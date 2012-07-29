@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRMForCasting, App_Web_essflbce" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRMForCasting, App_Web_1pla2zj3" %>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
