@@ -1,5 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRMAddDocument, App_Web_vfk3jxa4" %>
-
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRMAddDocument, App_Web_essflbce" %>
 <%@ Register TagPrefix="ew" Namespace="eWorld.UI" Assembly="eWorld.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=24d65337282035f2" %>
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -9,34 +8,32 @@
                 Attach New Document :
             </th>
         </tr>
+
         <tr>
-            <td style="width: 280px">
+        <td>
+        <label for="ddlCompany"><b>Select Company :</b></label>
+        <asp:DropDownList ID="ddlCompany" runat="server" DataSourceID="CompanyDS" AutoPostBack="True" DataTextField="COMPANYNAME" DataValueField="COMPANIESID" ondatabound="ddlCompany_DataBound"></asp:DropDownList>
+        </td>
+        <td style="Width:30"></td>
+        <td align="right">
+        <label for="ddlOpportunity"><b>Select Opportunity :</b></label>
+        <asp:DropDownList ID="ddlOpportunity" runat="server" DataSourceID="OpprtunityDS" AutoPostBack="True" DataTextField="OppName"  DataValueField="OppsID" ondatabound="ddlOpportunity_DataBound" onselectedindexchanged="ddlOpportunity_SelectedIndexChanged"></asp:DropDownList>
+        </td></tr>
+        <tr><td colspan="3"></td></tr>
+        <tr>
+            <td  colspan="3">
                 <asp:DetailsView ID="dvDocument" runat="server" Height="50px" Width="300px" AutoGenerateRows="False"
                     DefaultMode="Insert" CellPadding="3" BorderStyle="None" BorderWidth="1px" BackColor="White"
                     BorderColor="#999999" GridLines="Vertical" OnItemInserted="dvDocument_ItemInserted"
-                    OnModeChanging="dvDocument_ModeChanging" OnItemInserting="dvDocument_ItemInserting">
+                    OnModeChanging="dvDocument_ModeChanging" OnItemInserting="dvDocument_ItemInserting" Visible="false">
                     <Fields>
-                        <asp:TemplateField HeaderText="Select Opportunity:">
-                            <InsertItemTemplate>
-                                <asp:DropDownList ID="ddlOpportunity" runat="server" DataSourceID="OpprtunityDS"
-                                    DataTextField="Opp_Name" DataValueField="Opp_ID" SelectedValue='<%# Bind("Opp_ID") %>'>
-                                </asp:DropDownList>
-                            </InsertItemTemplate>
-                        </asp:TemplateField>
+                        
                         <asp:TemplateField HeaderText="Document Status :">
                             <InsertItemTemplate>
-                                <asp:TextBox ID="txtDocStatus" MaxLength="50" Width="380" runat="server" Text='<%# Bind("Document_Status") %>'></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvDocStatus" ControlToValidate="txtDocStatus" Display="Static"
-                                    InitialValue="" runat="server" ErrorMessage="Please Enter Document Status to proceed.">
-                    *
-                  </asp:RequiredFieldValidator>
+                                <asp:DropDownList ID="ddlDocStatus" runat="server" DataSourceID="DocStatusDS" DataTextField="DocStatusText"  DataValueField="DocStatusId"></asp:DropDownList>
                             </InsertItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Document Loaded :">
-                            <InsertItemTemplate>
-                                <asp:TextBox ID="txtDocLoaded" MaxLength="50" Width="380" runat="server" Text='<%# Bind("Document_Loaded") %>'></asp:TextBox>
-                            </InsertItemTemplate>
-                        </asp:TemplateField>
+                        
                         <asp:TemplateField HeaderText="Last Modify Date :">
                             <InsertItemTemplate>
                                 <ew:CalendarPopup ID="LastModifyDate" Nullable="True" DisplayPrevNextYearSelection="True"
@@ -71,11 +68,13 @@
         </asp:RequiredFieldValidator>
                             </InsertItemTemplate>
                         </asp:TemplateField>
+                        
                         <asp:TemplateField HeaderText="Attached Document:">
                             <InsertItemTemplate>
                                 <asp:FileUpload ID="UpLoad" Width="275px" runat="server" />
                             </InsertItemTemplate>
                         </asp:TemplateField>
+                        
                         <asp:TemplateField ShowHeader="False">
                             <InsertItemTemplate>
                                 <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Insert"
@@ -84,6 +83,7 @@
                                     Text="Back To Documents" ForeColor="Blue" Font-Bold="true"></asp:LinkButton>
                             </InsertItemTemplate>
                         </asp:TemplateField>
+                    
                     </Fields>
                     <FieldHeaderStyle Wrap="False" />
                     <HeaderStyle Wrap="False" BackColor="DarkRed" Font-Bold="True" ForeColor="White" />
@@ -97,15 +97,22 @@
             </td>
         </tr>
         <tr>
-            <td style="width: 280px">
+            <td colspan="3">
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" />
             </td>
         </tr>
         <tr>
-            <td style="width: 280px">
+            <td colspan="3">
                 <asp:Label ID="lblResult" runat="server" ForeColor="Red"></asp:Label><br />
-                <asp:ObjectDataSource ID="OpprtunityDS" runat="server" TypeName="SandlerRepositories.OpportunityRepository"
-                    SelectMethod="GetAllForDocument"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="CompanyDS" Runat="server" TypeName="SandlerRepositories.CompaniesRepository" SelectMethod="GetCompaniesForDDL"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="DocStatusDS" Runat="server" TypeName="SandlerRepositories.DocumentsRepository" SelectMethod="GetDocStatus"></asp:ObjectDataSource>
+                
+                <asp:ObjectDataSource ID="OpprtunityDS" Runat="server" TypeName="SandlerRepositories.OpportunityRepository" SelectMethod="GetByCompId">
+                   <SelectParameters>
+                          <asp:ControlParameter ControlID ="ddlCompany" Name="COMPANIESID" Type="Int32" />
+                   </SelectParameters>
+                </asp:ObjectDataSource>
+                
             </td>
         </tr>
     </table>

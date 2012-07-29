@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View/Edit Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="UpdatedCRM_CRMViewCompany, App_Web_vfk3jxa4" %>
+﻿<%@ page title="CRM - View/Edit Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="UpdatedCRM_CRMViewCompany, App_Web_essflbce" %>
 
 <%@ Register TagPrefix="ew" Namespace="eWorld.UI" Assembly="eWorld.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=24d65337282035f2" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -12,7 +12,8 @@
             <td>
                 <asp:DetailsView AutoGenerateRows="False" DataKeyNames="COMPANIESID" ID="CompanyDW"
                     runat="server" Width="675px" OnItemCommand="CompanyDW_ItemCommand" OnModeChanging="CompanyDW_ModeChanging"
-                    OnItemUpdating="CompanyDW_ItemUpdating" OnItemCreated="CompanyDW_ItemCreated">
+                    OnItemUpdating="CompanyDW_ItemUpdating" 
+                    OnItemCreated="CompanyDW_ItemCreated" ondatabound="CompanyDW_DataBound">
                     <Fields>
                         <asp:BoundField DataField="COMPANIESID" Visible="False" />
                         <asp:TemplateField HeaderText="Company Name :">
@@ -137,7 +138,7 @@
                                 <asp:Label ID="lblCOMPANYVALUEGOAL" runat="server" Text='<%# Bind("COMPANYVALUEGOAL") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Product :">
+                        <%--<asp:TemplateField HeaderText="Product :">
                             <ItemTemplate>
                                 <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("Product") %>'></asp:Label>
                             </ItemTemplate>
@@ -147,7 +148,7 @@
                                 </asp:DropDownList>
                             </EditItemTemplate>
                             <ItemStyle Wrap="False" />
-                        </asp:TemplateField>
+                        </asp:TemplateField>--%>
                         <asp:TemplateField HeaderText="Industry :">
                             <ItemTemplate>
                                 <asp:Label ID="lblIndustry" runat="server" Text='<%# Eval("Industry") %>'></asp:Label>
@@ -362,12 +363,12 @@
             </td>
         </tr>
         <%--Datasources--%>
-        <tr>
+        <%--<tr>
             <td colspan="2">
                 <asp:ObjectDataSource ID="ProductDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository"
                     SelectMethod="GetAllProducts"></asp:ObjectDataSource>
             </td>
-        </tr>
+        </tr>--%>
         <tr>
             <td colspan="2">
                 <asp:ObjectDataSource ID="IndustryDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository"

@@ -1,40 +1,71 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRMViewContact, App_Web_vfk3jxa4" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_CRMViewContact, App_Web_essflbce" %>
+
 <%@Register TagPrefix="ew"  Namespace="eWorld.UI" Assembly="eWorld.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=24d65337282035f2" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
 <table>
-<tr><th align="left" class="tdTC" colspan="2" style="width: 680px">View / Edit Contact :</th></tr>
+<tr>
+<th style="float: left">
+                <asp:Label ID="lblModuleActionHeading" runat="server"></asp:Label>
+            </th>
+</tr>
 <tr>
 <td>
-<asp:DetailsView AutoGenerateRows="False" DataKeyNames="Contact_ID"
+<asp:DetailsView AutoGenerateRows="False" DataKeyNames="CONTACTSID"
        ID="ContactDW" runat="server" Width="675px" 
         onitemcommand="ContactDW_ItemCommand" 
-        onmodechanging="ContactDW_ModeChanging" onitemupdating="ContactDW_ItemUpdating">
+        onmodechanging="ContactDW_ModeChanging" 
+        onitemupdating="ContactDW_ItemUpdating" ondatabound="ContactDW_DataBound"
+        OnItemCreated="ContactDW_ItemCreated">
       <Fields>
-        <asp:BoundField DataField="Contact_ID" visible="False"/>
+        <asp:BoundField DataField="CONTACTSID" visible="False"/>
                                        
-          <asp:TemplateField HeaderText="Name :">
+          <asp:TemplateField HeaderText="Company :" >
+            <ItemTemplate>
+              <asp:Label ID="lblCompany" runat="server" Text='<%# Eval("COMPANYNAME") %>'></asp:Label>
+            </ItemTemplate>
+            <EditItemTemplate>
+              <asp:DropDownList DataSourceID="CompanyDS" DataTextField="COMPANYNAME"  DataValueField="COMPANIESID" ID="ddlCompany" runat="server" SelectedValue='<%# Bind("COMPANIESID") %>'></asp:DropDownList>
+            </EditItemTemplate>
+            <ItemStyle Wrap="False" />
+          </asp:TemplateField>
+                    
+          <asp:TemplateField HeaderText="Last Name :">
               <EditItemTemplate>
-                  <asp:TextBox ID="txtFullName"  MaxLength="50"  runat="server" Text='<%# Bind("Full_Name") %>'></asp:TextBox>
-                  <asp:RequiredFieldValidator id="reqFieldValNameTB"
-                    ControlToValidate="txtFullName"
+                  <asp:TextBox ID="txtLastName"  MaxLength="50"  runat="server" Text='<%# Bind("LastName") %>'></asp:TextBox>
+                  <asp:RequiredFieldValidator id="rfvLNTB"
+                    ControlToValidate="txtLastName"
                     Display="Static"
-                    InitialValue="" runat="server" ErrorMessage="Please Enter Name to proceed.">
+                    InitialValue="" runat="server" ErrorMessage="Please Enter Last Name to proceed.">
                     *
                   </asp:RequiredFieldValidator>
               </EditItemTemplate>
-              
               <ItemTemplate>
-                  <asp:Label ID="lblFullName" runat="server" Text='<%# Bind("Full_Name") %>'></asp:Label>
+                  <asp:Label ID="lblLastName" runat="server" Text='<%# Bind("LastName") %>'></asp:Label>
               </ItemTemplate>
           </asp:TemplateField>
                   
-             
+          <asp:TemplateField HeaderText="First Name :">
+              <EditItemTemplate>
+                  <asp:TextBox ID="txtFirstName"  MaxLength="50"  runat="server" Text='<%# Bind("FirstName") %>'></asp:TextBox>
+                  <asp:RequiredFieldValidator id="rfvFNTB"
+                    ControlToValidate="txtFirstName"
+                    Display="Static"
+                    InitialValue="" runat="server" ErrorMessage="Please Enter First Name to proceed.">
+                    *
+                  </asp:RequiredFieldValidator>
+              </EditItemTemplate>
+              <ItemTemplate>
+                  <asp:Label ID="lblFirstName" runat="server" Text='<%# Bind("FirstName") %>'></asp:Label>
+              </ItemTemplate>
+          </asp:TemplateField>
+
           <asp:TemplateField HeaderText="Phone :">
               <EditItemTemplate>
-                  <ew:maskedtextbox id="txtPhone"  MaxLength="50" Text='<%# Eval("Phone") %>' runat="server" RequiredErrorText="*"  ErrorText="*"
-							ErrorMessage="Please Enter Phone Number in 111-111-1111 format." 
-							ValidationExpression="\d{3}\-\d{3}\-\d{4}" Validate="false" Mask="999-999-9999"></ew:maskedtextbox>
-                            
+                  <asp:TextBox ID="txtPhone" MaxLength="50" runat="server" Text='<%# Bind("Phone") %>'></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvPhoneTB" ControlToValidate="txtPhone"
+                                    Display="Static" InitialValue="" runat="server" ErrorMessage="Please Enter Phone to proceed.">
+                    *
+                  </asp:RequiredFieldValidator>        
               </EditItemTemplate>
              
               <ItemTemplate>
@@ -46,6 +77,12 @@
           <asp:TemplateField HeaderText="E-mail :">
               <EditItemTemplate>
                   <asp:TextBox ID="txtEmail"  MaxLength="50"   runat="server" Text='<%# Bind("Email") %>'></asp:TextBox>
+                  <asp:RequiredFieldValidator id="rfvEmailTB"
+                    ControlToValidate="txtEmail"
+                    Display="Static"
+                    InitialValue="" runat="server" ErrorMessage="Please Enter Email to proceed.">
+                    *
+                  </asp:RequiredFieldValidator>
                   
               </EditItemTemplate>
               
@@ -55,25 +92,104 @@
           </asp:TemplateField>
 
 
-           <asp:TemplateField HeaderText="Company :" >
+          <asp:TemplateField HeaderText="New Appointment?:" >
             <ItemTemplate>
-              <asp:Label ID="lblCompany" runat="server" Text='<%# Eval("Company_Name") %>'></asp:Label>
+              <asp:Label ID="lblNewAppt" runat="server" Text='<%# Eval("NewApptDescription") %>'></asp:Label>
             </ItemTemplate>
             <EditItemTemplate>
-              <asp:DropDownList DataSourceID="CompanyDS" DataTextField="Company_Name"  DataValueField="ID" ID="ddlCompany" runat="server" SelectedValue='<%# Bind("ID") %>'></asp:DropDownList>
+              <asp:DropDownList ID="ddlAccount" runat="server" DataSourceID="NewItemInfoDS" DataTextField="Description" DataValueField="Value" SelectedValue='<%# Bind("Value") %>'></asp:DropDownList>
+            </EditItemTemplate>
+            <ItemStyle Wrap="False" />
+          </asp:TemplateField>
+          
+             
+          <asp:TemplateField HeaderText="Appointment Source:" >
+            <ItemTemplate>
+              <asp:Label ID="lblApptSource" runat="server" Text='<%# Eval("ApptSourceName") %>'></asp:Label>
+            </ItemTemplate>
+            <EditItemTemplate>
+              <asp:DropDownList ID="ddlApptSource" runat="server" DataSourceID="ApptSourceDS" DataTextField="ApptSourceName" DataValueField="ApptSourceId" SelectedValue='<%# Bind("ApptSourceId") %>'></asp:DropDownList>
             </EditItemTemplate>
             <ItemStyle Wrap="False" />
           </asp:TemplateField>
 
-             
-          <asp:TemplateField HeaderText="Total Account Value :">
-              <EditItemTemplate>
-                  <asp:TextBox ID="txtTotalActValue"  onkeypress="EnterOnlyNumeric()"   runat="server" Text='<%# Bind("Total_ACT_Value") %>'></asp:TextBox>
-                  
-              </EditItemTemplate>
+
+          <asp:TemplateField HeaderText="Registered for Trng?:" >
+            <ItemTemplate>
+              <asp:Label ID="lblRegTrng" runat="server" Text='<%# Eval("RegForTrngDescription") %>'></asp:Label>
+            </ItemTemplate>
+            <EditItemTemplate>
+              <asp:DropDownList ID="ddlRegForTraining" runat="server" DataSourceID="RegForTrainingDS" DataTextField="Description" DataValueField="RegForTrainingId" SelectedValue='<%# Bind("RegForTrainingId") %>'></asp:DropDownList>
+            </EditItemTemplate>
+            <ItemStyle Wrap="False" />
+          </asp:TemplateField>
+
+
+          <asp:TemplateField HeaderText="Course Type:" >
+            <ItemTemplate>
+              <asp:Label ID="lblCourseType" runat="server" Text='<%# Eval("CourseName") %>'></asp:Label>
+            </ItemTemplate>
+            <EditItemTemplate>
+              <asp:DropDownList ID="ddlCourse" runat="server" DataSourceID="CourseDS" DataTextField="CourseName" DataValueField="CourseId" SelectedValue='<%# Bind("CourseId") %>'></asp:DropDownList>
+            </EditItemTemplate>
+            <ItemStyle Wrap="False" />
+          </asp:TemplateField>
+
+
+          <asp:TemplateField HeaderText="Course Training Date :">
               
+              <EditItemTemplate>
+                    <ew:CalendarPopup ID="CourseTrngDate"  Nullable="True" 
+
+DisplayPrevNextYearSelection="True" SelectedDate='<%# Bind("CourseTrainingDate") %>' runat="server" 
+
+AllowArbitraryText="False" CellPadding="2px" CellSpacing="0px" Culture="English (United States)" 
+
+JavascriptOnChangeFunction="" LowerBoundDate="" ShowClearDate="True" UpperBoundDate="12/31/9999 23:59:59" ImageUrl="../Images/calendar.gif" ControlDisplay="TextBoxImage">
+                        <TodayDayStyle BackColor="LightGoldenrodYellow" 
+
+Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                            Font-Size="XX-Small" ForeColor="Black" />
+                        <WeekendStyle BackColor="LightGray" 
+
+Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                            ForeColor="Black" />
+                        <OffMonthStyle BackColor="AntiqueWhite" 
+
+Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                            Font-Size="XX-Small" ForeColor="Gray" />
+                        <WeekdayStyle BackColor="White" 
+
+Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                            ForeColor="Black" />
+                        <SelectedDateStyle BackColor="Yellow" 
+
+Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                            Font-Size="XX-Small" ForeColor="Black" />
+                        <MonthHeaderStyle BackColor="Yellow" 
+
+Font-Names="Verdana,Helvetica,Tahoma,Arial"
+                            Font-Size="XX-Small" ForeColor="Black" />
+                        <HolidayStyle BackColor="White" 
+
+Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                            ForeColor="Black" />
+                        <GoToTodayStyle BackColor="White" 
+
+Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                            ForeColor="Black" />
+                        <DayHeaderStyle BackColor="Orange" 
+
+Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                            ForeColor="Black" />
+                        <ClearDateStyle BackColor="White" 
+
+Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
+                            ForeColor="Black" />
+                    </ew:CalendarPopup>
+              </EditItemTemplate>
               <ItemTemplate>
-                  <asp:Label ID="lblTotalActValue" runat="server" Text='<%# Bind("Total_ACT_Value","{0:c}") %>'></asp:Label>
+                  <asp:Label ID="lblCourseTrngDate" runat="server" Text='<%# Bind("CourseTrainingDate","{0:d}") %>' ></asp:Label>
               </ItemTemplate>
           </asp:TemplateField>
 
@@ -81,24 +197,34 @@
 
           <asp:TemplateField HeaderText="Discussion Topic :">
               <EditItemTemplate>
-                  <asp:TextBox ID="txtCOMMENT"    runat="server" Text='<%# Bind("COMMENT") %>'></asp:TextBox>
-                  
+                  <asp:TextBox ID="txtDiscTopic"    runat="server" Text='<%# Bind("DiscussionTopic") %>'></asp:TextBox>
+                  <asp:RequiredFieldValidator id="rfvDiscTopicTB"
+                    ControlToValidate="txtDiscTopic"
+                    Display="Static"
+                    InitialValue="" runat="server" ErrorMessage="Please Enter Discussion Topic to proceed.">
+                    *
+                  </asp:RequiredFieldValidator>
               </EditItemTemplate>
               
               <ItemTemplate>
-                  <asp:Label ID="lblCOMMENT" runat="server" Text='<%# Bind("COMMENT") %>'></asp:Label>
+                  <asp:Label ID="lblDiscTopic" runat="server" Text='<%# Bind("DiscussionTopic") %>'></asp:Label>
               </ItemTemplate>
           </asp:TemplateField>
 
          
          <asp:TemplateField HeaderText="Action Step :">
               <EditItemTemplate>
-                  <asp:TextBox ID="txtActStep"    runat="server" Text='<%# Bind("ACTION_STEP") %>'></asp:TextBox>
-                  
+                  <asp:TextBox ID="txtActStep"    runat="server" Text='<%# Bind("ACTIONSTEP") %>'></asp:TextBox>
+                  <asp:RequiredFieldValidator id="rfvActionStepTB"
+                    ControlToValidate="txtActStep"
+                    Display="Static"
+                    InitialValue="" runat="server" ErrorMessage="Please Enter Action Step to proceed.">
+                    *
+                  </asp:RequiredFieldValidator>
               </EditItemTemplate>
               
               <ItemTemplate>
-                  <asp:Label ID="lblActStep" runat="server" Text='<%# Bind("ACTION_STEP") %>'></asp:Label>
+                  <asp:Label ID="lblActStep" runat="server" Text='<%# Bind("ACTIONSTEP") %>'></asp:Label>
               </ItemTemplate>
           </asp:TemplateField>
 
@@ -113,7 +239,7 @@ DisplayPrevNextYearSelection="True" SelectedDate='<%# Bind("Last_Contact_Date") 
 
 AllowArbitraryText="False" CellPadding="2px" CellSpacing="0px" Culture="English (United States)" 
 
-JavascriptOnChangeFunction="" LowerBoundDate="" ShowClearDate="True" UpperBoundDate="12/31/9999 23:59:59" ImageUrl="Images/calendar.gif" ControlDisplay="TextBoxImage">
+JavascriptOnChangeFunction="" LowerBoundDate="" ShowClearDate="True" UpperBoundDate="12/31/9999 23:59:59" ImageUrl="../Images/calendar.gif" ControlDisplay="TextBoxImage">
                         <TodayDayStyle BackColor="LightGoldenrodYellow" 
 
 Font-Names="Verdana,Helvetica,Tahoma,Arial"
@@ -177,7 +303,7 @@ DisplayPrevNextYearSelection="True" SelectedDate='<%# Bind("Next_Contact_Date") 
 
 AllowArbitraryText="False" CellPadding="2px" CellSpacing="0px" Culture="English (United States)" 
 
-JavascriptOnChangeFunction="" LowerBoundDate="" ShowClearDate="True" UpperBoundDate="12/31/9999 23:59:59" ImageUrl="Images/calendar.gif" ControlDisplay="TextBoxImage">
+JavascriptOnChangeFunction="" LowerBoundDate="" ShowClearDate="True" UpperBoundDate="12/31/9999 23:59:59" ImageUrl="../Images/calendar.gif" ControlDisplay="TextBoxImage">
                         <TodayDayStyle BackColor="LightGoldenrodYellow" 
 
 Font-Names="Verdana,Helvetica,Tahoma,Arial"
@@ -219,6 +345,12 @@ Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
 Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                             ForeColor="Black" />
                     </ew:CalendarPopup>
+                    <asp:RequiredFieldValidator 
+
+id="NextContactDateRFV"
+            ControlToValidate="NextContactDate" runat="server" ErrorMessage="Please Enter Next Contact Date to proceed." >
+            *
+        </asp:RequiredFieldValidator>
               </EditItemTemplate>
               <ItemTemplate>
                   <asp:Label ID="lblNextContactDate" runat="server" Text='<%# Bind("Next_Contact_Date","{0:d}") %>' ></asp:Label>
@@ -248,8 +380,14 @@ Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
         Text="Go Back to All Contacts" onclick="Cancel_Click" /></td></tr>
 <tr><td colspan="2"><asp:Label  CssClass="resultLabel" ID="LblStatus"  ForeColor="Red" runat="server"></asp:Label></td></tr>
 <tr><td colspan="2"><asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="True" /></td></tr>
-<tr><td colspan="2"> <asp:ObjectDataSource ID="CompanyDS" Runat="server" TypeName="SandlerRepositories.ContactsRepository" SelectMethod="GetAllCompanies"></asp:ObjectDataSource></td></tr>
-<tr><td colspan="2"><asp:HiddenField ID="hidContactID" runat="server" /> </td></tr>     
+<tr><td colspan="2"> 
+<asp:ObjectDataSource ID="CompanyDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository" SelectMethod="GetCompaniesForDDL"></asp:ObjectDataSource>
+<asp:ObjectDataSource ID="NewItemInfoDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository" SelectMethod="GetNewItemOptions"></asp:ObjectDataSource>
+<asp:ObjectDataSource ID="ApptSourceDS" runat="server" TypeName="SandlerRepositories.ContactsRepository" SelectMethod="GetApptSourceOptions"></asp:ObjectDataSource>
+<asp:ObjectDataSource ID="RegForTrainingDS" runat="server" TypeName="SandlerRepositories.ContactsRepository" SelectMethod="GetRegForTrainingOptions"></asp:ObjectDataSource>
+<asp:ObjectDataSource ID="CourseDS" runat="server" TypeName="SandlerRepositories.ContactsRepository" SelectMethod="GetCourseInfo"></asp:ObjectDataSource>
+</td></tr>
+<tr><td colspan="2"><asp:HiddenField ID="hidContactID" runat="server" /><asp:HiddenField ID="hidCourseName" runat="server" /> </td></tr>     
     
 </table> 
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ page title="Dashboard" language="C#" masterpagefile="~/Site.master" autoeventwireup="true" inherits="_Default, App_Web_5aajap3t" %>
+﻿<%@ page title="Dashboard" language="C#" masterpagefile="~/Site.master" autoeventwireup="true" inherits="_Default, App_Web_sqflr0an" %>
 
 <%@ Register Assembly="SandlerControls" Namespace="SandlerControls" TagPrefix="SandlerChart" %>
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
@@ -39,6 +39,6 @@
             </td>
         </tr>
     </table>
-    <script type="text/javascript">
+    <script type="text/javascript">        
     </script>
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRMViewDocument, App_Web_vfk3jxa4" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRMViewDocument, App_Web_essflbce" %>
 
 <%@ Register TagPrefix="ew" Namespace="eWorld.UI" Assembly="eWorld.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=24d65337282035f2" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -10,39 +10,43 @@
         </tr>
         <tr>
             <td>
-                <asp:DetailsView AutoGenerateRows="False" DataKeyNames="Doc_ID" ID="DocumentDW" runat="server"
-                    Width="675px" OnItemCommand="DocumentDW_ItemCommand" OnModeChanging="DocumentDW_ModeChanging"
+                <asp:DetailsView AutoGenerateRows="False" 
+                    DataKeyNames="DocsID" ID="DocumentDW" runat="server"
+                    Width="675px" 
+                    OnItemCommand="DocumentDW_ItemCommand" 
+                    OnModeChanging="DocumentDW_ModeChanging"
                     OnItemUpdating="DocumentDW_ItemUpdating">
                     <Fields>
-                        <asp:BoundField DataField="Doc_ID" Visible="False" />
+                        <asp:BoundField DataField="DocsID" Visible="False" />
                         <asp:TemplateField HeaderText="Company :">
                             <ItemTemplate>
-                                <asp:Label ID="lblCompany" runat="server" Text='<%# Eval("Company_Name") %>'></asp:Label>
+                                <asp:Label ID="lblCompany" runat="server" Text='<%# Eval("CompanyName") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Opp Name :">
+                            <EditItemTemplate>
+                                <asp:DropDownList ID="ddlOpportunity" SelectedValue='<%# Bind("OppsID") %>' runat="server" DataSourceID="OpprtunityDS" DataTextField="OppName"  DataValueField="OppsID"></asp:DropDownList>
+                                
+                            </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lblOppName" runat="server" Text='<%# Eval("Opp_Name") %>'></asp:Label>
+                                <asp:Label ID="lblOppName" runat="server" Text='<%# Eval("OppName") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Document Status :">
                             <EditItemTemplate>
-                                <asp:TextBox ID="txtDocStatus" runat="server" Text='<%# Bind("Document_Status") %>'></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvDocStatusTB" ControlToValidate="txtDocStatus"
-                                    Display="Static" InitialValue="" runat="server" ErrorMessage="Please Enter Document Status to proceed.">
-                    *
-                                </asp:RequiredFieldValidator>
+                                <asp:DropDownList ID="ddlDocStatus" runat="server" SelectedValue='<%# Bind("DocStatusId") %>' DataSourceID="DocStatusDS" DataTextField="DocStatusText"  DataValueField="DocStatusId"></asp:DropDownList>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lblCOMMENT" runat="server" Text='<%# Bind("Document_Status") %>'></asp:Label>
+                                <asp:Label ID="lblDocStatus" runat="server" Text='<%# Bind("DocStatusText") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
+                        
                         <asp:TemplateField HeaderText="Last Modified Date :">
                             <EditItemTemplate>
                                 <ew:CalendarPopup ID="LastModifyDate" Nullable="True" DisplayPrevNextYearSelection="True"
-                                    SelectedDate='<%# Bind("Last_Modify_Date") %>' runat="server" AllowArbitraryText="False"
+                                    SelectedDate='<%# Bind("LastModifyDate") %>' runat="server" AllowArbitraryText="False"
                                     CellPadding="2px" CellSpacing="0px" Culture="English (United States)" JavascriptOnChangeFunction=""
-                                    LowerBoundDate="" ShowClearDate="True" UpperBoundDate="12/31/9999 23:59:59" ImageUrl="Images/calendar.gif"
+                                    LowerBoundDate="" ShowClearDate="True" UpperBoundDate="12/31/9999 23:59:59" ImageUrl="../Images/calendar.gif"
                                     ControlDisplay="TextBoxImage">
                                     <TodayDayStyle BackColor="LightGoldenrodYellow" Font-Names="Verdana,Helvetica,Tahoma,Arial"
                                         Font-Size="XX-Small" ForeColor="Black" />
@@ -67,20 +71,21 @@
                                 </ew:CalendarPopup>
                                 <asp:RequiredFieldValidator ID="LastContactDateRFV" ControlToValidate="LastModifyDate"
                                     runat="server" ErrorMessage="Please Enter Last Modify Date to proceed.">
-            *
+                                    *
                                 </asp:RequiredFieldValidator>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lblLastContactDate" runat="server" Text='<%# Bind("Last_Modify_Date","{0:d}") %>'></asp:Label>
+                                <asp:Label ID="lblLastContactDate" runat="server" Text='<%# Bind("LastModifyDate","{0:d}") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Attached Document:">
+                       
+                       <asp:TemplateField HeaderText="Attached Document:">
                             <EditItemTemplate>
                                 <asp:FileUpload ID="UpLoad" Width="275px" runat="server" />
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:HyperLink ID="ModuleLink" runat="server" ForeColor="Blue" Target="_blank" NavigateUrl='<%# Eval("Doc_Name", "Documents\\{0}") %>'
-                                    Text='<%# Eval("Doc_Name") %>'></asp:HyperLink>
+                                <asp:HyperLink ID="ModuleLink" runat="server" ForeColor="Blue" Target="_blank" NavigateUrl='<%# Eval("DocName", "Documents\\{0}") %>'
+                                    Text='<%# Eval("DocName") %>'></asp:HyperLink>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField ShowHeader="False">
@@ -107,8 +112,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:Button ID="Cancel" CssClass="menuButton" runat="server" Text="Go Back to Documents"
-                    OnClick="Cancel_Click" />
+                <asp:Button ID="Cancel" CssClass="menuButton" runat="server" Text="Go Back to Documents" OnClick="Cancel_Click" />
             </td>
         </tr>
         <tr>
@@ -124,7 +128,17 @@
         <tr>
             <td colspan="2">
                 <asp:HiddenField ID="hidDocumentID" runat="server" />
+                <asp:HiddenField ID="hidCompanyID" runat="server" />
+                <asp:HiddenField ID="hidDocumentName" runat="server" />
             </td>
         </tr>
+        <tr><td>
+            <asp:ObjectDataSource ID="DocStatusDS" Runat="server" TypeName="SandlerRepositories.DocumentsRepository" SelectMethod="GetDocStatus"></asp:ObjectDataSource>
+             <asp:ObjectDataSource ID="OpprtunityDS" Runat="server" TypeName="SandlerRepositories.OpportunityRepository" SelectMethod="GetByCompId">
+                   <SelectParameters>
+                          <asp:ControlParameter ControlID="hidCompanyID" Name="COMPANIESID" Type="Int32"  />
+                   </SelectParameters>
+                </asp:ObjectDataSource>
+        </td></tr>
     </table>
 </asp:Content>

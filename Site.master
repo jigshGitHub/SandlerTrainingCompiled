@@ -1,4 +1,4 @@
-﻿<%@ master language="C#" autoeventwireup="true" inherits="SiteMaster, App_Web_2x5ixirv" %>
+﻿<%@ master language="C#" autoeventwireup="true" inherits="SiteMaster, App_Web_0br205ng" %>
 
 <%@ Import Namespace="Sandler.UI.ChartStructure" %>
 <%@ Register src="Menu.ascx" tagname="Menu" tagprefix="uc1" %>
@@ -10,7 +10,9 @@
     <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/jquery.formatCurrency-1.4.0.min.js") %>"></script>
     <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/jquery.calculation.min.js") %>"></script>
     <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/FusionChartLib/FusionCharts.js") %>"></script>
-    <script type="text/javascript" language="javascript" src="<%= Page.ResolveClientUrl("~/Scripts/jquery.dropdownPlain.js") %>"></script>
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/jquery.dropdownPlain.js") %>"></script>
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/consolelog.min.js") %>"></script>
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/plugins.js") %>"></script>
     <title></title>
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="~/Styles/Menu/style.css" type="text/css" media="screen, projection" />
@@ -28,7 +30,7 @@
         <div class="header">
             <div class="title">
             </div>
-            <div class="loginDisplay" style="display: none">
+            <div class="loginDisplay" style="display: block">
                 <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                     <AnonymousTemplate>
                         <!--[ <a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server">Log In</a>

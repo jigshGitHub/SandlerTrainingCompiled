@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Add Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="UpdatedCRM_CRMAddCompany, App_Web_vfk3jxa4" %>
+﻿<%@ page title="CRM - Add Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="UpdatedCRM_CRMAddCompany, App_Web_essflbce" %>
 
 <%@Register TagPrefix="ew"  Namespace="eWorld.UI" Assembly="eWorld.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=24d65337282035f2" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -130,7 +130,7 @@
             </asp:TemplateField>
 
 
-            <asp:TemplateField HeaderText="Product:">
+            <%--<asp:TemplateField HeaderText="Product:">
                    <InsertItemTemplate>
                         <asp:DropDownList ID="ddlProduct" runat="server" DataSourceID="ProductDS" DataTextField="ProductTypeName" DataValueField="ID" SelectedValue='<%# Bind("ID") %>'></asp:DropDownList>
                         <asp:RequiredFieldValidator id="productRFV"
@@ -140,7 +140,7 @@
                             *
                         </asp:RequiredFieldValidator>
                    </InsertItemTemplate>
-          </asp:TemplateField>
+          </asp:TemplateField>--%>
 
 
           <asp:TemplateField HeaderText="Industry:">
@@ -156,7 +156,7 @@
           </asp:TemplateField>
 
 
-          <asp:TemplateField HeaderText="Rep Last Name :">
+          <asp:TemplateField HeaderText="Sandler Rep Last Name :">
               <InsertItemTemplate>
                   <asp:TextBox ID="txtRepLastName"  MaxLength="50"   Width="380"  runat="server" Text='<%# Bind("RepLastName") %>'></asp:TextBox>
                   <asp:RequiredFieldValidator id="reqFieldValRepLastNameTB"
@@ -169,7 +169,7 @@
             </asp:TemplateField> 
            
 
-           <asp:TemplateField HeaderText="Rep First Name :">
+           <asp:TemplateField HeaderText="Sandler Rep First Name :">
               <InsertItemTemplate>
                   <asp:TextBox ID="txtRepFirstName"  MaxLength="50"   Width="380"  runat="server" Text='<%# Bind("RepFirstName") %>'></asp:TextBox>
                   <asp:RequiredFieldValidator id="reqFieldValRepFirstNameTB"
@@ -319,6 +319,10 @@ Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
 Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
                             ForeColor="Black" />
                     </ew:CalendarPopup>
+                    <asp:RequiredFieldValidator ID="NextContactDateRFV" ControlToValidate="NextContactDate"
+                                    runat="server" ErrorMessage="Please Enter Next Contact Date to proceed.">
+            *
+        </asp:RequiredFieldValidator>
               </InsertItemTemplate>
               
           </asp:TemplateField>
@@ -423,7 +427,7 @@ id="AcctCreationDateRFV"
             <asp:ControlParameter ControlID="dvCompany" Name="POCPhone" PropertyName="SelectedValue" />
             <asp:ControlParameter ControlID="dvCompany" Name="Value" PropertyName="SelectedValue" />
             <asp:ControlParameter ControlID="dvCompany" Name="COMPANYVALUEGOAL" PropertyName="SelectedValue" />
-            <asp:ControlParameter ControlID="dvCompany" Name="ID" PropertyName="SelectedValue" />
+            <%--<asp:ControlParameter ControlID="dvCompany" Name="ID" PropertyName="SelectedValue" />--%>
             <asp:ControlParameter ControlID="dvCompany" Name="IndID" PropertyName="SelectedValue" />
             <asp:ControlParameter ControlID="dvCompany" Name="RepLastName" PropertyName="SelectedValue" />
             <asp:ControlParameter ControlID="dvCompany" Name="RepFirstName" PropertyName="SelectedValue" />
@@ -432,7 +436,6 @@ id="AcctCreationDateRFV"
             <asp:ControlParameter ControlID="dvCompany" Name="LastContact_Date" PropertyName="SelectedValue" />
             <asp:ControlParameter ControlID="dvCompany" Name="NextContact_Date" PropertyName="SelectedValue" />
             <asp:ControlParameter ControlID="dvCompany" Name="CreationDate" PropertyName="SelectedValue" />
-            <asp:SessionParameter  Name="CurrentUser" SessionField="CurrentUser" Type="object" />   
          </InsertParameters>
     </asp:ObjectDataSource>
     </td></tr>
