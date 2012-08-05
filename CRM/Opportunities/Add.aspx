@@ -1,8 +1,10 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityADD, App_Web_fcp0zpy0" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityADD, App_Web_wfqxkjdx" %>
 
-<%@ Register TagPrefix="ew" Namespace="eWorld.UI" Assembly="eWorld.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=24d65337282035f2" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+    </asp:ToolkitScriptManager>
     <table>
         <tr>
             <th class="tdTC" style="width: 280px" align="left">
@@ -12,7 +14,7 @@
         <tr>
             <td style="width: 280px">
                 <table cellspacing="0" cellpadding="3" rules="cols" id="MainContent_dvOpportunity"
-                    style="background-color: White; border-color: #999999; border-width: 1px; border-style: None;
+                    style="background-color: White; border-color: #999999; border-width: 1px; border-style: solid;
                     height: 50px; width: 300px; border-collapse: collapse;">
                     <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                         <td style="white-space: nowrap;">
@@ -23,11 +25,16 @@
                                 ID="ddlCompany" runat="server" AutoPostBack="True" OnDataBound="ddlCompany_DataBound"
                                 OnSelectedIndexChanged="ddlCompany_SelectedIndexChanged">
                             </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rfvDDLCompany" ControlToValidate="ddlCompany" Display="Dynamic"
+                                InitialValue="0" runat="server" ErrorMessage="Please Select A Company From The List."
+                                Text="*">
+                            </asp:RequiredFieldValidator>
                             <asp:ObjectDataSource ID="CompanyDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository"
                                 SelectMethod="GetCompaniesForDDL"></asp:ObjectDataSource>
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;" id="trOpportunityID"
+                        runat="server" visible="false">
                         <td style="white-space: nowrap;">
                             Opportunity ID :
                         </td>
@@ -46,7 +53,7 @@
                             </asp:RequiredFieldValidator>
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td style="white-space: nowrap;">
                             Sales Rep Last Name :
                         </td>
@@ -68,7 +75,7 @@
                             </asp:RequiredFieldValidator>
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td style="white-space: nowrap;">
                             Sales Rep Phone :
                         </td>
@@ -89,7 +96,7 @@
                             </asp:ObjectDataSource>
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td style="white-space: nowrap;">
                             Opportunity Status :
                         </td>
@@ -109,18 +116,18 @@
                             <asp:DropDownList ID="ddlContacts" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlContacts_SelectedIndexChanged">
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator ID="rfvContact" ControlToValidate="ddlContacts" Display="Dynamic"
-                                InitialValue=" " runat="server" ErrorMessage="Please Select A Contact From The List."
+                                InitialValue="0" runat="server" ErrorMessage="Please Select A Contact From The List."
                                 Text="*">
                             </asp:RequiredFieldValidator>
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td style="white-space: nowrap;">
                             Contact Phone :
                         </td>
                         <td>
-                            <asp:TextBox ID="txtContactPhone" onkeypress="EnterOnlyNumeric()" MaxLength="50" Width="380"
-                                runat="server" Enabled="false"></asp:TextBox>
+                            <asp:TextBox ID="txtContactPhone" onkeypress="EnterOnlyNumeric()" MaxLength="50"
+                                Width="380" runat="server" Enabled="false"></asp:TextBox>
                         </td>
                     </tr>
                     <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
@@ -131,7 +138,7 @@
                             <asp:TextBox ID="txtEmail" MaxLength="50" runat="server" Enabled="false"></asp:TextBox>
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td style="white-space: nowrap;">
                             Opportunity Value :
                         </td>
@@ -155,7 +162,7 @@
                             </asp:RequiredFieldValidator>
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td style="white-space: nowrap;">
                             Weighted Value :
                         </td>
@@ -169,32 +176,11 @@
                             Close Date :
                         </td>
                         <td>
-                            <ew:CalendarPopup ID="CloseDate" Nullable="True" DisplayPrevNextYearSelection="True"
-                                runat="server" AllowArbitraryText="False" CellPadding="2px" CellSpacing="0px"
-                                Culture="English (United States)" JavascriptOnChangeFunction="" LowerBoundDate=""
-                                ShowClearDate="True" UpperBoundDate="12/31/9999 23:59:59" ImageUrl="~/Images/calendar.gif"
-                                ControlDisplay="TextBoxImage">
-                                <TodayDayStyle BackColor="LightGoldenrodYellow" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                    Font-Size="XX-Small" ForeColor="Black" />
-                                <WeekendStyle BackColor="LightGray" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                    ForeColor="Black" />
-                                <OffMonthStyle BackColor="AntiqueWhite" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                    Font-Size="XX-Small" ForeColor="Gray" />
-                                <WeekdayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                    ForeColor="Black" />
-                                <SelectedDateStyle BackColor="Yellow" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                    Font-Size="XX-Small" ForeColor="Black" />
-                                <MonthHeaderStyle BackColor="Yellow" Font-Names="Verdana,Helvetica,Tahoma,Arial"
-                                    Font-Size="XX-Small" ForeColor="Black" />
-                                <HolidayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                    ForeColor="Black" />
-                                <GoToTodayStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                    ForeColor="Black" />
-                                <DayHeaderStyle BackColor="Orange" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                    ForeColor="Black" />
-                                <ClearDateStyle BackColor="White" Font-Names="Verdana,Helvetica,Tahoma,Arial" Font-Size="XX-Small"
-                                    ForeColor="Black" />
-                            </ew:CalendarPopup>
+                            <asp:TextBox ID="CloseDate" runat="server" />&nbsp;<asp:Image ID="calanderImage"
+                                runat="server" ImageUrl="~/images/calendar.gif" ImageAlign="Middle" />
+                            <asp:CalendarExtender runat="server" TargetControlID="CloseDate" PopupButtonID="calanderImage"
+                                CssClass="calendar">
+                            </asp:CalendarExtender>
                         </td>
                         <tr>
                             <td colspan="2">
@@ -250,7 +236,7 @@
                             case 110: break; // . number block (Opera 9.63+ maps the "." from the number block to the "N" key (78) !!!)
                             case 190: break; // .
                             default: break;
-                            //$(this).formatCurrency({ colorize: true, negativeFormat: '(%s%n)', roundToDecimalPlace: -1, eventOnDecimalsEntered: true });      
+                            //$(this).formatCurrency({ colorize: true, negativeFormat: '(%s%n)', roundToDecimalPlace: -1, eventOnDecimalsEntered: true });                     
                         }
                     }
                 })

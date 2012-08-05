@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRMAddOpportunity_Konckout, App_Web_fcp0zpy0" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRMAddOpportunity_Konckout, App_Web_wfqxkjdx" %>
 
 <%@ Register TagPrefix="ew" Namespace="eWorld.UI" Assembly="eWorld.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=24d65337282035f2" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -29,7 +29,7 @@
                                 </select>
                             </td>
                         </tr>
-                        <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                        <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                             <td style="white-space: nowrap;">
                                 Opportunity ID
                             </td>
@@ -51,7 +51,7 @@
                                 <input data-bind="text:opportunityName" type="text" />
                             </td>
                         </tr>
-                        <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                        <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                             <td style="white-space: nowrap;">
                                 Sales Represntative
                             </td>
@@ -73,7 +73,7 @@
                                 <input data-bind="text:srLastName" type="text" />
                             </td>
                         </tr>
-                        <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                        <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                             <td style="white-space: nowrap;" align="right">
                                 First Name
                             </td>
@@ -95,7 +95,7 @@
                                 <input data-bind="text:srPhoneNo" type="text" />
                             </td>
                         </tr>
-                        <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                        <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                             <td style="white-space: nowrap;">
                                 Select Contact
                             </td>
@@ -118,7 +118,7 @@
                                 </select>
                             </td>
                         </tr>
-                        <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                        <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                             <td style="white-space: nowrap;" align="right">
                                 Phone
                             </td>
@@ -140,7 +140,7 @@
                                 <input data-bind="text:contactEmail" type="text" />
                             </td>
                         </tr>
-                        <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                        <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                             <td style="white-space: nowrap;" align="right">
                                 Opportunity Status
                             </td>

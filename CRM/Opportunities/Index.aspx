@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Opportunity, App_Web_fcp0zpy0" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityIndex, App_Web_wfqxkjdx" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -24,10 +24,10 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:GridView Width="100%" ID="gvOpportunities" runat="server"
-                    AutoGenerateColumns="False" DataKeyNames="ID" AllowSorting="true"
-                    PageSize="20" OnSelectedIndexChanged="gvOpportunities_SelectedIndexChanged" OnDataBound="gvOpportunities_DataBound"
-                    OnRowDataBound="gvOpportunities_RowDataBound" ShowFooter="true">
+                <asp:GridView Width="100%" ID="gvOpportunities" runat="server" AutoGenerateColumns="False"
+                    DataKeyNames="ID" AllowSorting="true" PageSize="3" OnSelectedIndexChanged="gvOpportunities_SelectedIndexChanged"
+                    OnDataBound="gvOpportunities_DataBound" OnRowDataBound="gvOpportunities_RowDataBound"
+                    ShowFooter="true">
                     <PagerStyle BackColor="#999999" ForeColor="Blue" HorizontalAlign="Center" />
                     <Columns>
                         <asp:BoundField DataField="ID" Visible="False" />
@@ -55,6 +55,8 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
+                    <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+                    <AlternatingRowStyle BackColor="#DCDCDC" />
                 </asp:GridView>
             </td>
         </tr>

@@ -1,17 +1,17 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityDETAIL, App_Web_fcp0zpy0" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityDETAIL, App_Web_wfqxkjdx" %>
 
 <%@ Register TagPrefix="ew" Namespace="eWorld.UI" Assembly="eWorld.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=24d65337282035f2" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <table>
         <tr>
             <th class="tdTC" style="width: 280px" align="left">
-                Detail Opportunity :
+                View Opportunity :
             </th>
         </tr>
         <tr>
             <td style="width: 280px">
                 <table cellspacing="0" cellpadding="3" rules="cols" id="MainContent_dvOpportunity"
-                    style="background-color: White; border-color: #999999; border-width: 1px; border-style: None;
+                    style="background-color: White; border-color: #999999; border-width: 1px; border-style: solid;
                     height: 50px; width: 300px; border-collapse: collapse;">
                     <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                         <td style="white-space: nowrap;">
@@ -21,7 +21,7 @@
                             <asp:Label ID="lblCompany" runat="server" />
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td style="white-space: nowrap;">
                             Opportunity ID :
                         </td>
@@ -37,7 +37,7 @@
                             <asp:Label ID="lblOppName" runat="server" Width="380"></asp:Label>
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td style="white-space: nowrap;">
                             Sales Rep Last Name :
                         </td>
@@ -53,7 +53,7 @@
                             <asp:Label ID="lblSalesRepFName" runat="server" Width="380"></asp:Label>
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td style="white-space: nowrap;">
                             Sales Rep Phone :
                         </td>
@@ -69,7 +69,7 @@
                             <asp:Label ID="lblProduct" runat="server" />
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td style="white-space: nowrap;">
                             Opportunity Status :
                         </td>
@@ -85,7 +85,7 @@
                             <asp:Label ID="lblContact" runat="server" />
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td style="white-space: nowrap;">
                             Contact Phone :
                         </td>
@@ -101,7 +101,7 @@
                             <asp:Label ID="lblEmail" runat="server" Enabled="false"></asp:Label>
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td style="white-space: nowrap;">
                             Opportunity Value :
                         </td>
@@ -117,7 +117,7 @@
                             <asp:Label ID="lblWinProbability" MaxLength="3" runat="server"></asp:Label>
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: Gainsboro; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td style="white-space: nowrap;">
                             Weighted Value :
                         </td>
@@ -153,6 +153,7 @@
             var opportunityValue = '#<%=lblOpportunityValue.ClientID %>';
             $(weightedValue).formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
             $(opportunityValue).formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
+            //$('#<%=lbtnCancel.ClientID%>').click(function () { window.location.href = '../CRM/Opportunities/Index.aspx'; });
         });
     </script>
 </asp:Content>
