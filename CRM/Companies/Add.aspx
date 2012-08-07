@@ -1,8 +1,8 @@
-﻿<%@ page title="CRM - Add Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="AddCompany, App_Web_lnhgapfw" %>
+﻿<%@ page title="CRM - Add Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="AddCompany, App_Web_4j51nzpg" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-<asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
     <table>
         <tr>
             <th class="tdTC" style="width: 280px" align="left">
@@ -15,7 +15,7 @@
                     DataSourceID="CompanyDataSource" DefaultMode="Insert" CellPadding="3" BorderStyle="None"
                     BorderWidth="1px" BackColor="White" BorderColor="#999999" GridLines="Vertical"
                     OnItemInserted="dvCompany_ItemInserted" OnModeChanging="dvCompany_ModeChanging"
-                    OnDataBound="dvCompany_DataBound">
+                    OnDataBound="dvCompany_DataBound" onitemcreated="dvCompany_ItemCreated">
                     <Fields>
                         <asp:TemplateField HeaderText="Company Name :">
                             <InsertItemTemplate>

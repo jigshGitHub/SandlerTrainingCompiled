@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityIndex, App_Web_wfqxkjdx" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityIndex, App_Web_voluhaxx" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -58,6 +58,11 @@
                     <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                     <AlternatingRowStyle BackColor="#DCDCDC" />
                 </asp:GridView>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="Pager">
+                <% = BindPager() %>
             </td>
         </tr>
         <tr>

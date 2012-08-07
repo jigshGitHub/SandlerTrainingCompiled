@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="DocumentDETAIL, App_Web_0i4oyodw" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="DocumentDETAIL, App_Web_zabgv1qc" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -56,7 +56,7 @@
                                 <asp:FileUpload ID="UpLoad" Width="275px" runat="server" />
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:HyperLink ID="ModuleLink" runat="server" ForeColor="Blue" Target="_blank" NavigateUrl='<%# Eval("DocName", "{0}") %>'
+                                <asp:HyperLink ID="ModuleLink" runat="server" ForeColor="Blue" Target="_blank" NavigateUrl='<%# Eval("docFullName", "~/SandlerDocuments/{0}") %>'
                                     Text='<%# Eval("DocName") %>'></asp:HyperLink>
                             </ItemTemplate>
                         </asp:TemplateField>
