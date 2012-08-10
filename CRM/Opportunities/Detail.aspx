@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityDETAIL, App_Web_voluhaxx" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityDETAIL, App_Web_ue4zm0y2" %>
 
 <%@ Register TagPrefix="ew" Namespace="eWorld.UI" Assembly="eWorld.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=24d65337282035f2" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -132,17 +132,23 @@
                         <td>
                             <asp:Label ID="lblCloseDate" runat="server" />
                         </td>
-                        <tr>
-                            <td colspan="2">
-                                <asp:LinkButton ID="lbtnEdit" runat="server" CausesValidation="True" 
-                                    Text="Edit" ForeColor="Blue"
-                                    Font-Bold="true" onclick="lbtnEdit_Click"></asp:LinkButton>&nbsp;&nbsp;
-                                <asp:LinkButton ID="lbtnCancel" runat="server" CausesValidation="False" Text="Back To Opportunities"
-                                    ForeColor="Blue" Font-Bold="true" onclick="lbtnCancel_Click"></asp:LinkButton>
-                            </td>
-                        </tr>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <a id="anchorEdit" runat="server" style="font-weight: bold">Edit</a> &nbsp;&nbsp;
+                            <a href="Index.aspx" style="font-weight: bold">Back To Opportunities</a>
+                        </td>
                     </tr>
                 </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Label ID="lblResult" runat="server" ForeColor="Red"></asp:Label><br />
             </td>
         </tr>
     </table>
@@ -153,7 +159,6 @@
             var opportunityValue = '#<%=lblOpportunityValue.ClientID %>';
             $(weightedValue).formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
             $(opportunityValue).formatCurrency({ colorize: true, negativeFormat: '(%s%n)' });
-            //$('#<%=lbtnCancel.ClientID%>').click(function () { window.location.href = '../CRM/Opportunities/Index.aspx'; });
         });
     </script>
 </asp:Content>

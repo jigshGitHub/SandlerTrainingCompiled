@@ -1,4 +1,4 @@
-﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ContactIndex, App_Web_zjlmzv25" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ContactIndex, App_Web_4jolrmlv" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -11,8 +11,7 @@
                 </asp:DropDownList>
             </td>
             <td align="right">
-                <asp:LinkButton ID="btnAddContact" runat="server" Font-Size="Large" OnClick="btnAddContact_Click"
-                    ForeColor="blue">Add New Contact</asp:LinkButton>
+                <a runat="server" id="addContactAnchor" href="Add.aspx">Add New Contact</a>
             </td>
         </tr>
         <tr>
@@ -36,7 +35,6 @@
                         <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="COMPANYNAME" HeaderText="Company"
                             HeaderStyle-ForeColor="Blue" SortExpression="COMPANYNAME" />
                         <asp:TemplateField ShowHeader="False">
-                            <ControlStyle ForeColor="Maroon" />
                             <ItemTemplate>
                                 <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Select"
                                     Text="View Detail.."></asp:LinkButton>

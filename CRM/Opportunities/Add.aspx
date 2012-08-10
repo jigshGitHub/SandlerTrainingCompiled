@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityADD, App_Web_voluhaxx" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityADD, App_Web_ue4zm0y2" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -92,7 +92,11 @@
                             <asp:DropDownList ID="ddlProducts" runat="server" DataSourceID="ProductTypesDS" DataTextField="ProductTypeName"
                                 DataValueField="Id">
                             </asp:DropDownList>
-                            <asp:ObjectDataSource ID="ProductTypesDS" runat="server" SelectMethod="GetAll" TypeName="SandlerRepositories.ProductTypesRepository">
+                            <asp:ObjectDataSource ID="ProductTypesDS" runat="server" SelectMethod="GetWithFranchiseeId"
+                                TypeName="SandlerRepositories.ProductTypesRepository">
+                                <SelectParameters>
+                                    <asp:Parameter Name="franchiseeId" Type="Int32" />
+                                </SelectParameters>
                             </asp:ObjectDataSource>
                         </td>
                     </tr>
@@ -182,14 +186,14 @@
                                 CssClass="calendar">
                             </asp:CalendarExtender>
                         </td>
-                        <tr>
-                            <td colspan="2">
-                                <asp:LinkButton ID="lbtnAdd" runat="server" CausesValidation="True" Text="Add" ForeColor="Blue"
-                                    Font-Bold="true" OnClick="lbtnAdd_Click"></asp:LinkButton>&nbsp;&nbsp;
-                                <asp:LinkButton ID="lbtnCancel" runat="server" CausesValidation="False" Text="Back To Opportunities"
-                                    ForeColor="Blue" Font-Bold="true" OnClick="lbtnCancel_Click"></asp:LinkButton>
-                            </td>
-                        </tr>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <asp:LinkButton ID="lbtnAdd" runat="server" CausesValidation="True" Text="Add" ForeColor="Blue"
+                                Font-Bold="true" OnClick="lbtnAdd_Click"></asp:LinkButton>&nbsp;&nbsp;
+                            <asp:LinkButton ID="lbtnCancel" runat="server" CausesValidation="False" ForeColor="Blue"
+                                Font-Bold="true" OnClick="lbtnCancel_Click"></asp:LinkButton>
+                        </td>
                     </tr>
                 </table>
             </td>
@@ -236,7 +240,7 @@
                             case 110: break; // . number block (Opera 9.63+ maps the "." from the number block to the "N" key (78) !!!)
                             case 190: break; // .
                             default: break;
-                            //$(this).formatCurrency({ colorize: true, negativeFormat: '(%s%n)', roundToDecimalPlace: -1, eventOnDecimalsEntered: true });                     
+                            //$(this).formatCurrency({ colorize: true, negativeFormat: '(%s%n)', roundToDecimalPlace: -1, eventOnDecimalsEntered: true });                         
                         }
                     }
                 })
