@@ -1,9 +1,11 @@
-﻿<%@ page title="Dashboard" language="C#" masterpagefile="~/Site.master" autoeventwireup="true" inherits="_Default, App_Web_mldkhyo5" %>
+﻿<%@ page title="Dashboard" language="C#" masterpagefile="~/Site.master" autoeventwireup="true" inherits="_Default, App_Web_uffzbnyq" %>
 
 <%@ Register Assembly="SandlerControls" Namespace="SandlerControls" TagPrefix="SandlerChart" %>
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+<script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/knockout-2.1.0.js") %>"></script>
+    
     <table width="100%">
         <tr>
             <td width="33%">
@@ -39,6 +41,6 @@
             </td>
         </tr>
     </table>
-    <script type="text/javascript">        
-    </script>
+
+    
 </asp:Content>

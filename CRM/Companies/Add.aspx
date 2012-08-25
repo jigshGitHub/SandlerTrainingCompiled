@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Add Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="AddCompany, App_Web_ce0zlrrl" %>
+﻿<%@ page title="CRM - Add Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="AddCompany, App_Web_pffx2ivp" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -55,7 +55,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Zip :">
                             <InsertItemTemplate>
-                                <asp:TextBox ID="txtZip" onkeypress="EnterOnlyNumeric()" Width="380" runat="server"
+                                <asp:TextBox ID="txtZip"  MaxLength="6"  Width="380" runat="server"
                                     Text='<%# Bind("Zip") %>'></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="reqFieldValtxtZipTB" ControlToValidate="txtZip" Display="Static"
                                     InitialValue="" runat="server" ErrorMessage="Please Enter Zip to proceed.">
