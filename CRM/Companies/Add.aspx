@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Add Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="AddCompany, App_Web_tojvt5mg" %>
+﻿<%@ page title="CRM - Add Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="AddCompany, App_Web_54rd14ck" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">

@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="DocumentIndex, App_Web_qpc1mxdi" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="DocumentIndex, App_Web_dhfetyvh" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">

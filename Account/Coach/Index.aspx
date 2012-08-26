@@ -1,4 +1,4 @@
-﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_Coach_Index, App_Web_03tdjlny" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_Coach_Index, App_Web_5w0vgxrr" %>
     
 <%@ Register Src="~/CRM/Pager.ascx" TagName="Pager" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
