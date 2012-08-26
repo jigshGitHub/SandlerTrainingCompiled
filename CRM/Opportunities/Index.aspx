@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityIndex, App_Web_f3xkdndp" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityIndex, App_Web_12kgdf3d" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
 <%@ Register Src="../Pager.ascx" TagName="Pager" TagPrefix="uc1" %>
