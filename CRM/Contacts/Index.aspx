@@ -1,4 +1,4 @@
-﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ContactIndex, App_Web_ukflbdci" %>
+﻿<%@ page title="CRM - View Contacts" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="ContactIndex, App_Web_s0eikqgg" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -11,7 +11,14 @@
                 </asp:DropDownList>
             </td>
             <td align="right">
-                <a runat="server" id="addContactAnchor" href="Add.aspx">Add New Contact</a>
+                <a runat="server" id="addContactAnchor" href="Add.aspx">Add New Contact</a>&nbsp;|&nbsp;
+                <a runat="server" id="callListAnchor" href="CallList.aspx">View Call List</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <asp:ImageButton ImageUrl="~/images/excel.jpg" runat="server" ToolTip="Export To Excel"
+                    ID="btnExportExcel" OnClick="btnExportExcel_Click" />
             </td>
         </tr>
         <tr>
@@ -20,30 +27,32 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:GridView Width="100%" ID="gvContacts" runat="server" DataSourceID="ContactDS"
-                    AutoGenerateColumns="False" DataKeyNames="contactsid" AllowSorting="true" AllowPaging="true"
-                    PageSize="20" OnSelectedIndexChanged="gvContacts_SelectedIndexChanged" OnDataBound="gvContacts_DataBound">
-                    <PagerStyle BackColor="#999999" ForeColor="Blue" HorizontalAlign="Center" />
-                    <Columns>
-                        <asp:BoundField DataField="contactsid" Visible="False" />
-                        <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="FullName" HeaderText="Name"
-                            HeaderStyle-ForeColor="Blue" SortExpression="FullName" />
-                        <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="Phone" HeaderText="Phone"
-                            HeaderStyle-ForeColor="Blue" SortExpression="Phone" />
-                        <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="Email" HeaderText="E-mail"
-                            HeaderStyle-ForeColor="Blue" SortExpression="Email" />
-                        <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="COMPANYNAME" HeaderText="Company"
-                            HeaderStyle-ForeColor="Blue" SortExpression="COMPANYNAME" />
-                        <asp:TemplateField ShowHeader="False">
-                            <ItemTemplate>
-                                <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Select"
-                                    Text="View Detail.."></asp:LinkButton>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                    </Columns>
-                    <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
-                    <AlternatingRowStyle BackColor="#DCDCDC" />
-                </asp:GridView>
+                <div id="Report" runat="server">
+                    <asp:GridView Width="100%" ID="gvContacts" runat="server" DataSourceID="ContactDS"
+                        AutoGenerateColumns="False" DataKeyNames="contactsid" AllowSorting="true" AllowPaging="true"
+                        PageSize="20" OnSelectedIndexChanged="gvContacts_SelectedIndexChanged" OnDataBound="gvContacts_DataBound">
+                        <PagerStyle BackColor="#999999" ForeColor="Blue" CssClass="gridPager" HorizontalAlign="Center" />
+                        <Columns>
+                            <asp:BoundField DataField="contactsid" Visible="False" />
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="FullName" HeaderText="Name"
+                                HeaderStyle-ForeColor="Blue" SortExpression="FullName" />
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="Phone" HeaderText="Phone"
+                                HeaderStyle-ForeColor="Blue" SortExpression="Phone" />
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="Email" HeaderText="E-mail"
+                                HeaderStyle-ForeColor="Blue" SortExpression="Email" />
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="COMPANYNAME" HeaderText="Company"
+                                HeaderStyle-ForeColor="Blue" SortExpression="COMPANYNAME" />
+                            <asp:TemplateField ShowHeader="False">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Select"
+                                        Text="View Detail.."></asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                        <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
+                        <AlternatingRowStyle BackColor="#DCDCDC" />
+                    </asp:GridView>
+                </div>
             </td>
         </tr>
         <tr>

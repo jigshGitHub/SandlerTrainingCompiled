@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View/Edit Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CompanyDETAIL, App_Web_ln4ucw2m" %>
+﻿<%@ page title="CRM - View/Edit Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CompanyDETAIL, App_Web_btze0hic" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -69,7 +69,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Zip :">
                             <EditItemTemplate>
-                                <asp:TextBox ID="txtZip" Width="380"  MaxLength="6"
+                                <asp:TextBox ID="txtZip" Width="380"  MaxLength="7"
                                     runat="server" Text='<%# Bind("Zip") %>'></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="reqFieldValtxtZipTB" ControlToValidate="txtZip" Display="Static"
                                     InitialValue="" runat="server" ErrorMessage="Please Enter Zip to proceed.">

@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="DocumentIndex, App_Web_1chqp5cj" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="DocumentIndex, App_Web_wnssfvog" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -34,7 +34,7 @@
                     AutoGenerateColumns="False" DataKeyNames="docsid" AllowSorting="True" AllowPaging="True"
                     PageSize="20" OnSelectedIndexChanged="gvDocuments_SelectedIndexChanged" OnDataBound="gvDocuments_DataBound"
                     OnRowDataBound="gvDocuments_RowDataBound">
-                    <PagerStyle BackColor="#999999" ForeColor="Blue" HorizontalAlign="Center" />
+                    <PagerStyle CssClass="gvPager" />
                     <Columns>
                         <asp:TemplateField Visible="false">
                             <ItemTemplate>

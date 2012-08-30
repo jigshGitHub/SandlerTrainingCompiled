@@ -1,4 +1,4 @@
-﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ContactDETAIL, App_Web_ukflbdci" %>
+﻿<%@ page title="CRM - View/Edit Contact" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ContactDETAIL, App_Web_s0eikqgg" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -68,10 +68,8 @@
                         <asp:TemplateField HeaderText="E-mail :">
                             <EditItemTemplate>
                                 <asp:TextBox ID="txtEmail" MaxLength="50" runat="server" Text='<%# Bind("Email") %>'></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvEmailTB" ControlToValidate="txtEmail" Display="Static"
-                                    InitialValue="" runat="server" ErrorMessage="Please Enter Email to proceed.">
-                    *
-                                </asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="rfvEmailTB" ControlToValidate="txtEmail" Display="Static" InitialValue="" runat="server" ErrorMessage="Please Enter Email to proceed.">*</asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="regExpVal" runat="server" ControlToValidate="txtEmail" ErrorMessage="Please Enter Valid Email address." ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lblEmail" runat="server" Text='<%# Bind("Email") %>'></asp:Label>
@@ -183,6 +181,30 @@
                                 <asp:Label ID="lblNextContactDate" runat="server" Text='<%# Bind("Next_Contact_Date","{0:d}") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="Email Subscription?:">
+                            <ItemTemplate>
+                                <asp:Label ID="lblBlastEmail" runat="server" Text='<%# Eval("BlastEmailDescription") %>'></asp:Label>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:DropDownList ID="ddlBlastEmail" runat="server" DataSourceID="BlastEmailDS"
+                                    DataTextField="Description" DataValueField="BlastEmailId" SelectedValue='<%# Bind("BlastEmailId") %>'>
+                                </asp:DropDownList>
+                            </EditItemTemplate>
+                            <ItemStyle Wrap="False" />
+                        </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText="Need to Call Back?:">
+                            <ItemTemplate>
+                                <asp:Label ID="lblCallBack" runat="server" Text='<%# Eval("CallBackDescription") %>'></asp:Label>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:DropDownList ID="ddlCallBack" runat="server" DataSourceID="CallBackInfoDS" DataTextField="CallBackDescription" DataValueField="CallBackValue" SelectedValue='<%# Bind("CallBackValue") %>'></asp:DropDownList>
+                            </EditItemTemplate>
+                            <ItemStyle Wrap="False" />
+                        </asp:TemplateField>
+
+
                         <asp:TemplateField ShowHeader="False">
                             <ControlStyle Font-Bold="true" />
                             <EditItemTemplate>
@@ -220,16 +242,13 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:ObjectDataSource ID="CompanyDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository"
-                    SelectMethod="GetCompaniesForDDL"></asp:ObjectDataSource>
-                <asp:ObjectDataSource ID="NewItemInfoDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository"
-                    SelectMethod="GetNewItemOptions"></asp:ObjectDataSource>
-                <asp:ObjectDataSource ID="ApptSourceDS" runat="server" TypeName="SandlerRepositories.ContactsRepository"
-                    SelectMethod="GetApptSourceOptions"></asp:ObjectDataSource>
-                <asp:ObjectDataSource ID="RegForTrainingDS" runat="server" TypeName="SandlerRepositories.ContactsRepository"
-                    SelectMethod="GetRegForTrainingOptions"></asp:ObjectDataSource>
-                <asp:ObjectDataSource ID="CourseDS" runat="server" TypeName="SandlerRepositories.ContactsRepository"
-                    SelectMethod="GetCourseInfo"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="CompanyDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository" SelectMethod="GetCompaniesForDDL"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="NewItemInfoDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository" SelectMethod="GetNewItemOptions"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ApptSourceDS" runat="server" TypeName="SandlerRepositories.ContactsRepository"  SelectMethod="GetApptSourceOptions"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="RegForTrainingDS" runat="server" TypeName="SandlerRepositories.ContactsRepository" SelectMethod="GetRegForTrainingOptions"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="BlastEmailDS" runat="server" TypeName="SandlerRepositories.ContactsRepository"   SelectMethod="GetBlastEmailOptions"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="CourseDS" runat="server" TypeName="SandlerRepositories.ContactsRepository"  SelectMethod="GetCourseInfo"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="CallBackInfoDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository" SelectMethod="GetCallBackOptions"></asp:ObjectDataSource>
             </td>
         </tr>
         <tr>

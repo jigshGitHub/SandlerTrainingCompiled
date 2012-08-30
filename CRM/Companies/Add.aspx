@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Add Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="AddCompany, App_Web_ln4ucw2m" %>
+﻿<%@ page title="CRM - Add Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="AddCompany, App_Web_btze0hic" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -55,7 +55,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Zip :">
                             <InsertItemTemplate>
-                                <asp:TextBox ID="txtZip"  MaxLength="6"  Width="380" runat="server"
+                                <asp:TextBox ID="txtZip"  MaxLength="7"  Width="380" runat="server"
                                     Text='<%# Bind("Zip") %>'></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="reqFieldValtxtZipTB" ControlToValidate="txtZip" Display="Static"
                                     InitialValue="" runat="server" ErrorMessage="Please Enter Zip to proceed.">
@@ -83,7 +83,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="POC Phone :">
                             <InsertItemTemplate>
-                                <asp:TextBox ID="txtPOCPhone" onkeypress="EnterOnlyNumeric()" MaxLength="50" Width="380"
+                                <asp:TextBox ID="txtPOCPhone" MaxLength="50" Width="380"
                                     runat="server" Text='<%# Bind("POCPhone") %>'></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="reqFieldValPOCPhoneTB" ControlToValidate="txtPOCPhone"
                                     Display="Static" InitialValue="" runat="server" ErrorMessage="Please Enter POC Phone to proceed.">
