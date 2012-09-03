@@ -1,35 +1,45 @@
-﻿<%@ page title="CRM - View Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunityIndex, App_Web_2k0mnvme" %>
+﻿<%@ page title="CRM - View Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunityIndex, App_Web_tz1cqxxd" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 <%@ Register Src="../Pager.ascx" TagName="Pager" TagPrefix="uc1" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-    <table id="tblMain" width="100%">
+    <table id="tblMain" style="width: 100%">
         <tr>
             <td>
-                Select Company Name:
-                <asp:DropDownList DataSourceID="CompanyDS" DataTextField="CompanyName" DataValueField="CompaniesID"
-                    ID="ddlCompany" runat="server" AutoPostBack="True" OnDataBound="ddlCompany_DataBound"
-                    OnSelectedIndexChanged="ddlCompany_SelectedIndexChanged">
-                </asp:DropDownList>
-                <asp:ObjectDataSource ID="CompanyDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository"
-                    SelectMethod="GetCompaniesForDDL"></asp:ObjectDataSource>
-            </td>
-            <td align="right">
-                <a id="addOpportunityAnchor" runat="server" href="Add.aspx">Add New Opportunity</a>
+                <table style="width: 100%">
+                    <tr>
+                        <td style="width: 100%" align="right">
+                            <a id="searchAnchor" runat="server" href="Search.aspx">Search </a>&nbsp;|&nbsp;<a
+                                id="addOpportunityAnchor" runat="server" href="Add.aspx">Add New Opportunity</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Select Company Name:
+                            <asp:DropDownList DataSourceID="CompanyDS" DataTextField="CompanyName" DataValueField="CompaniesID"
+                                ID="ddlCompany" runat="server" AutoPostBack="True" OnDataBound="ddlCreateDefaultSelection"
+                                OnSelectedIndexChanged="ddlCompany_SelectedIndexChanged">
+                            </asp:DropDownList>
+                            <asp:ObjectDataSource ID="CompanyDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository"
+                                SelectMethod="GetCompaniesForDDL"></asp:ObjectDataSource>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:ImageButton ImageUrl="~/images/excel.jpg" runat="server" ToolTip="Export To Excel"
+                                ID="btnExportExcel" OnClick="btnExportExcel_Click" />
+                        </td>
+                    </tr>
+                </table>
             </td>
         </tr>
         <tr>
-            <td colspan="2">
-                <asp:ImageButton ImageUrl="~/images/excel.jpg" runat="server" ToolTip="Export To Excel"
-                    ID="btnExportExcel" OnClick="btnExportExcel_Click" />
+            <td>
             </td>
         </tr>
         <tr>
-            <td colspan="2">
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
+            <td>
                 <div id="Report" runat="server">
                     <asp:GridView Width="100%" ID="gvOpportunities" runat="server" AutoGenerateColumns="False"
                         DataKeyNames="ID" AllowSorting="true" PageSize="3" OnDataBound="gvOpportunities_DataBound"
@@ -66,12 +76,12 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2" class="Pager">
+            <td class="Pager">
                 <uc1:Pager ID="pager" runat="server" />
             </td>
         </tr>
         <tr>
-            <td colspan="2">
+            <td>
                 <asp:Label ForeColor="Red" ID="LblStatus" runat="server"></asp:Label>
             </td>
         </tr>

@@ -1,4 +1,4 @@
-﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_Coach_Details, App_Web_tp02lgco" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_Coach_Details, App_Web_k2q12tic" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
@@ -117,7 +117,8 @@
                     <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                         <td colspan="3">
                             <a id="anchorEdit" runat="server" style="color: Blue; font-weight: bold;">Edit</a>
-                            &nbsp;&nbsp; <a href="Index.aspx" style="font-weight: bold">Back</a>
+                            &nbsp;&nbsp; <a href="Index.aspx" style="font-weight: bold">Delete</a>&nbsp;&nbsp;
+                            <a href="Index.aspx" style="font-weight: bold">Back</a>
                         </td>
                     </tr>
                 </table>
