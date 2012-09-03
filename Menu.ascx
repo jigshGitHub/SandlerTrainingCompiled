@@ -1,5 +1,5 @@
 ﻿<%@ Import Namespace="Sandler.UI.ChartStructure" %>
-<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_zh0ebn3e" %>
+<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_z2hmz3fz" %>
 <div class="clear hideSkiplink">
     <table border="0">
         <tr>
@@ -30,9 +30,9 @@
                         <li><a href="<%=  Page.ResolveClientUrl("~/Email/BlastEmail.aspx") %>">Blast Email</a></li>
                         <li><a href="<%=  Page.ResolveClientUrl("~/Email/ManageEmailSubscription.aspx") %>">
                             Manage Email Subscription</a></li><li><a href="<%=  Page.ResolveClientUrl("~/Calendar/Index.aspx") %>">
-                                My Calendar</a></li><li><a id="manageCoachAnchor" runat="server" visible="false">Manage
+                                My Calendar</a></li><li><a id="manageCoachAnchor" runat="server" visible="true">Manage
                                     Coach</a></li>
-                        <li><a id="manageFranchiseeAnchor" runat="server" visible="false">Manage Franchisee</a></li>
+                        <li><a id="manageFranchiseeAnchor" runat="server" visible="true">Manage Franchisee</a></li>
                     </ul>
                     </li>
                     <li><a href="#" class="disableLink">BENCHMARKS</a> </li>
