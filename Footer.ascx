@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="Footer, App_Web_z2hmz3fz" %>
+﻿<%@ control language="C#" autoeventwireup="true" inherits="Footer, App_Web_abf2kfta" %>
 <table width="100%">
     <tr>
         <td align="left">

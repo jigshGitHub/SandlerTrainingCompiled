@@ -1,12 +1,11 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="DocumentIndex, App_Web_gptex5pp" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="DocumentIndex, App_Web_heckrum1" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
+<%@ Register Src="../EntityMenu.ascx" TagName="EntityMenu" TagPrefix="uc1" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <table width="100%" border="0">
         <tr>
-            <td align="right">
-                <a runat="server" href="Search.aspx">Search </a>&nbsp;|&nbsp;<a href="Add.aspx">Attach
-                    New Document</a>
+            <td align="right"><uc1:EntityMenu ID="documentsMenu" runat="server" />
             </td>
         </tr>
         <tr>

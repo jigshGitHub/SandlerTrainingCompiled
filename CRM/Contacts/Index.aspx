@@ -1,14 +1,12 @@
-﻿<%@ page title="CRM - View Contacts" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="ContactIndex, App_Web_peyv5fsr" %>
+﻿<%@ page title="CRM - View Contacts" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="ContactIndex, App_Web_t0uttsgq" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
+<%@ Register Src="../EntityMenu.ascx" TagName="EntityMenu" TagPrefix="uc1" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <table id="tblCompMain" width="100%">
         <tr>
             <td align="right">
-                <a runat="server" id="searchAnchor" href="Search.aspx">Search</a>&nbsp;|&nbsp;<a runat="server"
-                    id="uploadAnchor" href="Upload.aspx">Upload Contact Data</a>&nbsp;|&nbsp; <a runat="server"
-                        id="addContactAnchor" href="Add.aspx">Add New Contact</a>&nbsp;|&nbsp;<a runat="server"
-                            id="callListAnchor" href="CallList.aspx">View Call List</a>
+                <uc1:EntityMenu ID="contactMenu" runat="server" />
             </td>
         </tr>
         <tr>

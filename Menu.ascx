@@ -1,5 +1,5 @@
 ﻿<%@ Import Namespace="Sandler.UI.ChartStructure" %>
-<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_z2hmz3fz" %>
+<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_abf2kfta" %>
 <div class="clear hideSkiplink">
     <table border="0">
         <tr>
@@ -24,15 +24,16 @@
                             Actual Dollars Booked and Comparison to Goal (By Month)</a></li></ul>
                     </li>
                     <li><a href="~/CRM/Companies/Index.aspx" id="anchorCRM" runat="server">CRM</a></li>
-                    <li><a href="#">MyAccount</a><ul class="sub_menu">
+                    <li><a id="anchorMyAccount" runat="server" href="#">My Account</a><ul class="sub_menu">
                         <li><a href="<%=  Page.ResolveClientUrl("~/Account/ChangePassword.aspx") %>">Change
                             Password</a></li>
                         <li><a href="<%=  Page.ResolveClientUrl("~/Email/BlastEmail.aspx") %>">Blast Email</a></li>
                         <li><a href="<%=  Page.ResolveClientUrl("~/Email/ManageEmailSubscription.aspx") %>">
                             Manage Email Subscription</a></li><li><a href="<%=  Page.ResolveClientUrl("~/Calendar/Index.aspx") %>">
-                                My Calendar</a></li><li><a id="manageCoachAnchor" runat="server" visible="true">Manage
+                                My Calendar</a></li><li><a id="manageCoachAnchor" runat="server" visible="false">Manage
                                     Coach</a></li>
-                        <li><a id="manageFranchiseeAnchor" runat="server" visible="true">Manage Franchisee</a></li>
+                        <li><a id="manageFranchiseeAnchor" runat="server" visible="false">Manage Franchisee</a></li>
+                        <li><a id="manageFranchiseeUserAnchor" runat="server" visible="false">Manage Franchisee User</a></li>
                     </ul>
                     </li>
                     <li><a href="#" class="disableLink">BENCHMARKS</a> </li>
