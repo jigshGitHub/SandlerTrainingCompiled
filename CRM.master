@@ -1,4 +1,4 @@
-﻿<%@ master language="C#" autoeventwireup="true" inherits="CRM, App_Web_pavxokcn" %>
+﻿<%@ master language="C#" autoeventwireup="true" inherits="CRM, App_Web_ib3b5qzp" %>
 
 <%@ Import Namespace="Sandler.UI.ChartStructure" %>
 <%@ Register Src="Header.ascx" TagName="Header" TagPrefix="uc1" %>
@@ -32,6 +32,7 @@
     <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/koGrid.debug.js") %>"></script>
     <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/jquery-ui-1.8.23.custom/js/jquery-1.8.0.min.js") %>"></script>
     <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/jquery-ui-1.8.23.custom/js/jquery-ui-1.8.23.custom.min.js") %>"></script>
+    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/jquery.updatepanel.js") %>"></script>
     <form id="Form1" runat="server">
     <div class="page">
         <div class="header">
