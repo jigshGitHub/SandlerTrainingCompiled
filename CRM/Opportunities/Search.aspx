@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Search Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunitySearch, App_Web_lgv34j3u" %>
+﻿<%@ page title="CRM - Search Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunitySearch, App_Web_q5r1spmk" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -171,7 +171,7 @@
                         <tr>
                             <td colspan="2">
                                 <asp:GridView Width="100%" ID="gvOpportunities" runat="server" AutoGenerateColumns="False"
-                                    DataKeyNames="ID" AllowSorting="true" PageSize="3" OnDataBound="gvOpportunities_DataBound"
+                                    DataKeyNames="ID" AllowSorting="true" OnDataBound="gvOpportunities_DataBound"
                                     OnRowDataBound="gvOpportunities_RowDataBound" ShowFooter="true" OnSorting="gvOpportunities_Sorting">
                                     <PagerStyle BackColor="#999999" ForeColor="Blue" HorizontalAlign="Center" />
                                     <Columns>

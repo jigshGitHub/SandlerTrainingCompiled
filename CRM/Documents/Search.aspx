@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Search Documents" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_Documents_Search, App_Web_fodylcns" %>
+﻿<%@ page title="CRM - Search Documents" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CRM_Documents_Search, App_Web_fzuv2n3q" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -13,33 +13,41 @@
                     <table style="width: 50%">
                         <tr>
                             <th class="tdTC" style="width: 100%" align="left">
-                                Search Opportunity :
+                                Search Document :
                             </th>
                         </tr>
                         <tr>
                             <td style="width: 50%">
-                                <table cellspacing="0" cellpadding="3" rules="cols" id="MainContent_dvOpportunity"
-                                    style="background-color: White; border-color: #999999; border-width: 1px; border-style: solid;
-                                    height: 50px; width: 100%; border-collapse: collapse;">
+                                <table cellspacing="0" cellpadding="3" rules="cols" id="MainContent_dvDocument" style="background-color: White;
+                                    border-color: #999999; border-width: 1px; border-style: solid; height: 50px;
+                                    width: 100%; border-collapse: collapse;">
                                     <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                                         <td style="white-space: nowrap;">
                                             Company :
                                         </td>
                                         <td style="white-space: nowrap;">
                                             <asp:DropDownList DataSourceID="CompanyDS" DataTextField="CompanyName" DataValueField="CompaniesID"
-                                                ID="ddlDocumentSearch" runat="server" OnDataBound="ddlCreateDefaultSelection">
+                                                ID="ddlCompanySearch" runat="server" OnDataBound="ddlCreateDefaultSelection">
                                             </asp:DropDownList>
                                             <asp:ObjectDataSource ID="CompanyDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository"
                                                 SelectMethod="GetCompaniesForDDL"></asp:ObjectDataSource>
                                         </td>
                                     </tr>
-                                    <tr id="Tr1" style="color: Black; background-color: #DCDCDC; white-space: nowrap;"
-                                        runat="server">
+                                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;" runat="server">
                                         <td style="white-space: nowrap;">
-                                            Name :
+                                            Opportunity :
                                         </td>
                                         <td>
-                                            <asp:TextBox ID="tctDocName" runat="server"></asp:TextBox>
+                                            <asp:DropDownList ID="ddlOpportunities" runat="server">
+                                            </asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                                        <td style="white-space: nowrap;">
+                                            Document Name :
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtDocName" MaxLength="50" runat="server" Width="380"></asp:TextBox>
                                         </td>
                                     </tr>
                                     <tr id="Tr2" style="color: Black; background-color: #DCDCDC; white-space: nowrap;"
@@ -99,45 +107,23 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <asp:GridView Width="100%" ID="gvDocuments" runat="server"
-                                    AutoGenerateColumns="False" DataKeyNames="docsid" AllowSorting="True" AllowPaging="True"
-                                    PageSize="20" OnSelectedIndexChanged="gvDocuments_SelectedIndexChanged" OnDataBound="gvDocuments_DataBound"
-                                    OnRowDataBound="gvDocuments_RowDataBound">
-                                    <PagerStyle CssClass="gvPager" />
+                                <asp:GridView ID="gvDocuments" runat="server" Width="100%" AutoGenerateColumns="false"
+                                    OnDataBound="gvDocuments_DataBound">
+                                    <PagerStyle BackColor="#999999" ForeColor="Blue" HorizontalAlign="Center" />
                                     <Columns>
-                                        <asp:TemplateField Visible="false">
-                                            <ItemTemplate>
-                                                <asp:HiddenField ID="hdnDocFullName" runat="server" Value='<%# Eval("docFullName") %>' />
-                                            </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Center" />
-                                        </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="Document Name" SortExpression="DocName">
-                                            <ItemTemplate>
-                                                <asp:HyperLink ID="ModuleLink" runat="server" Target="_blank" ForeColor="Blue" Text='<%# Eval("DocName") %>'></asp:HyperLink>
-                                            </ItemTemplate>
-                                            <ItemStyle HorizontalAlign="Center" />
-                                        </asp:TemplateField>
-                                        <asp:BoundField DataField="docsid" Visible="False" />
-                                        <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="CompanyName" HeaderStyle-ForeColor="Blue"
-                                            HeaderText="Company Name" SortExpression="CompanyName">
-                                            <ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                        </asp:BoundField>
-                                        <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="OppName" HeaderStyle-ForeColor="Blue"
-                                            HeaderText="Opportunity Name" SortExpression="OppName">
-                                            <ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                        </asp:BoundField>
-                                        <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="DocStatusText" HeaderText="Document Status"
-                                            HeaderStyle-ForeColor="Blue" SortExpression="DocStatusText">
-                                            <ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                        </asp:BoundField>
-                                        <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="updateddate" HeaderText="Last Modify Date"
-                                            HeaderStyle-ForeColor="Blue" SortExpression="updateddate" DataFormatString="{0:d}">
-                                            <ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                        </asp:BoundField>
+                                        <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" HeaderText="ID"
+                                            DataField="DOCSID" />
+                                        <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" HeaderText="Document Name"
+                                            DataField="DocumentName" />
+                                        <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" HeaderText="Company"
+                                            DataField="CompanyName" />
+                                        <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" HeaderText="Opportunity"
+                                            DataField="OpportunityName" />
+                                        <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" HeaderText="Status"
+                                            DataField="Status" />
                                         <asp:TemplateField ShowHeader="False">
                                             <ItemTemplate>
-                                                <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Select"
-                                                    Text="View Detail.."></asp:LinkButton>
+                                                <a href="Detail.aspx?id=<%#Eval("DOCSID")%>">View Detail...</a>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>
@@ -154,43 +140,20 @@
                         <tr>
                             <td colspan="2">
                                 <asp:Panel ID="pnlExport" runat="server" Visible="false">
-                                    <asp:GridView Width="100%" ID="gvExport" runat="server" AutoGenerateColumns="False">
+                                    <asp:GridView ID="gvExport" runat="server" Width="100%" AutoGenerateColumns="false"
+                                        OnDataBound="gvDocuments_DataBound">
+                                        <PagerStyle BackColor="#999999" ForeColor="Blue" HorizontalAlign="Center" />
                                         <Columns>
-                                            <asp:TemplateField Visible="false">
-                                                <ItemTemplate>
-                                                    <asp:HiddenField ID="hdnDocFullName" runat="server" Value='<%# Eval("docFullName") %>' />
-                                                </ItemTemplate>
-                                                <ItemStyle HorizontalAlign="Center" />
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Document Name" SortExpression="DocName">
-                                                <ItemTemplate>
-                                                    <asp:HyperLink ID="ModuleLink" runat="server" Target="_blank" ForeColor="Blue" Text='<%# Eval("DocName") %>'></asp:HyperLink>
-                                                </ItemTemplate>
-                                                <ItemStyle HorizontalAlign="Center" />
-                                            </asp:TemplateField>
-                                            <asp:BoundField DataField="docsid" Visible="False" />
-                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="CompanyName" HeaderStyle-ForeColor="Blue"
-                                                HeaderText="Company Name" SortExpression="CompanyName">
-                                                <ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                            </asp:BoundField>
-                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="OppName" HeaderStyle-ForeColor="Blue"
-                                                HeaderText="Opportunity Name" SortExpression="OppName">
-                                                <ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                            </asp:BoundField>
-                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="DocStatusText" HeaderText="Document Status"
-                                                HeaderStyle-ForeColor="Blue" SortExpression="DocStatusText">
-                                                <ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                            </asp:BoundField>
-                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="updateddate" HeaderText="Last Modify Date"
-                                                HeaderStyle-ForeColor="Blue" SortExpression="updateddate" DataFormatString="{0:d}">
-                                                <ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                            </asp:BoundField>
-                                            <asp:TemplateField ShowHeader="False">
-                                                <ItemTemplate>
-                                                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Select"
-                                                        Text="View Detail.."></asp:LinkButton>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" HeaderText="ID"
+                                                DataField="DOCSID" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" HeaderText="Document Name"
+                                                DataField="DocumentName" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" HeaderText="Company"
+                                                DataField="CompanyName" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" HeaderText="Opportunity"
+                                                DataField="OpportunityName" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" HeaderText="Status"
+                                                DataField="Status" />
                                         </Columns>
                                         <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                                         <AlternatingRowStyle BackColor="#DCDCDC" />
@@ -203,4 +166,55 @@
             </td>
         </tr>
     </table>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var href = window.location.href.split('/');
+            var baseUrl = href[0] + '//' + href[2] + '/' + href[3];
+
+            $('#<%=ddlOpportunities.ClientID %>').empty().append('<option value=0>--Select Opportunity--</option>');
+
+            $('#<%=lbtnSearch.ClientID %>').click(function () {
+                if (!checkAtLeastOnecriteria()) {
+                    $('#<%=LblStatus.ClientID %>').text('Please enter/select at least one criteria for search.');
+                    return false;
+                }
+            });
+
+            function checkAtLeastOnecriteria() {
+                if ($('#<%=ddlCompanySearch.ClientID %>').val() != 0)
+                    return true;
+                if ($('#<%=ddlOpportunities.ClientID %>').val() != 0)
+                    return true;
+                if ($('#<%=txtDocName.ClientID %>').val() != '')
+                    return true;
+                if ($('#<%=ddlDocStatus.ClientID %>').val() != 0)
+                    return true;
+
+                return false;
+            }
+
+            $('#<%=ddlCompanySearch.ClientID %>').live('change', function () {
+                var companyId = $('#<%=ddlCompanySearch.ClientID %> option:selected').val();
+                if (companyId != '') {
+
+                    $.ajax({
+                        url: baseUrl + "/api/Opportunities/",
+                        type: 'GET',
+                        contentType: 'application/json',
+                        data: { companyId: companyId },
+                        success: function (data) {
+                            $('#<%=ddlOpportunities.ClientID %>').empty().append('<option value=0>--Select Opportunity--</option>');
+                            $.each(data.$values, function (i, item) {
+                                $('#<%=ddlOpportunities.ClientID %>').append($('<option></option>').val(item.CONTACTSID).html(item.NAME));
+                            });
+                        },
+                        error: function (xhr, status, somthing) {
+                            log(status);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </asp:Content>
