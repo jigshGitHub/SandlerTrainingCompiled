@@ -1,4 +1,4 @@
-﻿<%@ master language="C#" autoeventwireup="true" inherits="CRM, App_Web_wy1ylvzl" %>
+﻿<%@ master language="C#" autoeventwireup="true" inherits="CRM, App_Web_urirjn5v" %>
 
 <%@ Import Namespace="Sandler.UI.ChartStructure" %>
 <%@ Register Src="Header.ascx" TagName="Header" TagPrefix="uc1" %>
