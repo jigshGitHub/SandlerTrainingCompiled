@@ -1,10 +1,10 @@
-﻿<%@ page title="CRM - Upload Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_Companies_Upload, App_Web_bnbqeh5i" %>
+﻿<%@ page title="CRM - Upload Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_Companies_Upload, App_Web_bfe1b1ge" %>
 
 <%@ Register Src="../Pager.ascx" TagName="Pager" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
-    <div id="dialog" title="Upload Data:">
+    <div id="dialog" title="Upload Company:">
         <asp:Panel ID="pnlFileUpload" runat="server">
             <table>
                 <tr>
