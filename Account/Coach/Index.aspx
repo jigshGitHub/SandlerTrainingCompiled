@@ -1,12 +1,17 @@
-﻿<%@ page title="My Account - Coach" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_Coach_Index, App_Web_xwfuf0ao" %>
-    
+﻿<%@ page title="My Account - Coach" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_Coach_Index, App_Web_g4u0ilk3" %>
+
 <%@ Register Src="~/CRM/Pager.ascx" TagName="Pager" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <table id="tblMain" width="100%">
         <tr>
-            <td style="width: 50%">
+            <td style="width: 100%" align="right">
+                <a href="Add.aspx" id="addCoachLink" runat="server">Add Coach</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
                 <table style="background-color: White; border-color: #999999; border-width: 1px;
                     border-style: solid; height: 50px; width: 100%; border-collapse: collapse;">
                     <tr>
@@ -42,7 +47,7 @@
         </tr>
         <tr>
             <td class="Pager">
-                <uc1:pager id="pager" runat="server" />
+                <uc1:Pager ID="pager" runat="server" />
             </td>
         </tr>
     </table>
