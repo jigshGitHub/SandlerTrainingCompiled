@@ -1,5 +1,5 @@
 ﻿<%@ Import Namespace="Sandler.UI.ChartStructure" %>
-<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_dwf1lquu" %>
+<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_wxw0epun" %>
 <div class="clear hideSkiplink">
     <table border="0">
         <tr>
