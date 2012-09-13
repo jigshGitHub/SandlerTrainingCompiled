@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="Footer, App_Web_wxw0epun" %>
+﻿<%@ control language="C#" autoeventwireup="true" inherits="Footer, App_Web_so0ohcmb" %>
 <table width="100%">
     <tr>
         <td align="right" valign="top" style="width: 20%">
@@ -6,8 +6,9 @@
                 Mined Systems, Inc.</a> ®
         </td>
         <td align="left" valign="top" style="width: 5%">
-            <a href="http://www.minedsystems.com" target="_blank"><img src="<%= Page.ResolveClientUrl("~/Images/MSI_piechart.png")%>" href="http://www.minedsystems.com"
-                target="_blank"></image></a>
+            <a href="http://www.minedsystems.com" target="_blank">
+                <img src="<%= Page.ResolveClientUrl("~/Images/MSIPieChart.png")%>" href="http://www.minedsystems.com"
+                    target="_blank"></image></a>
         </td>
         <td align="center" style="width: 25%">
             <asp:LinkButton ID="lnkPrivacy" runat="server" CausesValidation="false" ForeColor="White"

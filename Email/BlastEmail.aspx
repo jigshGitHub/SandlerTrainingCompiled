@@ -1,4 +1,4 @@
-﻿<%@ page title="Send Email" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Email_BlastEmail, App_Web_bawdmfi2" %>
+﻿<%@ page title="Send Email" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Email_BlastEmail, App_Web_plfvzkpv" %>
 <%@ Register TagPrefix="FTB" Namespace="FreeTextBoxControls" Assembly="FreeTextBox" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -57,7 +57,7 @@
 
 <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;"><td colspan="2" style="height:3px"></td></tr>
 
-<tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;"><td align="center" colspan="2"><asp:Button id="btnSend" Runat="server" Text="Send Blast Email" Style="background-color:#336699;
+<tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;"><td align="center" colspan="2"><asp:Button id="btnSend" Runat="server" Text="Send Email" Style="background-color:#336699;
                                 color: #FFFFFF; margin-left:10px" Height="40" Width="120" onclick="btnSend_Click"></asp:Button></td></tr>
 
 <tr><td colspan="2"><asp:Label id="lblInfo" ForeColor="Red" runat="server"></asp:Label></td></tr>

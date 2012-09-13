@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Upload Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_Companies_Upload, App_Web_pookncah" %>
+﻿<%@ page title="CRM - Upload Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_Companies_Upload, App_Web_luhcqhw1" %>
 
 <%@ Register Src="../Pager.ascx" TagName="Pager" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
