@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Search Contacts - Results" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_Contacts_SearchResults, App_Web_ycc1v1o3" %>
+﻿<%@ page title="CRM - Search Contacts - Results" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_Contacts_SearchResults, App_Web_2fisg4si" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -68,6 +68,10 @@
                             <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="COMPANYNAME" HeaderText="Company"
                                 HeaderStyle-ForeColor="Blue" SortExpression="COMPANYNAME" />
                             <%--For Export to Excel--%>
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="FranchiseeName"
+                                HeaderText="Franchisee" />
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="RegionName"
+                                HeaderText="Region" />
                             <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="NewApptDesp"
                                 HeaderText="New Appointment?" />
                             <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="ApptSourceName"
@@ -90,10 +94,6 @@
                                 HeaderText="Blast Email Subscription?" />
                             <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="NeedCallBack"
                                 HeaderText="Need Call Back?" />
-                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="FranchiseeName"
-                                HeaderText="Franchisee" />
-                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="RegionName"
-                                HeaderText="Region" />
                         </Columns>
                         <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                         <AlternatingRowStyle BackColor="#DCDCDC" />

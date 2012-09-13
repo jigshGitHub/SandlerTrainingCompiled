@@ -1,4 +1,4 @@
-﻿<%@ page title="My Account - MyCalenar" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Calendar_Index, App_Web_btrbwijn" %>
+﻿<%@ page title="My Account - MyCalenar" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Calendar_Index, App_Web_sx53xbyk" %>
 <%@ Register TagPrefix="ECalendar" Namespace="ExtendedControls" Assembly="App_Code.EventCalendar" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
@@ -40,7 +40,7 @@
                 <AlternatingRowStyle BackColor="#DCDCDC" />
                 <Columns>
                     <%--<asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="Date" HeaderText="Date" SortExpression="Date" DataFormatString="{0:d}" />--%>
-                    <asp:BoundField ItemStyle-HorizontalAlign="Center" ItemStyle-Wrap="false" HeaderStyle-ForeColor="Blue" DataField="Description" HeaderText="Description" SortExpression="Description" />
+                    <asp:BoundField ItemStyle-HorizontalAlign="Center" ItemStyle-Wrap="true" HeaderStyle-ForeColor="Blue" DataField="Description" HeaderText="Description" SortExpression="Description" />
                     <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="Phone" HeaderText="Phone" SortExpression="Phone" />
                 </Columns> 
                 </asp:GridView>

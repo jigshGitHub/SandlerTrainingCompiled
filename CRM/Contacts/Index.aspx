@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View Contacts" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="ContactIndex, App_Web_ycc1v1o3" %>
+﻿<%@ page title="CRM - View Contacts" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="ContactIndex, App_Web_2fisg4si" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
 <%@ Register Src="../EntityMenu.ascx" TagName="EntityMenu" TagPrefix="uc1" %>
@@ -72,6 +72,10 @@
                             <asp:BoundField ItemStyle-HorizontalAlign="Center" DataField="COMPANYNAME" HeaderText="Company"
                                 HeaderStyle-ForeColor="Blue" SortExpression="COMPANYNAME" />
                             <%--For Export to Excel--%>
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="FranchiseeName"
+                                HeaderText="Franchisee" />
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="RegionName"
+                                HeaderText="Region" />
                             <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="NewApptDesp"
                                 HeaderText="New Appointment?" />
                             <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="ApptSourceName"
@@ -94,10 +98,6 @@
                                 HeaderText="Blast Email Subscription?" />
                             <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="NeedCallBack"
                                 HeaderText="Need Call Back?" />
-                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="FranchiseeName"
-                                HeaderText="Franchisee" />
-                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="RegionName"
-                                HeaderText="Region" />
                         </Columns>
                         <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                         <AlternatingRowStyle BackColor="#DCDCDC" />
