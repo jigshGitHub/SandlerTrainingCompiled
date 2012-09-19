@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Add Contact" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ContactADD, App_Web_2fisg4si" %>
+﻿<%@ page title="CRM - Add Contact" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ContactADD, App_Web_sutfhf5n" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">

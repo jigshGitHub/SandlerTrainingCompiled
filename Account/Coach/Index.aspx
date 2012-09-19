@@ -1,4 +1,4 @@
-﻿<%@ page title="My Account - Coach" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_Coach_Index, App_Web_vo3hnxsj" %>
+﻿<%@ page title="My Account - Coach" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_Coach_Index, App_Web_5mhki0z4" %>
 
 <%@ Register Src="~/CRM/Pager.ascx" TagName="Pager" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
@@ -17,7 +17,7 @@
                     <tr>
                         <td>
                             <asp:GridView Width="100%" ID="gvCoaches" runat="server" AutoGenerateColumns="false"
-                                DataKeyNames="ID">
+                                DataKeyNames="ID" AllowSorting="true" OnSorting=gvCoaches_Sorting>
                                 <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                                 <AlternatingRowStyle BackColor="#DCDCDC" />
                                 <PagerStyle BackColor="#999999" ForeColor="Blue" HorizontalAlign="Center" />

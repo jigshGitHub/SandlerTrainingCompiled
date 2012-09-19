@@ -1,11 +1,11 @@
-﻿<%@ page title="My Account - Franchisee Detail" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_FranchiseeOwner_Details, App_Web_zchd0zrk" %>
+﻿<%@ page title="My Account - Franchisee Detail" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_FranchiseeOwner_Detail, App_Web_ofonh15q" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <input id="hdnFranchiseeId" type="hidden" runat="server" />
     <input id="hdnCoachId" type="hidden" runat="server" />
-    <input id="hdnUserId" type="hidden" runat="server" />
+    <input id="hdnFranchiseeOwnerUserId" type="hidden" runat="server" />
     <table>
         <tr>
             <th class="tdTC" style="width: 280px" align="left">
@@ -27,32 +27,61 @@
                             <span data-bind="text: franchiseeName" type="text" style="width: 100%" />
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC;">
                         <td width="20%">
-                            Address1
+                            Address
                         </td>
                         <td width="1%">
                             :
                         </td>
                         <td width="79%">
-                            <span data-bind="text: address1" type="text" style="width: 100%" />
+                            <span data-bind="text: address1" />
+                        </td>
+                    </tr>
+                    <tr style="color: Black; background-color: #EEEEEE;">
+                        <td width="20%">
+                            &nbsp;
+                        </td>
+                        <td width="1%">
+                            &nbsp;
+                        </td>
+                        <td width="79%">
+                            <span data-bind="text: address2" />
+                        </td>
+                    </tr>
+                    <tr style="color: Black; background-color: #DCDCDC;">
+                        <td width="20%">
+                            &nbsp;
+                        </td>
+                        <td width="1%">
+                        </td>
+                        <td width="79%">
+                            <span data-bind="text: city" />
+                        </td>
+                    </tr>
+                    <tr style="color: Black; background-color: #EEEEEE;">
+                        <td width="20%">
+                            &nbsp;
+                        </td>
+                        <td width="1%">
+                            &nbsp;
+                        </td>
+                        <td width="79%">
+                            <span data-bind="text: state" />
+                        </td>
+                    </tr>
+                    <tr style="color: Black; background-color: #DCDCDC;">
+                        <td width="20%">
+                            &nbsp;
+                        </td>
+                        <td width="1%">
+                            &nbsp;
+                        </td>
+                        <td width="79%">
+                            <span data-bind="text: zip" />
                         </td>
                     </tr>
                     <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
-                        <td width="20%">
-                            Address2
-                        </td>
-                        <td width="1%">
-                            :
-                        </td>
-                        <td width="79%">
-                            <span data-bind="text: address2" type="text" style="width: 100%" /><br />
-                            <span data-bind="test: city" type=text /span><br />
-                            <span data-bind="test: state" type=text /span><br />
-                            <span data-bind="test: zip" type=text /span><br />
-                        </td>
-                    </tr>
-                     <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td width="20%">
                             Phone Number
                         </td>
@@ -63,7 +92,7 @@
                             <span data-bind="text: phoneNumber" type="text" style="width: 100%" />
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td width="20%">
                             Fax Number
                         </td>
@@ -74,7 +103,7 @@
                             <span data-bind="text: faxNumber" type="text" style="width: 100%" />
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                         <td width="20%">
                             Web address
                         </td>
@@ -85,7 +114,7 @@
                             <span data-bind="text:webAddress" type="text" style="width: 100%" />
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td width="20%">
                             Email
                         </td>
@@ -96,8 +125,17 @@
                             <span data-bind="text:email" type="text" style="width: 100%" />
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;"><th class="tdTC" colspan=2>Owner data:
-                        </th></tr>
+                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                        <th class="tdTC" style="float: left">
+                            Owner data:
+                        </th>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
                     <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td>
                             First Name
@@ -109,7 +147,7 @@
                             <span data-bind="text:firstName" type="text" style="width: 100%" />
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                         <td>
                             Last Name
                         </td>
@@ -120,7 +158,7 @@
                             <span data-bind="text:lastName" type="text" style="width: 100%" />
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td>
                             Address
                         </td>
@@ -131,7 +169,7 @@
                             <span data-bind="text:address" type="text" style="width: 100%" />
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                         <td>
                             City
                         </td>
@@ -139,10 +177,10 @@
                             :
                         </td>
                         <td>
-                            <span data-bind="text:city" type="text" style="width: 100%" />
+                            <span data-bind="text:ownerCity" type="text" style="width: 100%" />
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td>
                             State
                         </td>
@@ -150,7 +188,7 @@
                             :
                         </td>
                         <td>
-                            <span data-bind="text:state" type="text" style="width: 100%" />
+                            <span data-bind="text:ownerState" type="text" style="width: 100%" />
                         </td>
                     </tr>
                     <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
@@ -161,7 +199,7 @@
                             :
                         </td>
                         <td>
-                            <span data-bind="text:zip" type="text" style="width: 100%" />
+                            <span data-bind="text:ownerZip" type="text" style="width: 100%" />
                         </td>
                     </tr>
                     <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
@@ -172,10 +210,10 @@
                             :
                         </td>
                         <td>
-                            <span data-bind="text:email" type="text" style="width: 100%" />
+                            <span data-bind="text:ownerEmail" type="text" style="width: 100%" />
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                         <td>
                             User Name
                         </td>
@@ -186,7 +224,7 @@
                             <span data-bind="text:userName, enable:userNameEnabled" type="text" style="width: 100%" />
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td colspan="3">
                             <a id="anchorEdit" runat="server" style="color: Blue; font-weight: bold;">Edit</a>
                             &nbsp;&nbsp; <a href="Index.aspx" style="font-weight: bold">Delete</a>&nbsp;&nbsp;
@@ -227,7 +265,7 @@
             self.userNameEnabled = ko.observable(false);
             self.createdBy = ko.observable($('#<%=hdnCoachId.ClientID%>').val());
             self.id = ko.observable($('#<%=hdnFranchiseeId.ClientID%>').val());
-            self.userId = ko.observable($('#<%=hdnUserId.ClientID%>').val());
+            self.userId = ko.observable($('#<%=hdnFranchiseeOwnerUserId.ClientID%>').val());
             self.firstName = ko.observable('');
             self.lastName = ko.observable('');
             self.contactNumber = ko.observable('');
@@ -235,8 +273,10 @@
             self.ownerCity = ko.observable('');
             self.ownerState = ko.observable('');
             self.ownerZip = ko.observable('');
+            self.ownerCountry = ko.observable();
             self.userName = ko.observable();
             self.ownerIsEmailSubscription = ko.observable('');
+            self.ownerEmail = ko.observable('');
 
             $.ajax({
                 url: baseUrl + "/api/Franchisee/",
@@ -258,16 +298,18 @@
                     self.userNameEnabled(false);
                     self.createdBy($('#<%=hdnCoachId.ClientID%>').val());
                     self.id($('#<%=hdnFranchiseeId.ClientID%>').val());
-                    self.userId($('#<%=hdnUserId.ClientID%>').val());
+                    self.userId($('#<%=hdnFranchiseeOwnerUserId.ClientID%>').val());
                     self.firstName(data.FranchiseeUser.FirstName);
                     self.lastName(data.FranchiseeUser.LastName);
                     self.contactNumber(data.FranchiseeUser.ContactNumber);
-                    self.address(data.FranchiseeUser.Address);
+                    self.address(data.FranchiseeUser.ADDRESS);
                     self.ownerCity(data.FranchiseeUser.City);
                     self.ownerState(data.FranchiseeUser.State);
                     self.ownerZip(data.FranchiseeUser.Zip);
                     self.userName(data.FranchiseeUser.UserName);
                     self.ownerIsEmailSubscription(data.FranchiseeUser.IsEmailSubscription);
+                    self.ownerCountry(data.FranchiseeUser.CountryID);
+                    self.ownerEmail(data.FranchiseeUser.Email);
                 },
                 error: function (xhr, status, somthing) {
                     log(status);

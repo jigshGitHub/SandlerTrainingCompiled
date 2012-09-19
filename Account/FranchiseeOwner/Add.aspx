@@ -1,8 +1,9 @@
-﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_FranchiseeOwner_Add, App_Web_zchd0zrk" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_FranchiseeOwner_Add, App_Web_ofonh15q" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+    <input id="hdnCoachUserid" type="hidden" runat="server" />
     <input id="hdnCoachId" type="hidden" runat="server" />
     <table border="0">
         <tr>
@@ -128,7 +129,7 @@
                             &nbsp;</span>
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                         <td>
                             Fax Number
                         </td>
@@ -156,7 +157,7 @@
                             &nbsp;</span>
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                         <td>
                             Email
                         </td>
@@ -170,10 +171,19 @@
                             &nbsp;
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
-                        <th class="tdTC" colspan="2">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                        <th class="tdTC" style="float: left">
                             Owner data:
                         </th>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
                     </tr>
                     <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                         <td width="20%">
@@ -183,13 +193,13 @@
                             :
                         </td>
                         <td width="70%">
-                            <input data-bind="value:firstName" type="text" style="width: 100%" />
+                            <input id="txtFirstName" data-bind="value:firstName" type="text" style="width: 100%" />
                         </td>
                         <td width="9%">
-                            &nbsp;
+                            <span data-bind="text:firstNameRequired, visible:firstNameRequiredHasError"></span>
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td width="20%">
                             Last Name
                         </td>
@@ -200,10 +210,10 @@
                             <input data-bind="value:lastName" type="text" style="width: 100%" />
                         </td>
                         <td width="9%">
-                            &nbsp;
+                            <span data-bind="text:lastNameRequired, visible:lastNameRequiredHasError"></span>
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                         <td>
                             Address
                         </td>
@@ -285,10 +295,10 @@
                             <input data-bind="value:contactNumber" type="text" style="width: 100%" />
                         </td>
                         <td>
-                            &nbsp;</span>
+                            &nbsp;
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                         <td>
                             Email
                         </td>
@@ -316,7 +326,7 @@
                             &nbsp;
                         </td>
                     </tr>
-                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                         <td colspan="4">
                             <a href="#" style="color: Blue; font-weight: bold;" data-bind="click:save">Add</a>
                             &nbsp;&nbsp;<a href="Index.aspx" style="font-weight: bold">Cancel</a>
@@ -337,15 +347,16 @@
     <br />
     <script type="text/javascript">
 
-        function CoachVM() {
+        function FranchiseeVM() {
 
             var href = window.location.href.split('/');
             var baseUrl = href[0] + '//' + href[2] + '/' + href[3];
-            log($('#<%=hdnCoachId.ClientID%>').val());
+            log($('#<%=hdnCoachUserid.ClientID%>').val());
             var self = this;
+            self.coachId = ko.observable($('#<%=hdnCoachId.ClientID%>').val());
             self.isEditMode = ko.observable(false);
             self.userNameEnabled = ko.observable(false);
-            self.createdBy = ko.observable($('#<%=hdnCoachId.ClientID%>').val());            
+            self.createdBy = ko.observable($('#<%=hdnCoachUserid.ClientID%>').val());
             self.franchiseeName = ko.observable('');
             self.franchiseeNameRequired = ko.observable('*');
             self.franchiseeNameRequiredMsg = ko.observable('');
@@ -363,17 +374,13 @@
             self.email = ko.observable('');
 
             self.firstName = ko.observable('');
+            self.firstNameRequired = ko.observable('*');
+            self.firstNameRequiredMsg = ko.observable('');
+            self.firstNameRequiredHasError = ko.observable(false);
             self.lastName = ko.observable('');
-            self.contactNumber = ko.observable('');
-            self.address = ko.observable('');
-            self.ownerCity = ko.observable('');
-            self.ownerState = ko.observable('');
-            self.ownerZip = ko.observable('');
-            self.userName = ko.observable();
-            self.ownerIsEmailSubscription = ko.observable('');
-
-            self.firstName = ko.observable('');
-            self.lastName = ko.observable('');
+            self.lastNameRequired = ko.observable('*');
+            self.lastNameRequiredMsg = ko.observable('');
+            self.lastNameRequiredHasError = ko.observable(false);
             self.contactNumber = ko.observable('');
             self.address = ko.observable('');
             self.ownerCity = ko.observable('');
@@ -405,7 +412,7 @@
                     log(status);
                 }
             });
-            
+
             self.save = function () {
                 self.validationErrors([]);
                 self.franchiseeNameRequiredHasError(false);
@@ -413,53 +420,74 @@
 
                 $('#resultSummary ul').empty();
 
-                if (self.franchiseeName() == '') {
+                if (self.franchiseeName() == '' || self.franchiseeName() == undefined) {
                     self.franchiseeNameRequiredHasError(true);
                     self.franchiseeNameRequiredMsg('Franchisee Name is required');
                     self.validationErrors.push(self.franchiseeNameRequiredMsg());
                 }
-
-                if (self.ownerEmail() == '') {
+                
+                if (self.firstName() == '' || self.firstName() == undefined) {
+                    self.firstNameRequiredHasError(true);
+                    self.firstNameRequiredMsg('First Name is required');
+                    self.validationErrors.push(self.firstNameRequiredMsg());
+                }
+                if (self.lastName() == '' || self.lastName() == undefined) {
+                    self.lastNameRequiredHasError(true);
+                    self.lastNameRequiredMsg('Last Name is required');
+                    self.validationErrors.push(self.lastNameRequiredMsg());
+                }
+                if (self.ownerEmail() == '' || self.ownerEmail() == undefined) {
                     self.ownerEmailRequiredHasError(true);
                     self.ownerEmailRequiredMsg('Owner Email is required');
                     self.validationErrors.push(self.ownerEmailRequiredMsg());
                 }
 
                 if (self.validationErrors() == '') {
-//                    var json = JSON.stringify({
-//                        ADDRESS: self.address(),
-//                        City: self.city(),
-//                        CountryID: self.country(),
-//                        FirstName: self.franchiseeName(),
-//                        LastName: self.lastName(),
-//                        PhoneNumber: self.phoneNumber(),
-//                        State: self.state(),
-//                        Zip: self.zip(),
-//                        CreatedByCorporateID: self.createdBy(),
-//                        UserName: self.firstName() + '.' + self.lastName(),
-//                        RegionID: self.region(),
-//                        Email: self.email(),
-//                        IsEmailSubscription: self.emailSubscription(),
-//                        ID: self.id()
-//                    });
+                    var json = JSON.stringify({
+                        Name: self.franchiseeName(),
+                        CoachID: self.coachId(),
+                        Address1: self.address1(),
+                        Address2: self.address2(),
+                        City: self.city(),
+                        State: self.state(),
+                        Zip: self.zip(),
+                        CountryID: self.country(),
+                        PhoneNumber: self.phoneNumber(),
+                        FaxNumber: self.faxNumber(),
+                        WebAddress: self.webAddress(),
+                        Email: self.email(),
+                        CreatedByCoachID: self.createdBy(),
+                        FranchiseeUser: {
+                            FirstName: self.firstName(),
+                            LastName: self.lastName(),
+                            ContactNumber: self.contactNumber(),
+                            ADDRESS: self.address(),
+                            City: self.ownerCity(),
+                            State: self.ownerState(),
+                            Zip: self.ownerZip(),
+                            CountryID: self.ownerCountry(),
+                            Email: self.ownerEmail()
+                        }
 
-//                    $.ajax({
-//                        url: baseUrl + "/api/Coach/",
-//                        type: "POST",
-//                        data: json,
-//                        dataType: "json",
-//                        contentType: "application/json; charset=utf-8",
-//                        success: function (response) {
-//                            log(response.UserName);
-//                            $('#resultSummary ul').append('<li>Coach with username ' + response.UserName + ' has been created.</li>');
-//                        },
-//                        error: function (response, errorText) {
-//                        }
-//                    });
+                    });
+
+                    $.ajax({
+                        url: baseUrl + "/api/Franchisee/",
+                        type: "POST",
+                        data: json,
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (response) {
+                            log(response.UserName);
+                            $('#resultSummary ul').append('<li>Franchisee with username ' + response.FranchiseeUser.UserName + ' has been created.</li>');
+                        },
+                        error: function (response, errorText) {
+                        }
+                    });
                 }
                 else {
                     $.each(self.validationErrors(), function (i, item) {
-                        log(item);
+                        //log(item);
                         $('#resultSummary ul').append('<li>' + item + '</li>');
                     });
 
@@ -468,8 +496,19 @@
             };
         }
         $(document).ready(function () {
-            ko.applyBindings(new CoachVM());
+            var franchiseeVM = new FranchiseeVM();
+            ko.applyBindings(franchiseeVM);
 
+            $('#txtFirstName').focus(function () {
+                franchiseeVM.address(franchiseeVM.address1() + ' ' + franchiseeVM.address2());
+                franchiseeVM.ownerCity(franchiseeVM.city());
+                franchiseeVM.ownerState(franchiseeVM.state());
+                franchiseeVM.ownerCountry(franchiseeVM.country());
+                franchiseeVM.ownerZip(franchiseeVM.zip());
+                franchiseeVM.contactNumber(franchiseeVM.phoneNumber());
+                franchiseeVM.faxNumber(franchiseeVM.faxNumber());
+                franchiseeVM.ownerEmail(franchiseeVM.email());
+            });
 
         });
     </script>

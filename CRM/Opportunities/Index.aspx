@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunityIndex, App_Web_0upgdjp3" %>
+﻿<%@ page title="CRM - View Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunityIndex, App_Web_2gqjrvah" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -11,7 +11,7 @@
                 <table style="width: 100%">
                     <tr>
                         <td style="width: 100%" align="right">
-                            <uc1:EntityMenu ID="opportunityMenu" runat="server" />
+                            <uc1:EntityMenu ID="opportunityMenu" runat="server" EnableViewState="true" />
                         </td>
                     </tr>
                     <tr>
@@ -42,7 +42,8 @@
             <td>
                 <asp:GridView Width="100%" ID="gvOpportunities" runat="server" AutoGenerateColumns="False"
                     DataKeyNames="ID" AllowSorting="true" OnDataBound="gvOpportunities_DataBound"
-                    OnRowDataBound="gvOpportunities_RowDataBound" ShowFooter="true" OnSorting="gvOpportunities_Sorting">
+                    OnRowDataBound="gvOpportunities_RowDataBound" ShowFooter="true" OnSorting="gvOpportunities_Sorting"
+                    EnableViewState="false">
                     <PagerStyle BackColor="#999999" ForeColor="Blue" HorizontalAlign="Center" />
                     <Columns>
                         <asp:BoundField DataField="ID" Visible="False" />

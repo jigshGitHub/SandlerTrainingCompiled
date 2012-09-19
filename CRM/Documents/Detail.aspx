@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="DocumentDETAIL, App_Web_l4gubar5" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="DocumentDETAIL, App_Web_lvavtnr2" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -45,7 +45,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Last Modified Date :">
                             <EditItemTemplate>
-                                <asp:TextBox ID="LastModifyDate" Text='<%# Bind("LastModifyDate") %>' runat="server" />&nbsp;<asp:Image
+                                <asp:TextBox ID="LastModifyDate" Text='<%# Bind("LastModifyDate","{0:d}") %>' runat="server" />&nbsp;<asp:Image
                                     ID="calanderImageLMD" runat="server" ImageUrl="~/images/calendar.gif" ImageAlign="Middle" />
                                 <asp:CalendarExtender runat="server" TargetControlID="LastModifyDate" PopupButtonID="calanderImageLMD"
                                     CssClass="calendar">
