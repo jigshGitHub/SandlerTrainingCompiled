@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityDETAIL, App_Web_2gqjrvah" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityDETAIL, App_Web_l120rjzx" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <table>
@@ -34,6 +34,22 @@
                         </td>
                         <td>
                             <asp:Label ID="lblOppName" runat="server" Width="380"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                        <td style="white-space: nowrap;">
+                            Opportunity Description :
+                        </td>
+                        <td>
+                            <asp:Label ID="lblDescription" runat="server" Width="380"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                        <td style="white-space: nowrap;">
+                            Opportunity Notes :
+                        </td>
+                        <td>
+                            <asp:Label ID="lblNotes" runat="server" Width="380"></asp:Label>
                         </td>
                     </tr>
                     <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
@@ -78,26 +94,26 @@
                     </tr>
                     <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                         <td style="white-space: nowrap;">
-                            Contact Name :
+                            Opportunity Source :
                         </td>
                         <td>
-                            <asp:Label ID="lblContact" runat="server" />
+                            <asp:Label ID="lblSource" runat="Server" />
                         </td>
                     </tr>
                     <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td style="white-space: nowrap;">
-                            Contact Phone :
+                            Opportunity Type :
                         </td>
                         <td>
-                            <asp:Label ID="lblPhone" Width="380px" runat="server" Enabled="False"></asp:Label>
+                            <asp:Label ID="lblType" runat="Server" />
                         </td>
                     </tr>
                     <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                         <td style="white-space: nowrap;">
-                            Contact E-mail :
+                            Why Lost? :
                         </td>
                         <td>
-                            <asp:Label ID="lblEmail" runat="server" Enabled="false"></asp:Label>
+                            <asp:Label ID="lblWLost" runat="Server" />
                         </td>
                     </tr>
                     <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
@@ -126,10 +142,28 @@
                     </tr>
                     <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                         <td style="white-space: nowrap;">
+                            Actual Value :
+                        </td>
+                        <td>
+                            <asp:Label ID="lblActualValue" runat="server" Enabled="false"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                        <td style="white-space: nowrap;">
                             Close Date :
                         </td>
                         <td>
                             <asp:Label ID="lblCloseDate" runat="server" />
+                        </td>
+                    </tr>
+                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                        <td style="white-space: nowrap;">
+                            Contacts :
+                        </td>
+                        <td>
+                            <asp:Label ID="lblPrimaryContact" runat="server" /><br />
+                            <asp:Label ID="lblSecondaryContact1" runat="server" /><br />
+                            <asp:Label ID="lblSecondaryContact2" runat="server" /><br />
                         </td>
                     </tr>
                     <tr>

@@ -1,4 +1,4 @@
-﻿<%@ page title="My Account - Manage Blast Email Subscription" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Email_ManageEmailSubscription, App_Web_tpjfylh0" %>
+﻿<%@ page title="My Account - Manage Blast Email Subscription" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Email_ManageEmailSubscription, App_Web_eggwkehk" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 

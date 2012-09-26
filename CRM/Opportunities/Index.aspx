@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunityIndex, App_Web_2gqjrvah" %>
+﻿<%@ page title="CRM - View Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunityIndex, App_Web_l120rjzx" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -111,14 +111,26 @@
                                 HeaderText="Sales Rep" />
                             <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="Status"
                                 HeaderText="Status" />
-                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="ContactName"
-                                HeaderText="Contact Name" />
-                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="ContactPhone"
-                                HeaderText="Contact Phone" />
-                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="ContactEmail"
-                                HeaderText="Contact Email" />
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="PrimaryContact"
+                                HeaderText="PrimaryContact" />
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="SecondaryContact1"
+                                HeaderText="SecondaryContact1" />
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="SecondaryContact2"
+                                HeaderText="SecondaryContact2" />
                             <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="Product"
                                 HeaderText="Product" />
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="OppType"
+                                HeaderText="TypeOfOpportunity" />
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="WhyLost"
+                                HeaderText="WhyLost?" />
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="Description"
+                                HeaderText="Description" />
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="Notes"
+                                HeaderText="Notes" />
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="ActualValue"
+                                HeaderText="ActualValue" DataFormatString="{0:C}" />
+                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="Source"
+                                HeaderText="Source" />
                         </Columns>
                         <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                         <AlternatingRowStyle BackColor="#DCDCDC" />

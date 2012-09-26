@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Search Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunitySearch, App_Web_2gqjrvah" %>
+﻿<%@ page title="CRM - Search Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunitySearch, App_Web_l120rjzx" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -46,6 +46,22 @@
                                         </td>
                                         <td>
                                             <asp:TextBox ID="txtOppName" MaxLength="50" runat="server" Width="380"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                                        <td style="white-space: nowrap;">
+                                            Opportunity Description :
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtDescription" MaxLength="50" runat="server" Width="380"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                                        <td style="white-space: nowrap;">
+                                            Opportunity Notes :
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtNotes" MaxLength="50" runat="server" Width="380"></asp:TextBox>
                                         </td>
                                     </tr>
                                     <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
@@ -103,6 +119,42 @@
                                     </tr>
                                     <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                                         <td style="white-space: nowrap;">
+                                            Opportunity Source :
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlSource" runat="server" DataSourceID="OpportunitySourceDS"
+                                                DataTextField="Name" DataValueField="ID" OnDataBound="ddlCreateDefaultSelection">
+                                            </asp:DropDownList>
+                                            <asp:ObjectDataSource ID="OpportunitySourceDS" runat="server" SelectMethod="GetAll"
+                                                TypeName="SandlerRepositories.OpprtunitySourceRepository"></asp:ObjectDataSource>
+                                        </td>
+                                    </tr>
+                                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                                        <td style="white-space: nowrap;">
+                                            Opportunity Types :
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlTypes" runat="server" DataSourceID="OpportunityTypesDS"
+                                                DataTextField="Name" DataValueField="ID" OnDataBound="ddlCreateDefaultSelection">
+                                            </asp:DropDownList>
+                                            <asp:ObjectDataSource ID="OpportunityTypesDS" runat="server" SelectMethod="GetAll"
+                                                TypeName="SandlerRepositories.OpprtunityTypesRepository"></asp:ObjectDataSource>
+                                        </td>
+                                    </tr>
+                                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                                        <td style="white-space: nowrap;">
+                                            Why Lost? :
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlWhyLost" runat="server" DataSourceID="OpportunityWhyLostDS"
+                                                DataTextField="Name" DataValueField="ID" OnDataBound="ddlCreateDefaultSelection">
+                                            </asp:DropDownList>
+                                            <asp:ObjectDataSource ID="OpportunityWhyLostDS" runat="server" SelectMethod="GetAll"
+                                                TypeName="SandlerRepositories.OpprtunityWhyLostRepository"></asp:ObjectDataSource>
+                                        </td>
+                                    </tr>
+                                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                                        <td style="white-space: nowrap;">
                                             Contact Name :
                                         </td>
                                         <td>
@@ -110,21 +162,20 @@
                                             </asp:DropDownList>
                                         </td>
                                     </tr>
-                                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                                     <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                                         <td style="white-space: nowrap;">
-                                            Contact Phone :
+                                            Weighted Value :
                                         </td>
                                         <td>
-                                            <asp:TextBox ID="txtContactPhone" onkeypress="EnterOnlyNumeric()" MaxLength="50"
-                                                Width="380" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtWeightedValue" onkeypress="EnterOnlyNumeric()" runat="server"></asp:TextBox>
                                         </td>
                                     </tr>
                                     <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                                         <td style="white-space: nowrap;">
-                                            Contact E-mail :
+                                            Actual Value :
                                         </td>
                                         <td>
-                                            <asp:TextBox ID="txtEmail" MaxLength="50" runat="server" Width="380"></asp:TextBox>
+                                            <asp:TextBox ID="txtActualValue" onkeypress="EnterOnlyNumeric()" runat="server"></asp:TextBox>
                                         </td>
                                     </tr>
                                     <tr>
@@ -235,14 +286,26 @@
                                                 HeaderText="Sales Rep" />
                                             <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="Status"
                                                 HeaderText="Status" />
-                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="ContactName"
-                                                HeaderText="Contact Name" />
-                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="ContactPhone"
-                                                HeaderText="Contact Phone" />
-                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="ContactEmail"
-                                                HeaderText="Contact Email" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="PrimaryContact"
+                                                HeaderText="PrimaryContact" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="SecondaryContact1"
+                                                HeaderText="SecondaryContact1" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="SecondaryContact2"
+                                                HeaderText="SecondaryContact2" />
                                             <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="Product"
                                                 HeaderText="Product" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="OppType"
+                                                HeaderText="TypeOfOpportunity" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="WhyLost"
+                                                HeaderText="WhyLost?" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="Description"
+                                                HeaderText="Description" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="Notes"
+                                                HeaderText="Notes" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="ActualValue"
+                                                HeaderText="ActualValue" DataFormatString="{0:C}" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="Source"
+                                                HeaderText="Source" />
                                         </Columns>
                                         <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                                         <AlternatingRowStyle BackColor="#DCDCDC" />
@@ -284,25 +347,7 @@
                 }
             });
 
-            $('#<%=ddlContacts.ClientID %>').live('change', function () {
-                var contactId = $('#<%=ddlContacts.ClientID %> option:selected').val();
-
-                if (contactId != '0') {
-                    $.ajax({
-                        url: baseUrl + "/api/Contacts/Details/",
-                        type: 'GET',
-                        contentType: 'application/json',
-                        data: { id: contactId },
-                        success: function (data) {
-                            $('#<%=txtContactPhone.ClientID %>').val(data.PHONE);
-                            $('#<%=txtEmail.ClientID %>').val(data.EMAIL);
-                        },
-                        error: function (xhr, status, somthing) {
-                            log(status);
-                        }
-                    });
-                }
-            });
+            
             $('#<%=txtOpportunityID.ClientID %>').keypress(EnterOnlyNumeric);
 
             $('#<%=lbtnSearch.ClientID %>').click(function () {
@@ -319,6 +364,10 @@
                     return true;
                 if ($('#<%=txtOppName.ClientID %>').val() != '')
                     return true;
+                if ($('#<%=txtDescription.ClientID %>').val() != '')
+                    return true;
+                if ($('#<%=txtNotes.ClientID %>').val() != '')
+                    return true;
                 if ($('#<%=txtSalesRepLName.ClientID %>').val() != '')
                     return true;
                 if ($('#<%=txtSalesRepFName.ClientID %>').val() != '')
@@ -331,9 +380,16 @@
                     return true;
                 if ($('#<%=ddlContacts.ClientID %>').val() != 0)
                     return true;
-                if ($('#<%=txtEmail.ClientID %>').val() != '')
+                if ($('#<%=ddlSource.ClientID %>').val() != 0)
                     return true;
-
+                if ($('#<%=ddlTypes.ClientID %>').val() != 0)
+                    return true;
+                if ($('#<%=ddlWhyLost.ClientID %>').val() != 0)
+                    return true;
+                if ($('#<%=txtWeightedValue.ClientID %>').val() != '')
+                    return true;
+                if ($('#<%=txtActualValue.ClientID %>').val() != '')
+                    return true;
                 return false;
             }
         });

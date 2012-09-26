@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Contacts Call-list" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CRM_Contacts_CallList, App_Web_sutfhf5n" %>
+﻿<%@ page title="CRM - Contacts Call-list" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CRM_Contacts_CallList, App_Web_tno1z2y0" %>
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
 
