@@ -1,5 +1,5 @@
 ﻿<%@ Import Namespace="Sandler.UI.ChartStructure" %>
-<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_b5kwmxrc" %>
+<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_2sjitoab" %>
 <div class="clear hideSkiplink">
     <table style="width: 100%">
         <tr>
@@ -36,8 +36,9 @@
                         <li><a id="manageEmailSubscription" runat="server" visible="false">Manage Email Subscription</a></li>
                     </ul>
                     </li>
-                    <li><a href="#" class="disableLink">Gap Analysis</a> </li>
-                    <li><a href="#" class="disableLink">ROI&nbsp;&nbsp;</a></li>
+                    <li><a id="anchorGapAnalysis" runat="server" href="~/GapAnalysisCreate.aspx">
+                        Gap Analysis</a> </li>
+                    <li><a id="anchorROI" runat="server" href="~/ROI.aspx">ROI&nbsp;&nbsp;</a></li>
                     <li><a href="http://assessment.aberdeen.com/gqtJlzBd2X/SAN127/sponsor.aspx" target="_blank">
                         Sandler Training Assessment Tool</a></li>
                     <!--<li><a href="~/Account/Logout.aspx" id="anchorLogout" runat="server">LOGOUT</a>
