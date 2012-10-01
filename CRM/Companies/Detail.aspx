@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View/Edit Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CompanyDETAIL, App_Web_z3rlil0f" %>
+﻿<%@ page title="CRM - View/Edit Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CompanyDETAIL, App_Web_hs1lj1n0" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">

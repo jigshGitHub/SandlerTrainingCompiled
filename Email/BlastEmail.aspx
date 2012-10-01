@@ -1,4 +1,4 @@
-﻿<%@ page title="Send Email" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Email_BlastEmail, App_Web_rtgmgi4v" %>
+﻿<%@ page title="Send Email" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Email_BlastEmail, App_Web_qic4xekz" %>
 <%@ Register TagPrefix="FTB" Namespace="FreeTextBoxControls" Assembly="FreeTextBox" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -26,7 +26,14 @@
  <td>Select receiving group(s):</td>
  <td>
  <asp:CheckBoxList ID="chkListGroup"  DataSourceID="BlastEmailGroupsDS"  CellSpacing="8" CellPadding="8" DataTextField="BlastGroupName" DataValueField="Id"  RepeatDirection="Horizontal" runat="server"></asp:CheckBoxList>
- <asp:CustomValidator runat="server" ID="cvListGroup" ClientValidationFunction="ValidateModuleList" ErrorMessage="Please select at least one Group as Email receiver or type Email addresses.">*</asp:CustomValidator>
+ <asp:CustomValidator runat="server" ID="cvListGroup" ClientValidationFunction="ValidateModuleList" ErrorMessage="Please select at least one Group as Email receiver or type Email address(es).">*</asp:CustomValidator>
+ </td>
+ </tr>
+
+ <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+ <td>Select your own group(s):</td>
+ <td>
+    <asp:ListBox ID="lstUserEmailGroup" Rows="4" SelectionMode="Multiple" DataSourceID="UserGroupDS" DataTextField="GroupName" DataValueField="Id" runat="server" OnDataBound="lstUserEmailGroup_DataBound"></asp:ListBox>
  </td>
  </tr>
 
@@ -71,6 +78,7 @@
 <tr>
 <td>
 <asp:ObjectDataSource ID="BlastEmailGroupsDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetBlastEmailGroupsByRole"></asp:ObjectDataSource>
+<asp:ObjectDataSource ID="UserGroupDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetUserEmailGroup"></asp:ObjectDataSource>
 </td>
 </tr>
 

@@ -1,4 +1,4 @@
-﻿<%@ page title="GapAnalysis" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="GapAnalysisCreateModalPopup, App_Web_re5fa2j4" %>
+﻿<%@ page title="GapAnalysis" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="GapAnalysisCreateModalPopup, App_Web_m00xybvz" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
@@ -60,16 +60,16 @@
                             <td>
                                 <asp:DropDownList ID="drpLstDAISCT" runat="server">
                                     <asp:ListItem Text="" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="10%" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="20%" Value="2"></asp:ListItem>
-                                    <asp:ListItem Text="30%" Value="3"></asp:ListItem>
-                                    <asp:ListItem Text="40%" Value="4"></asp:ListItem>
-                                    <asp:ListItem Text="50%" Value="5"></asp:ListItem>
-                                    <asp:ListItem Text="60%" Value="6"></asp:ListItem>
-                                    <asp:ListItem Text="70%" Value="7"></asp:ListItem>
-                                    <asp:ListItem Text="80%" Value="8"></asp:ListItem>
-                                    <asp:ListItem Text="90%" Value="9"></asp:ListItem>
-                                    <asp:ListItem Text="100%" Value="10"></asp:ListItem>
+                                    <asp:ListItem Text="10%" Value="10"></asp:ListItem>
+                                    <asp:ListItem Text="20%" Value="20"></asp:ListItem>
+                                    <asp:ListItem Text="30%" Value="30"></asp:ListItem>
+                                    <asp:ListItem Text="40%" Value="40"></asp:ListItem>
+                                    <asp:ListItem Text="50%" Value="50"></asp:ListItem>
+                                    <asp:ListItem Text="60%" Value="60"></asp:ListItem>
+                                    <asp:ListItem Text="70%" Value="70"></asp:ListItem>
+                                    <asp:ListItem Text="80%" Value="80"></asp:ListItem>
+                                    <asp:ListItem Text="90%" Value="90"></asp:ListItem>
+                                    <asp:ListItem Text="100%" Value="100"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
                         </tr>
@@ -77,16 +77,16 @@
                             <td>
                                 <asp:DropDownList ID="drpLstDAISE" runat="server">
                                     <asp:ListItem Text="" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="10%" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="20%" Value="2"></asp:ListItem>
-                                    <asp:ListItem Text="30%" Value="3"></asp:ListItem>
-                                    <asp:ListItem Text="40%" Value="4"></asp:ListItem>
-                                    <asp:ListItem Text="50%" Value="5"></asp:ListItem>
-                                    <asp:ListItem Text="60%" Value="6"></asp:ListItem>
-                                    <asp:ListItem Text="70%" Value="7"></asp:ListItem>
-                                    <asp:ListItem Text="80%" Value="8"></asp:ListItem>
-                                    <asp:ListItem Text="90%" Value="9"></asp:ListItem>
-                                    <asp:ListItem Text="100%" Value="10"></asp:ListItem>
+                                    <asp:ListItem Text="10%" Value="10"></asp:ListItem>
+                                    <asp:ListItem Text="20%" Value="20"></asp:ListItem>
+                                    <asp:ListItem Text="30%" Value="30"></asp:ListItem>
+                                    <asp:ListItem Text="40%" Value="40"></asp:ListItem>
+                                    <asp:ListItem Text="50%" Value="50"></asp:ListItem>
+                                    <asp:ListItem Text="60%" Value="60"></asp:ListItem>
+                                    <asp:ListItem Text="70%" Value="70"></asp:ListItem>
+                                    <asp:ListItem Text="80%" Value="80"></asp:ListItem>
+                                    <asp:ListItem Text="90%" Value="90"></asp:ListItem>
+                                    <asp:ListItem Text="100%" Value="100"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
                         </tr>
@@ -94,16 +94,16 @@
                             <td>
                                 <asp:DropDownList ID="drpLstDAISQ" runat="server">
                                     <asp:ListItem Text="" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="10%" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="20%" Value="2"></asp:ListItem>
-                                    <asp:ListItem Text="30%" Value="3"></asp:ListItem>
-                                    <asp:ListItem Text="40%" Value="4"></asp:ListItem>
-                                    <asp:ListItem Text="50%" Value="5"></asp:ListItem>
-                                    <asp:ListItem Text="60%" Value="6"></asp:ListItem>
-                                    <asp:ListItem Text="70%" Value="7"></asp:ListItem>
-                                    <asp:ListItem Text="80%" Value="8"></asp:ListItem>
-                                    <asp:ListItem Text="90%" Value="9"></asp:ListItem>
-                                    <asp:ListItem Text="100%" Value="10"></asp:ListItem>
+                                    <asp:ListItem Text="10%" Value="10"></asp:ListItem>
+                                    <asp:ListItem Text="20%" Value="20"></asp:ListItem>
+                                    <asp:ListItem Text="30%" Value="30"></asp:ListItem>
+                                    <asp:ListItem Text="40%" Value="40"></asp:ListItem>
+                                    <asp:ListItem Text="50%" Value="50"></asp:ListItem>
+                                    <asp:ListItem Text="60%" Value="60"></asp:ListItem>
+                                    <asp:ListItem Text="70%" Value="70"></asp:ListItem>
+                                    <asp:ListItem Text="80%" Value="80"></asp:ListItem>
+                                    <asp:ListItem Text="90%" Value="90"></asp:ListItem>
+                                    <asp:ListItem Text="100%" Value="100"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
                         </tr>
@@ -111,16 +111,16 @@
                             <td>
                                 <asp:DropDownList ID="drpLstDAITCS" runat="server">
                                     <asp:ListItem Text="" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="10%" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="20%" Value="2"></asp:ListItem>
-                                    <asp:ListItem Text="30%" Value="3"></asp:ListItem>
-                                    <asp:ListItem Text="40%" Value="4"></asp:ListItem>
-                                    <asp:ListItem Text="50%" Value="5"></asp:ListItem>
-                                    <asp:ListItem Text="60%" Value="6"></asp:ListItem>
-                                    <asp:ListItem Text="70%" Value="7"></asp:ListItem>
-                                    <asp:ListItem Text="80%" Value="8"></asp:ListItem>
-                                    <asp:ListItem Text="90%" Value="9"></asp:ListItem>
-                                    <asp:ListItem Text="100%" Value="10"></asp:ListItem>
+                                    <asp:ListItem Text="10%" Value="10"></asp:ListItem>
+                                    <asp:ListItem Text="20%" Value="20"></asp:ListItem>
+                                    <asp:ListItem Text="30%" Value="30"></asp:ListItem>
+                                    <asp:ListItem Text="40%" Value="40"></asp:ListItem>
+                                    <asp:ListItem Text="50%" Value="50"></asp:ListItem>
+                                    <asp:ListItem Text="60%" Value="60"></asp:ListItem>
+                                    <asp:ListItem Text="70%" Value="70"></asp:ListItem>
+                                    <asp:ListItem Text="80%" Value="80"></asp:ListItem>
+                                    <asp:ListItem Text="90%" Value="90"></asp:ListItem>
+                                    <asp:ListItem Text="100%" Value="100"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
                         </tr>
@@ -128,16 +128,16 @@
                             <td>
                                 <asp:DropDownList ID="drpLstDAIQA" runat="server">
                                     <asp:ListItem Text="" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="10%" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="20%" Value="2"></asp:ListItem>
-                                    <asp:ListItem Text="30%" Value="3"></asp:ListItem>
-                                    <asp:ListItem Text="40%" Value="4"></asp:ListItem>
-                                    <asp:ListItem Text="50%" Value="5"></asp:ListItem>
-                                    <asp:ListItem Text="60%" Value="6"></asp:ListItem>
-                                    <asp:ListItem Text="70%" Value="7"></asp:ListItem>
-                                    <asp:ListItem Text="80%" Value="8"></asp:ListItem>
-                                    <asp:ListItem Text="90%" Value="9"></asp:ListItem>
-                                    <asp:ListItem Text="100%" Value="10"></asp:ListItem>
+                                    <asp:ListItem Text="10%" Value="10"></asp:ListItem>
+                                    <asp:ListItem Text="20%" Value="20"></asp:ListItem>
+                                    <asp:ListItem Text="30%" Value="30"></asp:ListItem>
+                                    <asp:ListItem Text="40%" Value="40"></asp:ListItem>
+                                    <asp:ListItem Text="50%" Value="50"></asp:ListItem>
+                                    <asp:ListItem Text="60%" Value="60"></asp:ListItem>
+                                    <asp:ListItem Text="70%" Value="70"></asp:ListItem>
+                                    <asp:ListItem Text="80%" Value="80"></asp:ListItem>
+                                    <asp:ListItem Text="90%" Value="90"></asp:ListItem>
+                                    <asp:ListItem Text="100%" Value="100"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
                         </tr>
@@ -145,16 +145,16 @@
                             <td>
                                 <asp:DropDownList ID="drpLstDAIEBG" runat="server">
                                     <asp:ListItem Text="" Value="0"></asp:ListItem>
-                                    <asp:ListItem Text="10%" Value="1"></asp:ListItem>
-                                    <asp:ListItem Text="20%" Value="2"></asp:ListItem>
-                                    <asp:ListItem Text="30%" Value="3"></asp:ListItem>
-                                    <asp:ListItem Text="40%" Value="4"></asp:ListItem>
-                                    <asp:ListItem Text="50%" Value="5"></asp:ListItem>
-                                    <asp:ListItem Text="60%" Value="6"></asp:ListItem>
-                                    <asp:ListItem Text="70%" Value="7"></asp:ListItem>
-                                    <asp:ListItem Text="80%" Value="8"></asp:ListItem>
-                                    <asp:ListItem Text="90%" Value="9"></asp:ListItem>
-                                    <asp:ListItem Text="100%" Value="10"></asp:ListItem>
+                                    <asp:ListItem Text="10%" Value="10"></asp:ListItem>
+                                    <asp:ListItem Text="20%" Value="20"></asp:ListItem>
+                                    <asp:ListItem Text="30%" Value="30"></asp:ListItem>
+                                    <asp:ListItem Text="40%" Value="40"></asp:ListItem>
+                                    <asp:ListItem Text="50%" Value="50"></asp:ListItem>
+                                    <asp:ListItem Text="60%" Value="60"></asp:ListItem>
+                                    <asp:ListItem Text="70%" Value="70"></asp:ListItem>
+                                    <asp:ListItem Text="80%" Value="80"></asp:ListItem>
+                                    <asp:ListItem Text="90%" Value="90"></asp:ListItem>
+                                    <asp:ListItem Text="100%" Value="100"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
                         </tr>
@@ -206,9 +206,25 @@
             </tr>
             <tr>
                 <td colspan="4">
-                    <a href="#" id="btnReDo">Edit</a>&nbsp; &nbsp;<asp:LinkButton ID="btnSave"
-                        Text="Save" runat="server" OnClick="btnSaveGapAnalysisReport_Click"></asp:LinkButton>&nbsp;&nbsp;
-                    <a href="#" id="btnClose">Close</a>
+                    <table style="width: 100%">
+                        <tr>
+                            <td style="width: 20%">
+                                <a href="#" id="btnReDo">Edit: As-Is/To-Be Data</a>
+                            </td>
+                            <td style="width: 20%">
+                                <asp:LinkButton ID="btnSave" Text="Save: Gap Analysis Record" runat="server" OnClick="btnSaveGapAnalysisReport_Click"></asp:LinkButton>
+                            </td>
+                            <td style="width: 20%">
+                                <a href="" onclick="printData();">Print: Gap analysis Graph</a>
+                            </td>
+                            <td style="width: 20%">
+                                <a href="" id="editRoi" runat="server">Edit: ROI Record</a>
+                            </td>
+                            <td style="width: 20%">
+                                <a href="#" id="btnClose">Close</a>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
             </tr>
         </table>
@@ -440,9 +456,20 @@
                 }
             });
 
-//            $('#btnReDo').click(function () {
-//                alert('test');
-//            });
+            //            $('#btnReDo').click(function () {
+            //                alert('test');
+            //            });
+        }
+        function printData() {
+            //alert($('#<%=pnlChart.ClientID %>').html());
+            var WindowObject = window.open("", "PrintWindow",
+"width=750,height=650,top=50,left=50,toolbars=no,scrollbars=yes,status=no,resizable=yes");
+            WindowObject.document.writeln($('#<%=pnlChart.ClientID %>').html());
+            WindowObject.document.close();
+            WindowObject.focus();
+            WindowObject.print();
+            WindowObject.close();
+            return false;
         }
 
         function checkAtLeastOnecriteria() {
