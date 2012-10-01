@@ -1,4 +1,4 @@
-﻿<%@ page title="GapAnalysis" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="GapAnalysisCreate, App_Web_m00xybvz" %>
+﻿<%@ page title="GapAnalysis" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="GapAnalysisCreate, App_Web_yzophhdi" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
@@ -393,19 +393,19 @@
                                 </asp:Panel>
                             </ContentTemplate>
                             <CustomNavigationTemplate>
-                                <table style="width:80%; margin-left:10%;margin-right:10%" 1>
+                                <table style="width: 80%; margin-left: 10%; margin-right: 10%">
                                     <tr>
-                                        <td style="width: 25%;text-align:center">
+                                        <td style="width: 25%; text-align: center">
                                             <asp:LinkButton ID="lnkNextStep" runat="server" CommandArgument="0" CommandName="submitData"
                                                 OnCommand="lnlPrevStep_Click" Visible="True">Edit: As-Is/To-Be Data</asp:LinkButton>
                                         </td>
-                                        <td style="width: 25%;text-align:center">
+                                        <td style="width: 25%; text-align: center">
                                             <asp:LinkButton ID="btnSave" Text="Save: Gap Analysis Record" runat="server" OnClick="btnSaveGapAnalysisReport_Click"></asp:LinkButton>
                                         </td>
-                                        <td style="width: 25%;text-align:center">
-                                            <a href="" onclick="printData();">Print: Gap analysis Graph</a>
+                                        <td style="width: 25%; text-align: center">
+                                            <asp:LinkButton ID="lnkBtnPrint" runat="server" Visible="false" Text="Print: Gap analysis Graph"></asp:LinkButton>
                                         </td>
-                                        <td style="width: 25%;text-align:center">
+                                        <td style="width: 25%; text-align: center">
                                             <a href="" id="editRoi" runat="server">Edit: ROI Record</a>
                                         </td>
                                     </tr>

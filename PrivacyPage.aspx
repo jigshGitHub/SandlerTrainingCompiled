@@ -1,4 +1,4 @@
-﻿<%@ page language="C#" autoeventwireup="true" inherits="PrivacyPage, App_Web_yu1nba0j" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="PrivacyPage, App_Web_ai1qpe4f" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

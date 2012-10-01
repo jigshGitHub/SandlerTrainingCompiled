@@ -1,5 +1,5 @@
 ﻿<%@ Import Namespace="Sandler.UI.ChartStructure" %>
-<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_yu1nba0j" %>
+<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_ai1qpe4f" %>
 <div class="clear hideSkiplink">
     <table style="width: 100%">
         <tr>
@@ -34,6 +34,7 @@
                         <li><a id="manageFranchiseeUserAnchor" runat="server" visible="false">Manage Franchisee
                             User</a></li>
                         <li><a id="manageEmailSubscription" runat="server" visible="false">Manage Email Subscription</a></li>
+                        <li><a href="<%=  Page.ResolveClientUrl("~/Email/ManageGroup.aspx") %>">Create Group</a></li>
                     </ul>
                     </li>
                     <li><a id="anchorGapAnalysis" runat="server" href="~/GapAnalysisCreate.aspx">

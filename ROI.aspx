@@ -1,4 +1,4 @@
-﻿<%@ page title="ROI" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ROI, App_Web_m00xybvz" %>
+﻿<%@ page title="ROI" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ROI, App_Web_yzophhdi" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
@@ -227,7 +227,7 @@
                                                 OnCommand="lnlPrevStep_Click" Visible="True">Edit:ROI Data</asp:LinkButton>
                                         </td>
                                         <td style="width: 25%; text-align: center">
-                                            <a href="" onclick="printData();">Print: ROI Graph</a>
+                                            <asp:LinkButton ID="lnkBtnPrint" runat="server" Visible="false" Text="Print: ROI Graph"></asp:LinkButton>
                                         </td>
                                         <td style="width: 25%; text-align: center">
                                             <asp:LinkButton ID="btnSave" Text="Save: ROI Record" runat="server" OnClick="btnSaveGapAnalysisReport_Click"></asp:LinkButton>

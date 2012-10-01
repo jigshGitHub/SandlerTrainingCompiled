@@ -1,4 +1,4 @@
-﻿<%@ page title="My Account - Manage Blast Email Subscription" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Email_ManageEmailSubscription, App_Web_qic4xekz" %>
+﻿<%@ page title="My Account - Manage Blast Email Subscription" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Email_ManageEmailSubscription, App_Web_ml1j4amq" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 
@@ -24,7 +24,7 @@
  
 
  <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;"><td align="center">
-    <asp:Button id="btnUpdateSub" Runat="server" Text="Update Subscription" Style="background-color: #336699;
+    <asp:Button id="btnUpdateSub" Runat="server" Text="Update Subscription" Style="background-color: #3366cc;
                                 color: #FFFFFF; margin-left: 10px" Height="40" Width="140" onclick="btnUpdateSub_Click" ></asp:Button>
  </td></tr>
 
