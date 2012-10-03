@@ -1,4 +1,4 @@
-﻿<%@ page title="GapAnalysis" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="GapAnalysisCreate, App_Web_yzophhdi" %>
+﻿<%@ page title="GapAnalysis" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="GapAnalysisCreate, App_Web_4im0movc" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
@@ -85,7 +85,7 @@
                                             </tr>
                                             <tr style="color: Black; background-color: #DCDCDC">
                                                 <td>
-                                                    Training Cost Savings
+                                                    Sales Rep Retention
                                                 </td>
                                                 <td>
                                                     <asp:DropDownList ID="drpListTCSAsIs" OnDataBound="ddlCreateDefaultSelection" runat="server">
@@ -103,7 +103,7 @@
                                             </tr>
                                             <tr style="color: Black; background-color: #DCDCDC">
                                                 <td>
-                                                    Est. Benifits Gained
+                                                    Sandler Trng Benefits
                                                 </td>
                                                 <td>
                                                     <asp:DropDownList ID="drpListEBGAsIS" OnDataBound="ddlCreateDefaultSelection" runat="server">
@@ -145,7 +145,7 @@
                                             </tr>
                                             <tr style="color: Black; background-color: #DCDCDC">
                                                 <td>
-                                                    Training Cost Savings
+                                                    Sales Rep Retention
                                                 </td>
                                                 <td>
                                                     <asp:DropDownList ID="drpListTCSToBe" OnDataBound="ddlCreateDefaultSelection" runat="server">
@@ -163,7 +163,7 @@
                                             </tr>
                                             <tr style="color: Black; background-color: #DCDCDC">
                                                 <td>
-                                                    Est. Benifits Gained
+                                                    Sanlder Trng Benefits
                                                 </td>
                                                 <td>
                                                     <asp:DropDownList ID="drpListEBGToBe" OnDataBound="ddlCreateDefaultSelection" runat="server">

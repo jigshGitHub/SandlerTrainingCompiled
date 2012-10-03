@@ -1,5 +1,5 @@
 ﻿<%@ Import Namespace="Sandler.UI.ChartStructure" %>
-<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_ai1qpe4f" %>
+<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_c3orpngv" %>
 <div class="clear hideSkiplink">
     <table style="width: 100%">
         <tr>
@@ -18,6 +18,8 @@
                             New Client Quantity & Average Contract Price (By Month)</a></li>
                         <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","ClassHeadcountByCourseIndustryMonth"))  %>">
                             Class Headcount By Course & Industry (By Month)</a></li>
+                        <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","ClosedSalesAnalysis"))  %>">
+                            Closed Sales Analysis (By Month)</a></li>
                         <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","AverageLengthTimeActiveClientsByIndustry"))  %>">
                             Average Length of Time for Active Clients (By Industry)</a></li>
                         <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","ActualDollarsBookedComparisonGoal"))  %>">
@@ -37,8 +39,8 @@
                         <li><a href="<%=  Page.ResolveClientUrl("~/Email/ManageGroup.aspx") %>">Create Group</a></li>
                     </ul>
                     </li>
-                    <li><a id="anchorGapAnalysis" runat="server" href="~/GapAnalysisCreate.aspx">
-                        Gap Analysis</a> </li>
+                    <li><a id="anchorGapAnalysis" runat="server" href="~/GapAnalysisCreate.aspx">Gap Analysis</a>
+                    </li>
                     <li><a id="anchorROI" runat="server" href="~/ROI.aspx">ROI&nbsp;&nbsp;</a></li>
                     <li><a href="http://assessment.aberdeen.com/gqtJlzBd2X/SAN127/sponsor.aspx" target="_blank">
                         Sandler Training Assessment Tool</a></li>
