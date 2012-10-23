@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityADD, App_Web_jq0nogoq" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityADD, App_Web_timssiba" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -122,6 +122,14 @@
                             </tr>
                             <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                                 <td style="white-space: nowrap;">
+                                    Product Cost :
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtProductCost" onkeypress="EnterOnlyNumeric()" runat="server"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                                <td style="white-space: nowrap;">
                                     Opportunity Status :
                                 </td>
                                 <td>
@@ -206,6 +214,18 @@
                                 </td>
                                 <td>
                                     <asp:TextBox ID="txtActualValue" onkeypress="EnterOnlyNumeric()" runat="server"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                                <td style="white-space: nowrap;">
+                                    Creation Date :
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtBxCreationDate" runat="server" />&nbsp;<asp:Image ID="Image1"
+                                        runat="server" ImageUrl="~/images/calendar.gif" ImageAlign="Middle" />
+                                    <asp:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtBxCreationDate" PopupButtonID="Image1"
+                                        CssClass="calendar">
+                                    </asp:CalendarExtender>
                                 </td>
                             </tr>
                             <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">

@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityDETAIL, App_Web_jq0nogoq" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityDETAIL, App_Web_timssiba" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <table>
@@ -84,6 +84,14 @@
                             <asp:Label ID="lblProduct" runat="server" />
                         </td>
                     </tr>
+                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                        <td style="white-space: nowrap;">
+                            Product Cost:
+                        </td>
+                        <td>
+                            <asp:Label ID="lblProductCost" runat="server" />
+                        </td>
+                    </tr>
                     <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td style="white-space: nowrap;">
                             Opportunity Status :
@@ -146,6 +154,14 @@
                         </td>
                         <td>
                             <asp:Label ID="lblActualValue" runat="server" Enabled="false"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                        <td style="white-space: nowrap;">
+                            Creation Date :
+                        </td>
+                        <td>
+                            <asp:Label ID="lblCreationDate" runat="server" />
                         </td>
                     </tr>
                     <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">

@@ -1,4 +1,4 @@
-﻿<%@ page title="My Account - Franchisee Detail" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_FranchiseeUser_Detail, App_Web_jxbbp3qq" %>
+﻿<%@ page title="My Account - Franchisee Detail" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_FranchiseeUser_Detail, App_Web_unqe3we2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
@@ -107,7 +107,7 @@
                     <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                         <td colspan="3">
                             <a id="anchorEdit" runat="server" style="color: Blue; font-weight: bold;">Edit</a>
-                            &nbsp;&nbsp; <a href="Index.aspx" style="font-weight: bold">Delete</a>&nbsp;&nbsp;
+                            &nbsp;&nbsp; <a href="" data-bind="click:_delete" style="font-weight: bold">Delete</a>&nbsp;&nbsp;
                             <a href="Index.aspx" style="font-weight: bold">Back</a>
                         </td>
                     </tr>
@@ -126,7 +126,7 @@
     </table>
     <script type="text/javascript">
 
-        function CoachVM() {
+        function FranchiseeUserVM() {
 
             var href = window.location.href.split('/');
             var baseUrl = href[0] + '//' + href[2] + '/' + href[3];
@@ -170,9 +170,43 @@
                     log(status);
                 }
             });
+
+            self._delete = function () {
+                if (confirm('Are you sure to delete this user?')) {
+                    var json = JSON.stringify({
+                        FranchiseeID: self.franchiseeId(),
+                        UserID: self.userId()
+                    });
+                    $.ajax({
+                        url: baseUrl + "/api/FranchiseeUser",
+                        type: "DELETE",
+                        data: json,
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+
+                        },
+                        statusCode: {
+                            200: function () {
+                                alert('Selected user has been deleted');
+                                window.open('Index.aspx', '_self')
+                            },
+                            400: function () {
+                                alert('400 status code! user error');
+                            },
+                            500: function () {
+                                alert('500 status code! server error');
+                            }
+                        }
+                    });
+                }
+                else {
+                    return false;
+                }
+            };
         }
         $(document).ready(function () {
-            ko.applyBindings(new CoachVM());
+            ko.applyBindings(new FranchiseeUserVM());
 
 
         });
