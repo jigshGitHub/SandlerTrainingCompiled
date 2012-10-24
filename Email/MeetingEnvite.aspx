@@ -1,4 +1,4 @@
-﻿<%@ page title="Send Meeting Invite" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" validaterequest="false" inherits="Email_MeetingEnvite, App_Web_rrgnt12e" %>
+﻿<%@ page title="Send Meeting Invite" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" validaterequest="false" inherits="Email_MeetingEnvite, App_Web_5zgrru05" %>
 <%@ Register TagPrefix="Ajaxified" Assembly="Ajaxified" Namespace="Ajaxified" %>
 <%@ Register TagPrefix="FTB" Namespace="FreeTextBoxControls" Assembly="FreeTextBox" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
@@ -6,8 +6,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
 <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
-<asp:UpdatePanel ID="updPnl" runat="server">
-<ContentTemplate>
 <table width="100%">
  <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
     <th class="tdTC" style="width: 280px" align="left">Send Meeting Invite : </th>
@@ -154,7 +152,5 @@
  </td>
  </tr>
 </table>
-</ContentTemplate> 
-</asp:UpdatePanel>
 </asp:Content>
 
