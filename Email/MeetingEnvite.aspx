@@ -1,4 +1,4 @@
-﻿<%@ page title="Send Meeting Invite" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" validaterequest="false" inherits="Email_MeetingEnvite, App_Web_5zgrru05" %>
+﻿<%@ page title="Send Meeting Invite" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" validaterequest="false" inherits="Email_MeetingEnvite, App_Web_010wwmpm" %>
 <%@ Register TagPrefix="Ajaxified" Assembly="Ajaxified" Namespace="Ajaxified" %>
 <%@ Register TagPrefix="FTB" Namespace="FreeTextBoxControls" Assembly="FreeTextBox" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
