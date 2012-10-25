@@ -1,4 +1,4 @@
-﻿<%@ page title="My Account - Coach Add" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_Coach_Add, App_Web_glnqr1yx" %>
+﻿<%@ page title="My Account - Coach Add" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_Coach_Add, App_Web_34scd4de" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
