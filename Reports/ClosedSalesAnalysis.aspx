@@ -1,4 +1,4 @@
-﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Reports_ClosedSalesAnalysis, App_Web_wxihtit2" %>
+﻿<%@ page title="Reports-ClosedSalesAnalysis" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Reports_ClosedSalesAnalysis, App_Web_pm0gzlgq" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">

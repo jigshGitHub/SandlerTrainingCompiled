@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Search - Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CRM_Companies_Search, App_Web_zuiekjvp" %>
+﻿<%@ page title="CRM - Search - Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CRM_Companies_Search, App_Web_etz0h2uq" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
@@ -17,7 +17,8 @@
                 <asp:DetailsView ID="dvCompany" runat="server" Width="400px" AutoGenerateRows="False"
                     DefaultMode="Insert" CellPadding="3" BorderStyle="None"
                     BorderWidth="1px" BackColor="White" BorderColor="#999999" GridLines="Vertical"
-                    OnModeChanging="dvCompany_ModeChanging" OnItemInserting="dvCompany_ItemInserting">
+                    OnModeChanging="dvCompany_ModeChanging" 
+                    OnItemInserting="dvCompany_ItemInserting" ondatabound="dvCompany_DataBound">
                     <Fields>
                         <asp:TemplateField HeaderText="Company Name :">
                             <InsertItemTemplate>
