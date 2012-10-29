@@ -1,4 +1,4 @@
-﻿<%@ page title="Reports-ClosedSalesAnalysis" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Reports_ClosedSalesAnalysis, App_Web_pm0gzlgq" %>
+﻿<%@ page title="Reports-ClosedSalesAnalysis" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Reports_ClosedSalesAnalysis, App_Web_03fxt3kh" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
@@ -35,12 +35,12 @@
                                                 <td style="width: 20%">
                                                     Select 'Closed Sales Analysis' Type:
                                                 </td>
-                                                <td>
+                                                <td><!--<asp:ListItem Text="Sales Rep" Value="SalesRep"></asp:ListItem>-->
                                                     <asp:RadioButtonList ID="radBtnAnalysisType" runat="server">
-                                                        <asp:ListItem Text="Product Sold" Value="ProductsSold"></asp:ListItem>
+                                                        <asp:ListItem Text="Product Sold" Value="ProductsSold" Selected="True"></asp:ListItem>
                                                         <asp:ListItem Text="Opportunity Source" Value="OpportunitySource"></asp:ListItem>
                                                         <asp:ListItem Text="Opportunity Type" Value="OpportunityType"></asp:ListItem>
-                                                        <asp:ListItem Text="Sales Rep" Value="SalesRep"></asp:ListItem>
+                                                        
                                                     </asp:RadioButtonList>
                                                 </td>
                                                 <td>
@@ -54,8 +54,8 @@
                                                 <td style="width: 60%">
                                                     <asp:RadioButtonList ID="radBtnCompanySelection" runat="server">
                                                         <asp:ListItem Text="Only New Companies" Value="1"></asp:ListItem>
-                                                        <asp:ListItem Text="Only NON-New Companies" Value="2"></asp:ListItem>
-                                                        <asp:ListItem Text="All Companies" Value="3"></asp:ListItem>
+                                                        <asp:ListItem Text="Only NON-New Companies" Value="0"></asp:ListItem>
+                                                        <asp:ListItem Text="All Companies" Value="2"></asp:ListItem>
                                                     </asp:RadioButtonList>
                                                     <br />
                                                     <asp:DropDownList ID="drpLstCompanies" OnDataBound="ddlCreateDefaultSelection" runat="server">
@@ -98,11 +98,11 @@ Closed Sales Analysis Report</asp:LinkButton>
                         </asp:TemplatedWizardStep>
                         <asp:TemplatedWizardStep ID="plotChart" runat="server">
                             <ContentTemplate>
-                                <asp:Panel ID="pnlChart" runat="server">
-                                    <div id="chartContainer" runat="server">
-                                    </div>
+                                <asp:Panel ID="chartPanel" runat="server" HorizontalAlign="Center" Width="100%">
                                 </asp:Panel>
                             </ContentTemplate>
+                            <CustomNavigationTemplate>
+                            </CustomNavigationTemplate>
                         </asp:TemplatedWizardStep>
                     </WizardSteps>
                 </asp:Wizard>
