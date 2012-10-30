@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunityIndex, App_Web_ok1frvmq" %>
+﻿<%@ page title="CRM - View Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunityIndex, App_Web_bi3ev5od" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>

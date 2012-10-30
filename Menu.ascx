@@ -1,5 +1,5 @@
 ﻿<%@ Import Namespace="Sandler.UI.ChartStructure" %>
-<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_nyhix3ri" %>
+<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_yuj0qria" %>
 <div class="clear hideSkiplink">
     <table style="width: 100%; border-color: White; border-style: none; border-width: thin">
         <tr>
@@ -43,7 +43,7 @@
                         </ul>
                         </li>
                         <li><a href="#">Product</a><ul class="sub_menu">
-                            <li><a href="#">Product Margin Contribution</a></li><li><a href="#">Products Sold as
+                            <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","ProductMarginContributionByProductByMonth"))  %>">Product Margin Contribution</a></li><li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","FirstSaleProductValueByProductByMonth"))  %>">Products Sold as
                                 a 1st Sale</a></li><li><a href="#">Products Sold by Company</a></li><li><a href="#">
                                     Products Sold by Rep</a></li><li>
                         </ul>
