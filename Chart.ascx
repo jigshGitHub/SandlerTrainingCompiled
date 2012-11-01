@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="ChartUC, App_Web_yuj0qria" %>
+﻿<%@ control language="C#" autoeventwireup="true" inherits="ChartUC, App_Web_ce02b5dj" %>
 <div id="chartContainer" style="display: block">
     <asp:Image ID="ajaxLoadNotificationImage" runat="server" ImageUrl="~/images/indicator_medium.gif" />Please
     wait...</div>
@@ -10,7 +10,7 @@
             url: baseUrl + "/api/Chart/",
             type: 'GET',
             contentType: 'application/json',
-            data: { id: '', strChartIds: chartIds, strChartSubType: chartSubType, strDrillBy: '', strUserName: userName, strGaId: gaId },
+            data: { id: '', strChartIds: chartIds, strChartSubType: chartSubType, strDrillBy: '', strUserName: userName, strSearchParameter: searchParameter },
             success: function (data) {
                 log(data);
                 var myChart = new FusionCharts(baseUrl + '/FusionChartLib/' + data.SWF, 'myChartId', chartWidth, chartHeight, '0', '1');

@@ -1,5 +1,5 @@
 ﻿<%@ Import Namespace="Sandler.UI.ChartStructure" %>
-<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_yuj0qria" %>
+<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_ce02b5dj" %>
 <div class="clear hideSkiplink">
     <table style="width: 100%; border-color: White; border-style: none; border-width: thin">
         <tr>
@@ -43,9 +43,11 @@
                         </ul>
                         </li>
                         <li><a href="#">Product</a><ul class="sub_menu">
-                            <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","ProductMarginContributionByProductByMonth"))  %>">Product Margin Contribution</a></li><li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","FirstSaleProductValueByProductByMonth"))  %>">Products Sold as
-                                a 1st Sale</a></li><li><a href="#">Products Sold by Company</a></li><li><a href="#">
-                                    Products Sold by Rep</a></li><li>
+                            <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","ProductMarginContributionByProductByMonth"))  %>">
+                                Product Margin Contribution</a></li><li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","FirstSaleProductValueByProductByMonth"))  %>">
+                                    Products Sold as a 1st Sale</a></li><li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","ProductSoldToCompanyByProductByMonth","Reports/Products/SoldByCompany.aspx?"))  %>">
+                                        Products Sold by Company</a></li><li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","ProductSoldBySalesRepByProductByMonth","Reports/Products/SoldByCompanySalesRep.aspx?"))  %>">
+                                            Products Sold by Rep</a></li><li>
                         </ul>
                         </li>
                         <li><a href="#">Ad Hoc</a><ul class="sub_menu">

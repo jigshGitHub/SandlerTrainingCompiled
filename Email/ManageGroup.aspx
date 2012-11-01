@@ -1,4 +1,4 @@
-﻿<%@ page title="Create Email Group" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Email_ManageGroup, App_Web_uacy1z3s" %>
+﻿<%@ page title="Create Email Group" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Email_ManageGroup, App_Web_c2zbuzyj" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 
@@ -141,7 +141,7 @@
      <tr id="trCorp6" runat="server" style="color: Black; background-color: #EEEEEE; ">
          <td>Franchisee Contacts:</td>
          <td>
-            <asp:CheckBoxList ID="chkListFrContactsCorp"  DataSourceID="FrContactsEmailCorpDS"  CellSpacing="8" CellPadding="8" DataTextField="Email" DataValueField="ContactsId" 
+            <asp:CheckBoxList ID="chkListFrContactsCorp"  DataSourceID="FrContactsEmailCorpDS"  CellSpacing="8" CellPadding="8" DataTextField="FullName" DataValueField="ContactsId" 
               RepeatColumns="3"   RepeatLayout="Table" 
 
             runat="server"></asp:CheckBoxList>

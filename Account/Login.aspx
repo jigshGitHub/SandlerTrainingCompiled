@@ -1,4 +1,4 @@
-﻿<%@ page language="C#" autoeventwireup="true" inherits="Login, App_Web_dbggecim" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Login, App_Web_p5bran0a" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -22,7 +22,7 @@
                             <span style="color: #FFFFFF">:</span>
                         </td>
                         <td>
-                            <asp:TextBox ID="UserName" MaxLength="20" runat="server" />
+                            <asp:TextBox ID="UserName" MaxLength="100" runat="server" />
                         </td>
                         <td>
                             <asp:Label ID="lblPassword" runat="server" Text="Password" AssociatedControlID="Password"
