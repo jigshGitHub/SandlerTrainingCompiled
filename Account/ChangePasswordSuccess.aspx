@@ -1,4 +1,4 @@
-﻿<%@ page title="My Account - Change Password" language="C#" masterpagefile="~/Site.master" autoeventwireup="true" inherits="Account_ChangePasswordSuccess, App_Web_p5bran0a" %>
+﻿<%@ page title="My Account - Change Password" language="C#" masterpagefile="~/Site.master" autoeventwireup="true" inherits="Account_ChangePasswordSuccess, App_Web_qjsqgo13" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityDETAIL, App_Web_40bap4kg" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityDETAIL, App_Web_vgze5onj" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <table>
