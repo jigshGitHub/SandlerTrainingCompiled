@@ -1,5 +1,5 @@
 ﻿<%@ Import Namespace="Sandler.UI.ChartStructure" %>
-<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_lzuxoshb" %>
+<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_zd2g45zj" %>
 <div class="clear hideSkiplink">
     <table style="width: 100%; border-color: White; border-style: none; border-width: thin">
         <tr>
@@ -64,6 +64,10 @@
                             Rep to Franchise</a></li>
                         <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","BenchmarkFranchiseeRegion","Reports/Benchmarks/FranchiseeToRegion.aspx?"))  %>">
                             Franchise to Region</a></li>
+                        <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","BenchmarkRegionCountry","Reports/Benchmarks/RegionToCountry.aspx?"))  %>">
+                            Region to Country</a></li>
+                        <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","BenchmarkCountryAll","Reports/Benchmarks/CountryToAll.aspx?"))  %>">
+                            Country to "All"</a></li>
                     </ul>
                     </li>
                     <li><a href="~/CRM/Companies/Index.aspx" id="anchorCRM" runat="server">CRM</a></li>
