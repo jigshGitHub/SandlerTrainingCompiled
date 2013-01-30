@@ -1,4 +1,4 @@
-﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Email_Test, App_Web_w0xmjcof" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Email_Test, App_Web_ajhgqkoq" %>
 <%@ Register TagPrefix="Ajaxified" Assembly="Ajaxified" Namespace="Ajaxified" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server"> 
