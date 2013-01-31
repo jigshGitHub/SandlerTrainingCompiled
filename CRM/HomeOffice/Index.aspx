@@ -1,4 +1,4 @@
-﻿<%@ page title="HomeOffice - View Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Index, App_Web_dxmbjcws" %>
+﻿<%@ page title="HomeOffice - View Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Index, App_Web_xoa4u0ew" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
 <%@ Register Src="../EntityMenu.ascx" TagName="EntityMenu" TagPrefix="uc1" %>
@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
  <table id="tblMain" width="100%">
         <tr>
-            <td align="right">
+            <td align="right" colspan="2">
                 <uc1:EntityMenu ID="franchiseeMenu" runat="server" />
             </td>
         </tr>
@@ -15,6 +15,7 @@
                 <asp:ImageButton ImageUrl="~/images/excel.jpg" runat="server" ToolTip="Export To Excel"
                     ID="btnExportExcel" onclick="btnExportExcel_Click" />
             </td>
+            <td align="center"><b>All Sandler Franchisees, Master Franchisees, Coaches and Associates</b></td>
         </tr>
         <tr>
             <td colspan="2">
