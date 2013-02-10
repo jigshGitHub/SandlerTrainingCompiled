@@ -1,5 +1,5 @@
 ﻿<%@ Import Namespace="Sandler.UI.ChartStructure" %>
-<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_4ubwhckm" %>
+<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_dnngkkh1" %>
 <div class="clear hideSkiplink">
     <table style="width: 100%; border-color: White; border-style: none; border-width: thin">
         <tr>
@@ -12,7 +12,7 @@
                     <li><a id="anchorCHART" runat="server" href="#">REPORTS</a><ul id="reportsMenu" runat="server"
                         class="sub_menu">
                         <li><a href="">Franchisee</a><ul class="sub_menu">
-                            <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","NewAppointmentsBySourceMonth"))  %>">
+                            <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","NewAppointmentsBySourceMonth","ChartcustomPage.aspx?"))  %>">
                                 New Appointments By Source (By Month)</a></li>
                             <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","NewClientsByProductTypeMonth"))  %>">
                                 New Clients By Product Type (By Month)</a></li>
