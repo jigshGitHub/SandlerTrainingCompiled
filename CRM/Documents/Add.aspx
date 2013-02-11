@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="DocumentADD, App_Web_vgwevx2x" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="DocumentADD, App_Web_kzsysmcr" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -51,12 +51,15 @@
                             <InsertItemTemplate>
                                 <asp:TextBox ID="LastModifyDate" Text='<%# Bind("Last_Modify_Date") %>' runat="server" />&nbsp;<asp:Image ID="calanderImageLMD" runat="server" ImageUrl="~/images/calendar.gif" ImageAlign="Middle" />
                                 <asp:CalendarExtender runat="server" TargetControlID="LastModifyDate" PopupButtonID="calanderImageLMD" CssClass="calendar"></asp:CalendarExtender>
-                                <asp:RequiredFieldValidator ID="LastContactDateRFV" ControlToValidate="LastModifyDate" runat="server" ErrorMessage="Please Enter Last Modify Date to proceed.">*</asp:RequiredFieldValidator>
+                                <label id="mandlbl1" style="color:Red" runat="server">*</label>
+                                <asp:RequiredFieldValidator ID="LastContactDateRFV" ControlToValidate="LastModifyDate" runat="server" ErrorMessage="Please Enter Last Modify Date to proceed.">Required field</asp:RequiredFieldValidator>
                             </InsertItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Attached Document:">
                             <InsertItemTemplate>
                                 <asp:FileUpload ID="UpLoad" Width="275px" runat="server" />
+                                <label id="mandlbl3" style="color:Red" runat="server">*</label>
+                                <asp:RequiredFieldValidator ID="rfvUpLoad" ControlToValidate="UpLoad" Display="Static" InitialValue="" runat="server" ErrorMessage="Please Select upload document to proceed.">Required field</asp:RequiredFieldValidator>
                             </InsertItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField ShowHeader="False">

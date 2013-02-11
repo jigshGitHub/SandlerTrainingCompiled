@@ -1,5 +1,5 @@
 ﻿<%@ Import Namespace="Sandler.UI.ChartStructure" %>
-<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_dnngkkh1" %>
+<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_0n2frbgp" %>
 <div class="clear hideSkiplink">
     <table style="width: 100%; border-color: White; border-style: none; border-width: thin">
         <tr>
@@ -57,7 +57,7 @@
                         </ul>
                         </li>
 
-                        <li><a href="#">Home Office</a>
+                        <li><a href="#" id="homeofficeReportAnchor" runat="server" visible="false">Home Office</a>
                         <ul class="sub_menu">
                             <li><a href="#">Franchisee Report By...</a>
                                 <ul class="sub_menu">
@@ -116,6 +116,7 @@
 
                     <li><a id="a1" runat="server" href="#">CRM</a>
                       <ul class="sub_menu">
+                        <li><a id="quickstartAnchor" runat="server" visible="false">QuickStart</a></li>
                         <li><a href="<%=  Page.ResolveClientUrl("~/CRM/Companies/Index.aspx") %>">Companies</a></li>
                         <li><a href="<%=  Page.ResolveClientUrl("~/CRM/Contacts/Index.aspx") %>">Contacts</a></li>
                         <li><a href="<%=  Page.ResolveClientUrl("~/CRM/Opportunities/Index.aspx") %>">Pipeline</a></li>

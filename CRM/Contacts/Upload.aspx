@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Upload Contact" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_Contacts_Upload, App_Web_lo3mdc4l" enableeventvalidation="true" %>
+﻿<%@ page title="CRM - Upload Contact" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_Contacts_Upload, App_Web_efn4vvwi" enableeventvalidation="true" %>
 
 <%@ Register Src="../Pager.ascx" TagName="Pager" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
@@ -64,15 +64,15 @@
             <td width="100%">
                 <asp:GridView Width="100%" ID="gvCompanies" runat="server" AutoGenerateColumns="false">
                     <Columns>
-                        <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="FIRSTNAME"
+                        <asp:BoundField ItemStyle-HorizontalAlign="Left"  HeaderStyle-HorizontalAlign="Left" HeaderStyle-ForeColor="Blue" DataField="FIRSTNAME"
                             HeaderText="First Name" />
-                        <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="LASTNAME"
+                        <asp:BoundField ItemStyle-HorizontalAlign="Left"  HeaderStyle-HorizontalAlign="Left" HeaderStyle-ForeColor="Blue" DataField="LASTNAME"
                             HeaderText="Last Name" />
-                        <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="PHONE"
+                        <asp:BoundField ItemStyle-HorizontalAlign="Left"  HeaderStyle-HorizontalAlign="Left" HeaderStyle-ForeColor="Blue" DataField="PHONE"
                             HeaderText="Phone Number" />
-                        <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="EMail"
+                        <asp:BoundField ItemStyle-HorizontalAlign="Left"  HeaderStyle-HorizontalAlign="Left" HeaderStyle-ForeColor="Blue" DataField="EMail"
                             HeaderText="Email" />
-                        <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="Errormessage"
+                        <asp:BoundField ItemStyle-HorizontalAlign="Left"  HeaderStyle-HorizontalAlign="Left" HeaderStyle-ForeColor="Blue" DataField="Errormessage"
                             HeaderText="Message" />
                     </Columns>
                     <RowStyle BackColor="#EEEEEE" ForeColor="Black" />

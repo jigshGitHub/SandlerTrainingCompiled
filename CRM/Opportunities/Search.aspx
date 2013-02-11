@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Search Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunitySearch, App_Web_dvevddgx" %>
+﻿<%@ page title="CRM - Search Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunitySearch, App_Web_ypsbuv4r" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -153,7 +153,7 @@
                                                 TypeName="SandlerRepositories.OpprtunityWhyLostRepository"></asp:ObjectDataSource>
                                         </td>
                                     </tr>
-                                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                                         <td style="white-space: nowrap;">
                                             Contact Name :
                                         </td>
@@ -162,7 +162,7 @@
                                             </asp:DropDownList>
                                         </td>
                                     </tr>
-                                     <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                                         <td style="white-space: nowrap;">
                                             Weighted Value :
                                         </td>
@@ -170,12 +170,66 @@
                                             <asp:TextBox ID="txtWeightedValue" onkeypress="EnterOnlyNumeric()" runat="server"></asp:TextBox>
                                         </td>
                                     </tr>
-                                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                                         <td style="white-space: nowrap;">
                                             Actual Value :
                                         </td>
                                         <td>
                                             <asp:TextBox ID="txtActualValue" onkeypress="EnterOnlyNumeric()" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                                        <td style="white-space: nowrap;">
+                                            Pain :
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtPain" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                                        <td style="white-space: nowrap;">
+                                            Length of Problem :
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtLengthOfProblem" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                                        <td style="white-space: nowrap;">
+                                            Alternatives :
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtAlternatives" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                                        <td style="white-space: nowrap;">
+                                            Perceived Cost to Fix :
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtCostToFix" runat="server"></asp:TextBox>
+                                        </td>
+                                    </tr>
+                                    <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                                        <td style="white-space: nowrap;">
+                                            Budget Identified? :
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlBudgetIdentified" runat="server">
+                                                <asp:ListItem Value="true" Text="Yes"></asp:ListItem>
+                                                <asp:ListItem Value="false" Text="No"></asp:ListItem>
+                                            </asp:DropDownList>
+                                        </td>
+                                    </tr>
+                                    <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+                                        <td style="white-space: nowrap;">
+                                            Move Forward? :
+                                        </td>
+                                        <td>
+                                            <asp:DropDownList ID="ddlMoveForward" runat="server">
+                                                <asp:ListItem Value="true" Text="Yes"></asp:ListItem>
+                                                <asp:ListItem Value="false" Text="No"></asp:ListItem>
+                                            </asp:DropDownList>
                                         </td>
                                     </tr>
                                     <tr>
@@ -304,8 +358,14 @@
                                                 HeaderText="Notes" />
                                             <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="ActualValue"
                                                 HeaderText="ActualValue" DataFormatString="{0:C}" />
-                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="Source"
-                                                HeaderText="Source" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="Pain"
+                                                HeaderText="Pain" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="LengthOfProblem"
+                                                HeaderText="Length of Problem" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="Alternatives"
+                                                HeaderText="Alternatives" />
+                                            <asp:BoundField ItemStyle-HorizontalAlign="Center" HeaderStyle-ForeColor="Blue" DataField="CostToFix"
+                                                HeaderText="Cost To Fix" />
                                         </Columns>
                                         <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                                         <AlternatingRowStyle BackColor="#DCDCDC" />
@@ -347,7 +407,7 @@
                 }
             });
 
-            
+
             $('#<%=txtOpportunityID.ClientID %>').keypress(EnterOnlyNumeric);
 
             $('#<%=lbtnSearch.ClientID %>').click(function () {
@@ -389,6 +449,14 @@
                 if ($('#<%=txtWeightedValue.ClientID %>').val() != '')
                     return true;
                 if ($('#<%=txtActualValue.ClientID %>').val() != '')
+                    return true;
+                if ($('#<%=txtPain.ClientID %>').val() != '')
+                    return true;
+                if ($('#<%=txtLengthOfProblem.ClientID %>').val() != '')
+                    return true;
+                if ($('#<%=txtAlternatives.ClientID %>').val() != '')
+                    return true;
+                if ($('#<%=txtCostToFix.ClientID %>').val() != '')
                     return true;
                 return false;
             }

@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View/Edit Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CompanyDETAIL, App_Web_jdedur2o" %>
+﻿<%@ page title="CRM - View/Edit Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CompanyDETAIL, App_Web_qdul20v2" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -24,7 +24,8 @@
                         <asp:TemplateField HeaderText="Company Name :">
                             <EditItemTemplate>
                                 <asp:TextBox ID="txtCompName" Width="380" MaxLength="50" runat="server" Text='<%# Bind("COMPANYNAME") %>'></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="reqFieldValCompNameTB" ControlToValidate="txtCompName" Display="Static" InitialValue="" runat="server" ErrorMessage="Please Enter Company Name to proceed.">*</asp:RequiredFieldValidator>
+                                <label id="mandlbl" style="color:Red" runat="server">*</label>
+                                <asp:RequiredFieldValidator ID="reqFieldValCompNameTB" ControlToValidate="txtCompName" Display="Static" InitialValue="" runat="server" ErrorMessage="Please Enter Company Name to proceed.">Required field</asp:RequiredFieldValidator>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lblCompany" runat="server" Text='<%# Eval("COMPANYNAME") %>'></asp:Label>

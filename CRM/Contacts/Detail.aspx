@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View/Edit Contact" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ContactDETAIL, App_Web_lo3mdc4l" %>
+﻿<%@ page title="CRM - View/Edit Contact" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ContactDETAIL, App_Web_efn4vvwi" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -32,10 +32,9 @@
                         <asp:TemplateField HeaderText="Last Name :">
                             <EditItemTemplate>
                                 <asp:TextBox ID="txtLastName" MaxLength="50" runat="server" Text='<%# Bind("LastName") %>'></asp:TextBox>
+                                <label id="mandlbl1" style="color:Red" runat="server">*</label>
                                 <asp:RequiredFieldValidator ID="rfvLNTB" ControlToValidate="txtLastName" Display="Static"
-                                    InitialValue="" runat="server" ErrorMessage="Please Enter Last Name to proceed.">
-                    *
-                                </asp:RequiredFieldValidator>
+                                    InitialValue="" runat="server" ErrorMessage="Please Enter Last Name to proceed.">Required field</asp:RequiredFieldValidator>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lblLastName" runat="server" Text='<%# Bind("LastName") %>'></asp:Label>
@@ -44,10 +43,9 @@
                         <asp:TemplateField HeaderText="First Name :">
                             <EditItemTemplate>
                                 <asp:TextBox ID="txtFirstName" MaxLength="50" runat="server" Text='<%# Bind("FirstName") %>'></asp:TextBox>
+                                <label id="mandlbl2" style="color:Red" runat="server">*</label>
                                 <asp:RequiredFieldValidator ID="rfvFNTB" ControlToValidate="txtFirstName" Display="Static"
-                                    InitialValue="" runat="server" ErrorMessage="Please Enter First Name to proceed.">
-                    *
-                                </asp:RequiredFieldValidator>
+                                    InitialValue="" runat="server" ErrorMessage="Please Enter First Name to proceed.">Required field</asp:RequiredFieldValidator>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lblFirstName" runat="server" Text='<%# Bind("FirstName") %>'></asp:Label>
