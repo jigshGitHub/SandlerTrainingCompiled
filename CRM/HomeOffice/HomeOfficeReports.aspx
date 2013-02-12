@@ -1,4 +1,4 @@
-﻿<%@ page title="Home Office Reports" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="Reports_HomeOfficeReports, App_Web_jqqf3vfn" %>
+﻿<%@ page title="Home Office Reports" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="Reports_HomeOfficeReports, App_Web_fqqclhyw" %>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -16,13 +16,14 @@
     <table id="tblMain" width="100%">     
         <tr>
             <td align="center">
-                       <asp:Label ForeColor="Black" ID="lblreportDisplayName" runat="server"></asp:Label>
+                       <asp:Label ForeColor="Black" Font-Bold="true" ID="lblreportDisplayName" Font-Size="Large" runat="server"></asp:Label>
             </td>   
         </tr>
         <tr>
             <td align="left">
                 <asp:ImageButton ImageUrl="~/images/excel.jpg" runat="server" ToolTip="Export To Excel"
-                    ID="btnExportExcel" OnClick="btnExportExcel_Click" />
+                    ID="btnExportExcel" OnClick="btnExportExcel_Click" />&nbsp;
+                    <asp:Label runat="server" Text="Export To Excel" ID="lblExportToExcel"></asp:Label>
             </td>                        
         </tr>
         <tr>

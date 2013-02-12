@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View Contacts" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="ContactIndex, App_Web_efn4vvwi" %>
+﻿<%@ page title="CRM - View Contacts" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="ContactIndex, App_Web_najaeofn" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
 <%@ Register Src="../EntityMenu.ascx" TagName="EntityMenu" TagPrefix="uc1" %>
@@ -20,7 +20,8 @@
         <tr>
             <td>
                 <asp:ImageButton ImageUrl="~/images/excel.jpg" runat="server" ToolTip="Export To Excel"
-                    ID="btnExportExcel" OnClick="btnExportExcel_Click" />
+                    ID="btnExportExcel" OnClick="btnExportExcel_Click" />&nbsp;
+                    <asp:Label runat="server" Text="Export To Excel" ID="lblExportToExcel"></asp:Label>
             </td>
         </tr>
         <tr>

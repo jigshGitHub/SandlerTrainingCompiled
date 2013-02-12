@@ -1,4 +1,4 @@
-﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_FranchiseeOwner_Edit, App_Web_4wnu1ltq" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_FranchiseeOwner_Edit, App_Web_ftfrd4vl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
@@ -527,7 +527,7 @@
                         dataType: "json",
                         contentType: "application/json; charset=utf-8",
                         success: function (response) {
-                            log(response.UserName);
+                            log(response.FranchiseeUser.UserName);
                             $('#resultSummary ul').append('<li>Franchisee data being updated.</li>');
                         },
                         error: function (response, errorText) {

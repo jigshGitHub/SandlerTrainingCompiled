@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="Footer, App_Web_0n2frbgp" %>
+﻿<%@ control language="C#" autoeventwireup="true" inherits="Footer, App_Web_ibbryyhb" %>
 <table width="100%">
     <tr>
         <td align="right" valign="top" style="width: 20%">
@@ -9,8 +9,8 @@
             <img src="<%= Page.ResolveClientUrl("~/Images/MSIPieChart.png")%>" />
         </td>
         <td align="center" style="width: 25%">
-            <asp:LinkButton ID="lnkPrivacy" runat="server" CausesValidation="false" ForeColor="White"
-                Text="Privacy Statement"></asp:LinkButton>
+            <asp:HyperLink ID="HyperLink2" runat="server" Target="_blank" NavigateUrl="~/UserDocuments/MSIPrivacyPolicy.pdf">Privacy Policy</asp:HyperLink>&nbsp;<asp:HyperLink
+                ID="HyperLink1" Target="_blank" runat="server" NavigateUrl="~/UserDocuments/MSIMasterSubscriptionAgreement.pdf">Master Subscription Agreement</asp:HyperLink>
         </td>
         <td align="right" style="width: 50%">
             Copyright© 2011-2012 Mined Systems Metrics Intelligence. All rights reserved.

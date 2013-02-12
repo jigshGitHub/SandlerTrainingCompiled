@@ -1,4 +1,4 @@
-﻿<%@ page title="View/Edit Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Detail, App_Web_jqqf3vfn" %>
+﻿<%@ page title="View/Edit Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Detail, App_Web_fqqclhyw" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
@@ -28,9 +28,6 @@
                                      <table id="tblFranchiseeInfoET">
                                          <tr>
                                             <td colspan="2" style="font-size:large"><b>Franchisee Information:</b></td>
-                                         </tr>
-                                         <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
-                                            <td>Franchisee Name:<td><%# Eval("Name")%></td>
                                          </tr>
                                          <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                                             <td>Last Name:</td>
@@ -383,9 +380,6 @@
                                      <table id="tblFranchiseeInfoIT">
                                          <tr>
                                             <td colspan="2" style="font-size:large"><b>Franchisee Information:</b></td>
-                                         </tr>
-                                         <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
-                                            <td>Franchisee Name:<td><%# Eval("Name")%></td>
                                          </tr>
                                          <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                                             <td>Last Name:<td><%# Eval("LastName")%></td>

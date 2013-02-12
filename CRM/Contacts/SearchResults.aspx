@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Search Contacts - Results" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_Contacts_SearchResults, App_Web_efn4vvwi" %>
+﻿<%@ page title="CRM - Search Contacts - Results" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_Contacts_SearchResults, App_Web_najaeofn" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -17,7 +17,7 @@
         <tr>
             <td>
                 <asp:ImageButton ImageUrl="~/images/excel.jpg" runat="server" ToolTip="Export To Excel"
-                    ID="btnExportExcel" OnClick="btnExportExcel_Click" />
+                    ID="btnExportExcel" OnClick="btnExportExcel_Click" />&nbsp;Export To Excel
             </td>
             <td align="right">
                 <asp:Label ID="lblInfo" runat="server" ForeColor="Red"></asp:Label>
