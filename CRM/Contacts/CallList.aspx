@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Contacts Call-list" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CRM_Contacts_CallList, App_Web_najaeofn" %>
+﻿<%@ page title="CRM - Contacts Call-list" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CRM_Contacts_CallList, App_Web_bao2ae32" %>
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
 
@@ -25,6 +25,9 @@
                         <asp:BoundField ItemStyle-HorizontalAlign="Left"  HeaderStyle-HorizontalAlign="Left" DataField="Phone" HeaderText="Phone"   HeaderStyle-ForeColor="Blue" SortExpression="Phone" />
                         <asp:BoundField ItemStyle-HorizontalAlign="Left"  HeaderStyle-HorizontalAlign="Left" DataField="Email" HeaderText="E-mail"  HeaderStyle-ForeColor="Blue" SortExpression="Email" />
                         <asp:BoundField ItemStyle-HorizontalAlign="Left"  HeaderStyle-HorizontalAlign="Left" DataField="COMPANYNAME" HeaderText="Company" HeaderStyle-ForeColor="Blue" SortExpression="COMPANYNAME" />
+
+                        <asp:BoundField ItemStyle-HorizontalAlign="Left"  HeaderStyle-HorizontalAlign="Left" DataField="DiscussionTopic" HeaderText="Discussion Topic" HeaderStyle-ForeColor="Blue" SortExpression="DiscussionTopic" />
+
                         <asp:BoundField ItemStyle-HorizontalAlign="Left"  HeaderStyle-HorizontalAlign="Left" DataField="LAST_CONTACT_DATE" HeaderText="Last Contact Date" HeaderStyle-ForeColor="Blue" SortExpression="LAST_CONTACT_DATE" DataFormatString="{0:d}"/>
                         <asp:TemplateField ShowHeader="False">
                             <ItemTemplate>
