@@ -1,4 +1,4 @@
-﻿<%@ page title="Chart" language="C#" masterpagefile="~/Site.master" autoeventwireup="true" inherits="ChartPage, App_Web_lb11qznc" %>
+﻿<%@ page title="Chart" language="C#" masterpagefile="~/Site.master" autoeventwireup="true" inherits="ChartPage, App_Web_pyie1aac" %>
 
 <%@ Register Assembly="SandlerControls" Namespace="SandlerControls" TagPrefix="SandlerChart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">

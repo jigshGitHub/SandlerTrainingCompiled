@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="ChartUC, App_Web_3kfbeabn" %>
+﻿<%@ control language="C#" autoeventwireup="true" inherits="ChartUC, App_Web_vczut2mw" %>
 <div id="chartContainer" style="display: block">
     <asp:Image ID="ajaxLoadNotificationImage" runat="server" ImageUrl="~/images/indicator_medium.gif" />Please
     wait...</div>

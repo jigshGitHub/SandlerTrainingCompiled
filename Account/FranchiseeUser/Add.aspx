@@ -1,4 +1,4 @@
-﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_FranchiseeUser_Add, App_Web_myd22bwz" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_FranchiseeUser_Add, App_Web_mwiymshj" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
@@ -258,7 +258,7 @@
                         dataType: "json",
                         contentType: "application/json; charset=utf-8",
                         success: function (response) {
-                            $('#resultSummary ul').append('<li>Franchisee with userid ' + response.UserID + ' has been created.</li>');
+                            $('#resultSummary ul').append('<li>Franchisee with userid ' + response.UserName + ' has been created.</li>');
                         },
                         error: function (response, errorText) {
                         }
