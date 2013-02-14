@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="DocumentIndex, App_Web_tq2u50m3" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="DocumentIndex, App_Web_oonlbi4o" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
 <%@ Register Src="../EntityMenu.ascx" TagName="EntityMenu" TagPrefix="uc1" %>

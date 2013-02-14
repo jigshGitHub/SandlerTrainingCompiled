@@ -1,4 +1,4 @@
-﻿<%@ page title="Search - Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Search, App_Web_cxjz3dyc" %>
+﻿<%@ page title="Search - Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Search, App_Web_lnqmm53l" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 
