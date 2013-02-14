@@ -1,4 +1,4 @@
-﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_FranchiseeUser_Add, App_Web_5edrri11" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_FranchiseeUser_Add, App_Web_pnxsymoy" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
@@ -252,7 +252,7 @@
                     });
 
                     $.ajax({
-                        url: baseUrl + "/api/FranchiseeUser/",
+                        url: baseUrl + "/api/FranchiseeUser/PostFranchiseeUser/",
                         type: "POST",
                         data: json,
                         dataType: "json",
