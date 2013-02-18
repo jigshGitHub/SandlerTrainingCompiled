@@ -1,4 +1,4 @@
-﻿<%@ page language="C#" autoeventwireup="true" inherits="ChartPrinter, App_Web_rbvzgvpi" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="ChartPrinter, App_Web_xhivhesp" %>
 
 <%@ Register Src="Chart.ascx" TagName="Chart" TagPrefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

@@ -1,4 +1,4 @@
-﻿<%@ page title="My Account - MyCalenar" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Calendar_Index, App_Web_n1iuytyd" %>
+﻿<%@ page title="My Account - MyCalenar" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Calendar_Index, App_Web_0vh5j41r" %>
 <%@ Register TagPrefix="ECalendar" Namespace="ExtendedControls" Assembly="App_Code.EventCalendar" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
