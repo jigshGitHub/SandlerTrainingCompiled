@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="DocumentDETAIL, App_Web_c40t5cad" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="DocumentDETAIL, App_Web_0fd02y0w" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -116,9 +116,10 @@
                 <asp:ObjectDataSource ID="DocStatusDS" runat="server" TypeName="SandlerRepositories.DocumentsRepository"
                     SelectMethod="GetDocStatus"></asp:ObjectDataSource>
                 <asp:ObjectDataSource ID="OpprtunityDS" runat="server" TypeName="SandlerRepositories.OpportunityRepository"
-                    SelectMethod="GetByCompId">
+                    SelectMethod="GetByCompId" OnSelecting="OpprtunityDS_Selecting">
                     <SelectParameters>
                         <asp:ControlParameter ControlID="hidCompanyID" Name="COMPANIESID" Type="Int32" />
+                         <asp:Parameter Name="_user"  />
                     </SelectParameters>
                 </asp:ObjectDataSource>
             </td>

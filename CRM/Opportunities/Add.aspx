@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityADD, App_Web_5mw5r23f" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityADD, App_Web_mh53n4hl" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -32,8 +32,9 @@
                                         InitialValue="0" runat="server" ErrorMessage="Please Select A Company From The List."
                                         Text="">
                                     </asp:RequiredFieldValidator>
-                                    <asp:ObjectDataSource ID="CompanyDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository"
-                                        SelectMethod="GetCompaniesForDDL"></asp:ObjectDataSource>
+                                    <asp:ObjectDataSource ID="CompanyDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository" SelectMethod="GetCompaniesForDDL" OnSelecting="CompanyDS_Selecting">
+                                        <SelectParameters><asp:Parameter Name="_user"  /></SelectParameters>
+                                    </asp:ObjectDataSource>
                                 </td>
                             </tr>
                             <asp:Panel ID="pnlContacts" runat="server" Visible="false">

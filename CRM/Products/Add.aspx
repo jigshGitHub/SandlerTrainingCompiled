@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Add Product" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_Product_Add, App_Web_rq5fog5m" %>
+﻿<%@ page title="CRM - Add Product" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_Product_Add, App_Web_vl2m2vqb" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -65,11 +65,12 @@
         <tr>
             <td style="width: 280px">
                 <asp:Label ID="lblResult" runat="server" ForeColor="Red"></asp:Label><br />
-                <asp:ObjectDataSource ID="ProductDataSource" runat="server" InsertMethod="AddProduct"
+                <asp:ObjectDataSource ID="ProductDataSource" runat="server" InsertMethod="AddProduct" OnInserting="InsertOperation_Selecting"
                     TypeName="SandlerRepositories.CompaniesRepository">
                     <InsertParameters>
                         <asp:ControlParameter ControlID="dvProduct" Name="ProductTypeName" PropertyName="SelectedValue" />
                         <asp:ControlParameter ControlID="dvProduct" Name="ColorCode" PropertyName="SelectedValue" />
+                        <asp:Parameter Name="_user"  />
                     </InsertParameters>
                 </asp:ObjectDataSource>
             </td>

@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Search Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunitySearch, App_Web_5mw5r23f" %>
+﻿<%@ page title="CRM - Search Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunitySearch, App_Web_mh53n4hl" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -27,8 +27,9 @@
                                             <asp:DropDownList DataSourceID="CompanyDS" DataTextField="CompanyName" DataValueField="CompaniesID"
                                                 ID="ddlCompanySearch" runat="server" OnDataBound="ddlCreateDefaultSelection">
                                             </asp:DropDownList>
-                                            <asp:ObjectDataSource ID="CompanyDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository"
-                                                SelectMethod="GetCompaniesForDDL"></asp:ObjectDataSource>
+                                            <asp:ObjectDataSource ID="CompanyDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository" SelectMethod="GetCompaniesForDDL" OnSelecting="CompanyDS_Selecting">
+                                                <SelectParameters><asp:Parameter Name="_user"  /></SelectParameters>
+                                            </asp:ObjectDataSource>
                                         </td>
                                     </tr>
                                     <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;" id="trOpportunityID"

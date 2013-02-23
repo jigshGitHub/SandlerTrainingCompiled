@@ -1,4 +1,4 @@
-﻿<%@ page title="Send Meeting Invite" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" validaterequest="false" inherits="Email_MeetingEnvite, App_Web_2fk3qdo1" %>
+﻿<%@ page title="Send Meeting Invite" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" validaterequest="false" inherits="Email_MeetingEnvite, App_Web_dwzdappy" %>
 <%@ Register TagPrefix="FTB" Namespace="FreeTextBoxControls" Assembly="FreeTextBox" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@Register TagPrefix="ew"  Namespace="eWorld.UI" Assembly="eWorld.UI, Version=1.9.0.0, Culture=neutral, PublicKeyToken=24d65337282035f2" %>
@@ -151,8 +151,12 @@
 </tr>
 <tr>
  <td>
-    <asp:ObjectDataSource ID="BlastEmailGroupsDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetBlastEmailGroupsByRole"></asp:ObjectDataSource>
-    <asp:ObjectDataSource ID="UserGroupDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetUserEmailGroup"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="BlastEmailGroupsDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetBlastEmailGroupsByRole" OnSelecting="BlastEmailGroupsDS_Selecting">
+        <SelectParameters><asp:Parameter Name="_user"  /></SelectParameters>
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="UserGroupDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetUserEmailGroup" OnSelecting="UserGroupDS_Selecting">
+        <SelectParameters><asp:Parameter Name="_user"  /></SelectParameters>
+    </asp:ObjectDataSource>
     <asp:ObjectDataSource ID="MeetingTypeDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetMeetingTypeOptions"></asp:ObjectDataSource>
     <asp:ObjectDataSource ID="MeetingFrequencyTypeDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetMeetingFrequencyType"></asp:ObjectDataSource>
     <asp:ObjectDataSource ID="NewItemInfoDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository" SelectMethod="GetNewItemOptions"></asp:ObjectDataSource>
