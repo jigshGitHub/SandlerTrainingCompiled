@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Add Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="AddCompany, App_Web_2m0bzze3" %>
+﻿<%@ page title="CRM - Add Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="AddCompany, App_Web_kimbf1di" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -103,11 +103,15 @@
                         <asp:TemplateField HeaderText="POC Last Name :">
                             <InsertItemTemplate>
                                 <asp:TextBox ID="txtPOCLastName" MaxLength="50" Width="380" runat="server" Text='<%# Bind("POCLastName") %>'></asp:TextBox>
+                                <label id="mandlbl1" style="color:Red" runat="server">*</label>
+                                <asp:RequiredFieldValidator ID="rfvLastNameTB" ControlToValidate="txtPOCLastName" Display="Static" InitialValue="" runat="server" ErrorMessage="Please Enter POC Last Name to proceed.">Required field</asp:RequiredFieldValidator>
                             </InsertItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="POC First Name :">
                             <InsertItemTemplate>
                                 <asp:TextBox ID="txtPOCFirstName" MaxLength="50" Width="380" runat="server" Text='<%# Bind("POCFirstName") %>'></asp:TextBox>
+                                <label id="mandlbl2" style="color:Red" runat="server">*</label>
+                                <asp:RequiredFieldValidator ID="rfvFirstNameTB" ControlToValidate="txtPOCFirstName" Display="Static" InitialValue="" runat="server" ErrorMessage="Please Enter POC First Name to proceed.">Required field</asp:RequiredFieldValidator>
                             </InsertItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="POC Phone :">

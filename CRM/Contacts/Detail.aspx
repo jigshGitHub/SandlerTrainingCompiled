@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View/Edit Contact" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ContactDETAIL, App_Web_nsbh05a2" %>
+﻿<%@ page title="CRM - View/Edit Contact" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ContactDETAIL, App_Web_2z24jxas" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -12,12 +12,37 @@
             </th>
         </tr>
         <tr>
+            <td colspan="2">
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <asp:Label CssClass="resultLabel" ID="LblStatus1" ForeColor="Red" runat="server"></asp:Label>
+            </td>
+        </tr>
+        <tr>
             <td>
                 <asp:DetailsView AutoGenerateRows="False" DataKeyNames="CONTACTSID" ID="ContactDW"
                     runat="server" Width="675px" OnItemCommand="ContactDW_ItemCommand" OnModeChanging="ContactDW_ModeChanging"
                     OnItemUpdating="ContactDW_ItemUpdating" OnDataBound="ContactDW_DataBound" OnItemCreated="ContactDW_ItemCreated">
                     <Fields>
                         <asp:BoundField DataField="CONTACTSID" Visible="False" />
+                        <asp:TemplateField ShowHeader="False">
+                            <ControlStyle Font-Bold="true" />
+                            <EditItemTemplate>
+                                <asp:LinkButton ID="LinkButton11" runat="server" CausesValidation="True" CommandName="Update"
+                                    Text="Update"></asp:LinkButton>&nbsp;&nbsp;
+                                <asp:LinkButton ID="LinkButton12" runat="server" CausesValidation="False" CommandName="Cancel"
+                                    Text="Cancel"></asp:LinkButton>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:LinkButton ID="LinkButton11" runat="server" CausesValidation="False" CommandName="Edit"
+                                    Text="Edit"></asp:LinkButton>&nbsp;&nbsp;<a href="Index.aspx" style="font-weight: bold">Back
+                                        To Contacts</a>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        
                         <asp:TemplateField HeaderText="Company :">
                             <ItemTemplate>
                                 <asp:Label ID="lblCompany" runat="server" Text='<%# Eval("COMPANYNAME") %>'></asp:Label>

@@ -1,4 +1,4 @@
-﻿<%@ page title="Search - Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Search, App_Web_wlz24mjx" %>
+﻿<%@ page title="Search - Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Search, App_Web_p0uhxb4z" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 
@@ -107,10 +107,23 @@
                                             <td>Coach-Region:</td>
                                             <td>
                                                 <asp:DropDownList  ID="ddlCoach" runat="server" DataSourceID="CoachOptionsInfoDS" DataTextField="Name" DataValueField="Id"></asp:DropDownList>
-                                                
                                             </td>
                                          </tr>
-                                         <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
+
+                                         <tr style="color: Black; background-color:  #DCDCDC; white-space: nowrap;">
+                                            <td>Territory:</td>
+                                            <td><asp:TextBox ID="txtTerritory" MaxLength="3" Width="250"  runat="server"></asp:TextBox></td>
+                                         </tr>
+                                         <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                                            <td>Business Focus Area:</td>
+                                            <td><asp:TextBox ID="txtBusinessFocusArea" MaxLength="50" Width="250" runat="server"></asp:TextBox></td>
+                                         </tr>
+                                         <tr style="color: Black; background-color:  #DCDCDC; white-space: nowrap;">
+                                            <td>Closest Metro Area:</td>
+                                            <td><asp:TextBox ID="txtClosestMetro" MaxLength="50" Width="250" runat="server"></asp:TextBox></td>
+                                         </tr>
+
+                                         <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                                             <td>Franchise Name:</td>
                                             <td>
                                                 <asp:TextBox ID="FranchiseeNameTB" MaxLength="250"  Width="250"  runat="server"></asp:TextBox>
@@ -259,37 +272,37 @@
                                                 </td>
                                              </tr>
                                              <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
-                                                <td>Work Email:</td>
+                                                <td>Primary Office Email:</td>
                                                 <td>
                                                     <asp:TextBox ID="txtWorkEmail" MaxLength="80" Width="150" runat="server"></asp:TextBox>
                                                 </td>
                                              </tr>
                                              <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
-                                                <td>Work Address:</td>
+                                                <td>Primary Office Address:</td>
                                                 <td>
                                                     <asp:TextBox ID="txtWorkAddress" MaxLength="200" Width="250" runat="server"></asp:TextBox>
                                                 </td>
                                              </tr>
                                              <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
-                                                <td>Work City:</td>
+                                                <td>Primary Office City:</td>
                                                 <td>
                                                     <asp:TextBox ID="txtWorkCity" MaxLength="50" Width="150" runat="server"></asp:TextBox>
                                                 </td>
                                              </tr>
                                              <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
-                                                <td>Work State:</td>
+                                                <td>Primary Office State:</td>
                                                 <td>
                                                     <asp:DropDownList  ID="ddlWorkState" runat="server" DataSourceID="StateInfoDS" DataTextField="Name" DataValueField="Id"></asp:DropDownList>
                                                 </td>
                                              </tr>
                                              <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
-                                                <td>Work Zip:</td>
+                                                <td>Primary Office Zip:</td>
                                                 <td>
                                                     <asp:TextBox ID="txtWorkZip" MaxLength="50" Width="150" runat="server"></asp:TextBox>
                                                 </td>
                                              </tr>
                                              <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
-                                                <td>Work Country:</td>
+                                                <td>Primary Office Country:</td>
                                                 <td>
                                                     <asp:DropDownList  ID="ddlWorkCountry" runat="server" DataSourceID="CountryInfoDS" DataTextField="Name" DataValueField="Id"></asp:DropDownList>
                                                 </td>
