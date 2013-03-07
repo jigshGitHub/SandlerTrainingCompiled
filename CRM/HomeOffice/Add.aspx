@@ -1,4 +1,4 @@
-﻿<%@ page title="Add Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Add, App_Web_gwxhu245" %>
+﻿<%@ page title="Add Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Add, App_Web_qcenorl2" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 
@@ -117,7 +117,7 @@
                                          </tr>
                                          <tr style="color: Black; background-color:  #DCDCDC; white-space: nowrap;">
                                             <td>Territory:</td>
-                                            <td><asp:TextBox ID="txtTerritory" MaxLength="3" Width="150" Text='<%# Bind("Territory") %>' runat="server"></asp:TextBox></td>
+                                            <td><asp:TextBox ID="txtTerritory" MaxLength="120" Width="150" Text='<%# Bind("Territory") %>' runat="server"></asp:TextBox></td>
                                          </tr>
                                          <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                                             <td>Business Focus Area:</td>

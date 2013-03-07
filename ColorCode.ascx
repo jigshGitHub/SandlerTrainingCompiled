@@ -1,3 +1,3 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="ColorCode, App_Web_kl1f4y2h" %>
+﻿<%@ control language="C#" autoeventwireup="true" inherits="ColorCode, App_Web_aboldbjf" %>
 <select id="drpLstColorCodes" runat="server">
 </select>

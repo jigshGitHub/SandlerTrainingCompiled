@@ -1,4 +1,4 @@
-﻿<%@ page title="My Account - Franchisee Detail" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_FranchiseeOwner_Detail, App_Web_hys1pdzb" %>
+﻿<%@ page title="My Account - Franchisee Detail" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_FranchiseeOwner_Detail, App_Web_ykh02ha2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ page title="View/Edit Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Detail, App_Web_gwxhu245" %>
+﻿<%@ page title="View/Edit Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Detail, App_Web_qcenorl2" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
@@ -124,7 +124,7 @@
                                          </tr>
                                          <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
                                             <td>Territory:</td>
-                                            <td><asp:TextBox ID="txtTerritory" MaxLength="3" Width="200" Text='<%# Bind("Territory") %>' runat="server"></asp:TextBox></td>
+                                            <td><asp:TextBox ID="txtTerritory" MaxLength="120" Width="200" Text='<%# Bind("Territory") %>' runat="server"></asp:TextBox></td>
                                             
                                          </tr>
                                          <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
