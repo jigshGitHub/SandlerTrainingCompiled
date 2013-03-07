@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View/Edit Contact" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ContactDETAIL, App_Web_tqjubeox" %>
+﻿<%@ page title="CRM - View/Edit Contact" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ContactDETAIL, App_Web_23dfhp5l" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -262,6 +262,31 @@
                                 <asp:Label ID="lblCourseTrngDate" runat="server" Text='<%# Bind("CourseTrainingDate","{0:d}") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Training Course Name :">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txtTrainingCourseName" Width="380" runat="server" Text='<%# Bind("TrainingCourseName") %>'></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="lblTrainingCourseName" runat="server" Text='<%# Bind("TrainingCourseName") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="How Many Attended? :">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txtHowManyAttended" onkeypress="EnterOnlyNumeric()" MaxLength="5" runat="server"
+                                    Text='<%# Bind("HowManyAttended") %>'></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="lblHowManyAttended" runat="server" Text='<%# Bind("HowManyAttended") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Company Name where Training conducted :">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txtCompanyNameWhereTrainingConducted" Width="380" runat="server" Text='<%# Bind("CompanyNameWhereTrainingConducted") %>'></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Label ID="lblCompanyNameWhereTrainingConducted" runat="server" Text='<%# Bind("CompanyNameWhereTrainingConducted") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Discussion Topic :">
                             <EditItemTemplate>
                                 <asp:TextBox ID="txtDiscTopic" runat="server" Text='<%# Bind("DiscussionTopic") %>'></asp:TextBox>
@@ -270,6 +295,8 @@
                                 <asp:Label ID="lblDiscTopic" runat="server" Text='<%# Bind("DiscussionTopic") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
+
+
                         <asp:TemplateField HeaderText="Action Step :">
                             <EditItemTemplate>
                                 <asp:TextBox ID="txtActStep" runat="server" Text='<%# Bind("ACTIONSTEP") %>'></asp:TextBox>

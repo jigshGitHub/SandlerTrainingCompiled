@@ -1,4 +1,4 @@
-﻿<%@ page title="Search - Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Search, App_Web_2xojgld3" %>
+﻿<%@ page title="Search - Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Search, App_Web_gwxhu245" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 
@@ -112,7 +112,7 @@
 
                                          <tr style="color: Black; background-color:  #DCDCDC; white-space: nowrap;">
                                             <td>Territory:</td>
-                                            <td><asp:TextBox ID="txtTerritory" MaxLength="3" Width="250"  runat="server"></asp:TextBox></td>
+                                            <td><asp:TextBox ID="txtTerritory" MaxLength="120" Width="250"  runat="server"></asp:TextBox></td>
                                          </tr>
                                          <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
                                             <td>Business Focus Area:</td>
@@ -381,6 +381,12 @@
                                                     <asp:DropDownList  ID="ddlHomeCountry" runat="server" DataSourceID="CountryInfoDS" DataTextField="Name" DataValueField="Id"></asp:DropDownList>
                                                 </td>
                                              </tr>
+                                             <tr style="color: Black; background-color: #EEEEEE; white-space: nowrap;">
+                                                 <td colspan="2" align="right" >
+                                                    <asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="True" CommandName="Insert" Text="Search" ForeColor="Blue" Font-Bold="true"></asp:LinkButton>&nbsp;&nbsp;
+                                                    <asp:LinkButton ID="LinkButton4" runat="server" CausesValidation="False" CommandName="Cancel" Text="Clear" ForeColor="Blue" Font-Bold="true"></asp:LinkButton>
+                                                 </td>
+                                             </tr>  
                                             
                                       </table>
                                  </td>
@@ -394,13 +400,11 @@
                                          
                    
             </asp:FormView>
-
-
+            
             </td>
-
-      </tr>
-
-       <tr>
+     </tr>
+     <tr><td><asp:Label ID="lblResult1" runat="server" ForeColor="Red"></asp:Label></td></tr>
+     <tr>
             <td>
                 <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label><br />
                 <asp:ObjectDataSource ID="YesNoOptionsInfoDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository" SelectMethod="GetNewItemOptions"></asp:ObjectDataSource>

@@ -1,4 +1,4 @@
-﻿<%@ page title="Reports-SalesTotal" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Reports_SalesTotal, App_Web_a5zuuokd" %>
+﻿<%@ page title="Reports-SalesTotal" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Reports_SalesTotal, App_Web_r5hrxrw5" %>
 
 <%@ Register Src="~/Chart.ascx" TagName="Chart" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
