@@ -1,4 +1,4 @@
-﻿<%@ page title="QuickStart - Add" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_QuickStart_Index, App_Web_eplrfkkb" %>
+﻿<%@ page title="QuickStart - Add" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_QuickStart_Index, App_Web_akd1ypr2" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 

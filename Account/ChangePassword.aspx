@@ -1,4 +1,4 @@
-﻿<%@ page title="My Account - Change Password" language="C#" masterpagefile="~/Site.master" autoeventwireup="true" inherits="Account_ChangePassword, App_Web_qf2ugref" %>
+﻿<%@ page title="My Account - Change Password" language="C#" masterpagefile="~/Site.master" autoeventwireup="true" inherits="Account_ChangePassword, App_Web_s5l2thnv" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
@@ -26,7 +26,7 @@
         <tr>
             <td>
                 <asp:ChangePassword ID="ChangeUserPassword" runat="server" CancelDestinationPageUrl="~/"
-                    EnableViewState="false" RenderOuterTable="false" SuccessPageUrl="ChangePasswordSuccess.aspx">
+                    EnableViewState="false" RenderOuterTable="false" SuccessPageUrl="ChangePasswordSuccess.aspx" ChangePasswordFailureText="Password incorrect or New Password invalid. New Password length minimum: 6.At least one special character(i.e @,$,#,) is required.">
                     <ChangePasswordTemplate>
                         <span class="failureNotification">
                             <asp:Literal ID="FailureText" runat="server"></asp:Literal>
