@@ -1,4 +1,4 @@
-﻿<%@ page title="My Account - Change Password" language="C#" masterpagefile="~/Site.master" autoeventwireup="true" inherits="Account_ChangePassword, App_Web_s5l2thnv" %>
+﻿<%@ page title="My Account - Change Password" language="C#" masterpagefile="~/Site.master" autoeventwireup="true" inherits="Account_ChangePassword, App_Web_2cg4xkza" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
@@ -13,20 +13,21 @@
         </tr>
         <tr>
             <td>
-                First time logged in user requires to change the password.
+                <asp:Label ID="lblIntialPwdChange" runat="server" Text="Upon initial system login, each user is required to change their password."
+                    Visible="false"></asp:Label>
             </td>
         </tr>
         <tr>
             <td>
-                New passwords are required to be a minimum of
-                <%= Membership.MinRequiredPasswordLength %>
-                characters in length.
+                <asp:Label ID="lblPasswordInstruction" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
             <td>
                 <asp:ChangePassword ID="ChangeUserPassword" runat="server" CancelDestinationPageUrl="~/"
-                    EnableViewState="false" RenderOuterTable="false" SuccessPageUrl="ChangePasswordSuccess.aspx" ChangePasswordFailureText="Password incorrect or New Password invalid. New Password length minimum: 6.At least one special character(i.e @,$,#,) is required.">
+                    EnableViewState="false" RenderOuterTable="false" SuccessPageUrl="ChangePasswordSuccess.aspx"
+                    OnChangePasswordError="ChangeUserPassword_ChangePasswordError" OnChangingPassword="ChangeUserPassword_ChangingPassword"
+                    ChangePasswordFailureText="The New Password does not meet the security requirements of 6 characters including 1 “special character”.  Please correct and try again." FailureTextStyle-ForeColor="Red">
                     <ChangePasswordTemplate>
                         <span class="failureNotification">
                             <asp:Literal ID="FailureText" runat="server"></asp:Literal>
@@ -55,9 +56,6 @@
                                     <asp:RequiredFieldValidator ID="ConfirmNewPasswordRequired" runat="server" ControlToValidate="ConfirmNewPassword"
                                         CssClass="failureNotification" Display="Dynamic" ErrorMessage="Confirm New Password is required."
                                         ToolTip="Confirm New Password is required." ValidationGroup="ChangeUserPasswordValidationGroup">*</asp:RequiredFieldValidator>
-                                    <asp:CompareValidator ID="NewPasswordCompare" runat="server" ControlToCompare="NewPassword"
-                                        ControlToValidate="ConfirmNewPassword" CssClass="failureNotification" Display="Dynamic"
-                                        ErrorMessage="The Confirm New Password must match the New Password entry." ValidationGroup="ChangeUserPasswordValidationGroup">*</asp:CompareValidator>
                                 </p>
                             </fieldset>
                             <br />
