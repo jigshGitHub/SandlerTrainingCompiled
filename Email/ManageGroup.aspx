@@ -1,4 +1,4 @@
-﻿<%@ page title="Create Email Group" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Email_ManageGroup, App_Web_lfn0anzo" %>
+﻿<%@ page title="Create Email Group" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Email_ManageGroup, App_Web_u2ywqlya" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 
@@ -81,10 +81,18 @@
      <tr>
         <td colspan="2">
           
-          <asp:ObjectDataSource ID="CoachEmailDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetAllCoachAddressesByFrId"></asp:ObjectDataSource>
-          <asp:ObjectDataSource ID="FrOwnerEmailDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetAllFrOwnerAddressesByFrId"></asp:ObjectDataSource>
-          <asp:ObjectDataSource ID="FrUsersEmailDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetAllFrUsersAddressesByFrId"></asp:ObjectDataSource>
-          <asp:ObjectDataSource ID="FrContactsEmailDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetAllFrContactsAddressesByFrId"></asp:ObjectDataSource>
+          <asp:ObjectDataSource ID="CoachEmailDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetAllCoachAddressesByFrId" OnSelecting="CoachEmailDS_Selecting">
+            <SelectParameters><asp:Parameter Name="_user"  /></SelectParameters>
+          </asp:ObjectDataSource>
+          <asp:ObjectDataSource ID="FrOwnerEmailDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetAllFrOwnerAddressesByFrId" OnSelecting="FrOwnerEmailDS_Selecting">
+            <SelectParameters><asp:Parameter Name="_user"  /></SelectParameters>
+          </asp:ObjectDataSource>
+          <asp:ObjectDataSource ID="FrUsersEmailDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetAllFrUsersAddressesByFrId" OnSelecting="FrUsersEmailDS_Selecting">
+            <SelectParameters><asp:Parameter Name="_user"  /></SelectParameters>
+          </asp:ObjectDataSource>
+          <asp:ObjectDataSource ID="FrContactsEmailDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetAllFrContactsAddressesByFrId" OnSelecting="FrContactsEmailDS_Selecting">
+            <SelectParameters><asp:Parameter Name="_user"  /></SelectParameters>
+          </asp:ObjectDataSource>
         </td>
      </tr>
               
@@ -170,7 +178,9 @@
 
      <tr>
         <td colspan="2">
-          <asp:ObjectDataSource ID="FranchiseeDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository" SelectMethod="GetAllFranchisee"></asp:ObjectDataSource>
+          <asp:ObjectDataSource ID="FranchiseeDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository" SelectMethod="GetAllFranchisee" OnSelecting="FranchiseeDS_Selecting">
+            <SelectParameters><asp:Parameter Name="_user"  /></SelectParameters>
+          </asp:ObjectDataSource>
           <asp:ObjectDataSource ID="CoachEmailCorpDS" runat="server" TypeName="SandlerRepositories.BlastEmailRepository"  SelectMethod="GetAllCoachAddressesByFrId">
               <SelectParameters>
                             <asp:ControlParameter ControlID="ddlFranchisee" Name="ID" PropertyName="SelectedValue" Type="Int32" />
