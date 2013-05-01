@@ -1,4 +1,4 @@
-﻿<%@ page title="Create Email Group" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Email_ManageGroup, App_Web_jysf4twz" %>
+﻿<%@ page title="Create Email Group" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Email_ManageGroup, App_Web_d5rw2eok" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 

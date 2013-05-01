@@ -1,4 +1,4 @@
-﻿<%@ page title="HomeOffice - View Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Index, App_Web_1l2slis0" %>
+﻿<%@ page title="HomeOffice - View Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Index, App_Web_bn4cn2fy" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
 <%@ Register Src="../EntityMenu.ascx" TagName="EntityMenu" TagPrefix="uc1" %>

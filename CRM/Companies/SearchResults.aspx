@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Search Results - Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CRM_Companies_SearchResults, App_Web_dtoyzei2" %>
+﻿<%@ page title="CRM - Search Results - Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CRM_Companies_SearchResults, App_Web_gfziu1z2" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
