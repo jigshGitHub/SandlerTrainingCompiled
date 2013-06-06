@@ -1,5 +1,5 @@
 ﻿<%@ Import Namespace="Sandler.UI.ChartStructure" %>
-<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_10yf4004" %>
+<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_draw4dsv" %>
 <div class="clear hideSkiplink">
     <table style="width: 100%; border-color: White; border-style: none; border-width: thin">
         <tr>
@@ -14,9 +14,9 @@
                         <li><a href="">Franchisee</a><ul class="sub_menu">
                             <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","NewAppointmentsBySourceMonth","ChartcustomPage.aspx?"))  %>">
                                 New Appointments By Source (By Month)</a></li>
-                            <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","NewClientsByProductTypeMonth"))  %>">
+                            <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","NewClientsByProductTypeMonth","ChartcustomPage.aspx?"))  %>">
                                 New Clients By Product Type (By Month)</a></li>
-                            <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","NewClientQuantityAverageContractPriceByMonth"))  %>">
+                            <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","NewClientQuantityAverageContractPriceByMonth","ChartcustomPage.aspx?"))  %>">
                                 New Client Quantity & Average Contract Price (By Month)</a></li>
                             <li><a href="<%=  Page.ResolveClientUrl("~/" + ChartHelper.GeneratePageLink("","ClassHeadcountByCourseIndustryMonth"))  %>">
                                 Class Headcount By Course & Industry (By Month)</a></li>

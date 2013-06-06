@@ -1,4 +1,4 @@
-﻿<%@ page title="ROI" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ROI, App_Web_ojzluhql" %>
+﻿<%@ page title="ROI" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ROI, App_Web_tmogluhy" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
@@ -58,7 +58,7 @@
                                             </tr>
                                             <tr style="color: Black; background-color: #EEEEEE">
                                                 <td>
-                                                    Sales Cycle Time
+                                                    <a href=# title="Sales Cycle Time tool tip, this is the description of sales cycle time.">Sales Cycle Time</a>
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="txtBxSCTGap" runat="server" Enabled="false"></asp:TextBox>
@@ -66,7 +66,7 @@
                                             </tr>
                                             <tr style="color: Black; background-color: #DCDCDC">
                                                 <td>
-                                                    Sales Efficiency
+                                                    <a href=# title="Sales Cycle Time tool tip, this is the description of sales cycle time.">Sales Efficiency</a>
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="txtBxSEGap" runat="server" Enabled="false"></asp:TextBox>
@@ -74,7 +74,7 @@
                                             </tr>
                                             <tr style="color: Black; background-color: #EEEEEE">
                                                 <td>
-                                                    Sales Qualification
+                                                    <a href=# title="Sales Cycle Time tool tip, this is the description of sales cycle time.">Sales Qualification</a>
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="txtBxSQGap" runat="server" Enabled="false"></asp:TextBox>
@@ -82,7 +82,7 @@
                                             </tr>
                                             <tr style="color: Black; background-color: #DCDCDC">
                                                 <td>
-                                                    Training Cost Savings
+                                                    <a href=# title="Sales Cycle Time tool tip, this is the description of sales cycle time.">Training Cost Savings</a>
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="txtBxTCSGap" runat="server" Enabled="false"></asp:TextBox>
@@ -90,7 +90,7 @@
                                             </tr>
                                             <tr style="color: Black; background-color: #EEEEEE">
                                                 <td>
-                                                    Quota Achievement
+                                                    <a href=# title="Sales Cycle Time tool tip, this is the description of sales cycle time.">Quota Achievement</a>
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="txtBxQAGap" runat="server" Enabled="false"></asp:TextBox>
@@ -98,7 +98,7 @@
                                             </tr>
                                             <tr style="color: Black; background-color: #DCDCDC">
                                                 <td>
-                                                    Est. Benifits Gained
+                                                    <a href=# title="Sales Cycle Time tool tip, this is the description of sales cycle time.">Est. Benifits Gained</a>
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="txtBxEBGGap" runat="server" Enabled="false"></asp:TextBox>
