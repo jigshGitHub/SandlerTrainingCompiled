@@ -1,4 +1,4 @@
-﻿<%@ page title="Reports-PipelineOpportunityAnalysis" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Reports_PipelineOppAnalysis, App_Web_nfzb3ft0" %>
+﻿<%@ page title="Reports-PipelineOpportunityAnalysis" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Reports_PipelineOppAnalysis, App_Web_1fz4dbkz" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">

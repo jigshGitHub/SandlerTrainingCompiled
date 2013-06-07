@@ -1,2 +1,2 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="Pager, App_Web_bjp4giog" %>
+﻿<%@ control language="C#" autoeventwireup="true" inherits="Pager, App_Web_l3fxbrbb" %>
 <asp:PlaceHolder ID="pagerHolder" runat="server"></asp:PlaceHolder>
