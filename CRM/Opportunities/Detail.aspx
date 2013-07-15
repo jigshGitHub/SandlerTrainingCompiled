@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityDETAIL, App_Web_dsn4nnlf" %>
+﻿<%@ page title="CRM" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="OpportunityDETAIL, App_Web_ygfd23lp" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <table>
@@ -249,7 +249,6 @@
             </td>
         </tr>
     </table>
-    <script type="text/javascript" src="<%= Page.ResolveClientUrl("~/Scripts/jquery.formatCurrency-1.4.0.min.js") %>"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             var weightedValue = '#<%=lblWeightedValue.ClientID%>';

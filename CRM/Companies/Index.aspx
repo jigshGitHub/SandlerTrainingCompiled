@@ -1,8 +1,10 @@
-﻿<%@ page title="CRM - View Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CompanyIndex, App_Web_2vp4ngs0" %>
+﻿<%@ page title="CRM - View Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CompanyIndex, App_Web_3k5sj2an" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
 <%@ Register Src="../EntityMenu.ascx" TagName="EntityMenu" TagPrefix="uc1" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+   
+    
     <table id="tblMain" width="100%">
         <tr>
             <td align="right">
@@ -21,11 +23,17 @@
                 <asp:GridView Width="100%" ID="gvCompanies" runat="server" DataSourceID="SearchCompanyDS"
                     AutoGenerateColumns="False" DataKeyNames="COMPANIESID" AllowSorting="true" AllowPaging="true"
                     PageSize="20" OnSelectedIndexChanged="gvCompanies_SelectedIndexChanged" 
-                    OnDataBound="gvCompanies_DataBound">
+                    OnDataBound="gvCompanies_DataBound" OnRowDataBound="gvCompanies_RowDataBound" onrowdeleted="gvCompanies_RowDeleted">
                     <PagerStyle BackColor="#999999" ForeColor="Blue" CssClass="gvPager" HorizontalAlign="Center" />
                     <Columns>
+                        <asp:TemplateField Visible="false">
+                            <ItemTemplate>
+                                <asp:HiddenField ID="hdnUserId" runat="server" Value='<%# Eval("CreatedBy") %>' />
+                            </ItemTemplate>
+                            <ItemStyle HorizontalAlign="Center" />
+                        </asp:TemplateField>
                         <asp:BoundField DataField="COMPANIESID" Visible="False" />
-                        <asp:BoundField ItemStyle-HorizontalAlign="Left"  HeaderStyle-HorizontalAlign="Left" HeaderStyle-ForeColor="Blue" DataField="COMPANYNAME" HeaderText="Company Name" SortExpression="COMPANYNAME" />
+                        <asp:BoundField ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" HeaderStyle-ForeColor="Blue" DataField="COMPANYNAME" HeaderText="Company Name" SortExpression="COMPANYNAME" />
                         <asp:BoundField ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" HeaderStyle-ForeColor="Blue" DataField="Industry" HeaderText="Industry" SortExpression="Industry" />
                         <asp:BoundField ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" HeaderStyle-ForeColor="Blue" DataField="Product" HeaderText="Product" SortExpression="Product" />
                         <asp:BoundField ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left" HeaderStyle-ForeColor="Blue" DataField="Representative" HeaderText="Sandler Rep" SortExpression="Representative" />
@@ -36,6 +44,12 @@
                                     Text="View Detail.."></asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
+                        <asp:TemplateField  HeaderText="Archive" HeaderStyle-HorizontalAlign="Left">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="archiveButton" runat="server" CausesValidation="False" CommandName="Delete" 
+                                    Text="Archive"  OnClientClick="return confirm ('Are you sure to archive this Company record? All Contacts and Pipeline records for this Company will be archived too.');" ></asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField> 
                     </Columns>
                     <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                     <AlternatingRowStyle BackColor="#DCDCDC" />
@@ -105,10 +119,21 @@
         </tr>
         <tr>
             <td>
-                <asp:ObjectDataSource ID="SearchCompanyDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository" SelectMethod="GetAllCompanies" OnSelecting="SearchCompanyDS_Selecting">
-                    <SelectParameters><asp:Parameter Name="_user"  /></SelectParameters>
+                <asp:ObjectDataSource ID="SearchCompanyDS" runat="server" 
+                TypeName="SandlerRepositories.CompaniesRepository" SelectMethod="GetAllCompanies" 
+                DeleteMethod="ArchiveCompany"
+                OnSelecting="SearchCompanyDS_Selecting">
+                    <SelectParameters>
+                        <asp:Parameter Name="_user"  />
+                    </SelectParameters>
+                    <DeleteParameters>
+                        <asp:Parameter Name="COMPANIESID" Type="Int32" />
+                        <asp:ControlParameter Name="CurrentUserId"  ControlID="hidCurrentUserId"/>
+                    </DeleteParameters>
                 </asp:ObjectDataSource>
                 <asp:HiddenField ID="hidCompanyID" runat="server" />
+                <asp:HiddenField ID="hidCurrentUserId" runat="server" />
+
             </td>
         </tr>
     </table>

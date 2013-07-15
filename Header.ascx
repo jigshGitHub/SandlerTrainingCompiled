@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="Header, App_Web_gw4ul4my" %>
+﻿<%@ control language="C#" autoeventwireup="true" inherits="Header, App_Web_ii054jrj" %>
 <%@ Register Src="Menu.ascx" TagName="Menu" TagPrefix="uc1" %>
 <div class="loginDisplay" style="display: block">
     <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
@@ -15,10 +15,8 @@
             ]
         </LoggedInTemplate>
     </asp:LoginView>
-    <a href="https://minedsystems.hostpilot.com/Shared%20Documents/User%20Role%20Description.pptx"
-        target="_blank" style="color: White" runat="server" id="anchorUserGuide" visible="false">
-        How-To Guide</a>&nbsp;<a href="https://minedsystems.hostpilot.com/Lists/Tasks/AllItems.aspx"
-            target="_blank" id="anchorIcidentReporting" runat="server" visible="false"> Incident
-            Reporting</a>
+    <br />
+    <a href="#" title="Need Assistance?  Call SPM Customer Service at: 202-601-2570"><img src="<%= Page.ResolveClientUrl("~/images/Helpline.png") %>" alt="" />
+    </a>&nbsp;<a href="#" title="View SPM User Guide"><img src="<%= Page.ResolveClientUrl("~/images/SPM Guide.png") %>" alt="" /></a>
 </div>
 <uc1:Menu ID="Menu1" runat="server" />

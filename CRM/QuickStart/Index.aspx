@@ -1,4 +1,4 @@
-﻿<%@ page title="QuickStart - Add" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_QuickStart_Index, App_Web_zz4mmz32" %>
+﻿<%@ page title="QuickStart - Add" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_QuickStart_Index, App_Web_5q2bkpmb" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 
@@ -95,11 +95,11 @@
                                 </asp:DropDownList>
                             </InsertItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Product:">
+                        <asp:TemplateField HeaderText="New Product:">
                             <InsertItemTemplate>
                                 <asp:DropDownList ID="ddlProducts" runat="server" DataSourceID="ProductTypesDS" DataTextField="ProductTypeName" DataValueField="Id" SelectedValue='<%# Bind("ProductID") %>'></asp:DropDownList>
                                 <label id="mandlbl40" style="color:Red" runat="server">*</label>
-                                <asp:RequiredFieldValidator ID="rfvProduct" ControlToValidate="ddlProducts" Display="Dynamic" InitialValue="0" runat="server" ErrorMessage="Please Select Product to proceed.">Required Field</asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="rfvProduct" ControlToValidate="ddlProducts" Display="Dynamic" InitialValue="0" runat="server" ErrorMessage="Please Select New Product to proceed.">Required Field</asp:RequiredFieldValidator>
                             </InsertItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Opportunity Status:">
@@ -143,12 +143,12 @@
                                 <asp:RequiredFieldValidator ID="rfvAccount" ControlToValidate="ddlAccount" Display="Dynamic" InitialValue="0" runat="server" ErrorMessage="Please Select New Appointment to proceed.">Required Field</asp:RequiredFieldValidator>--%>
                             </InsertItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Appointment Source:">
+                        <asp:TemplateField HeaderText="New Appointment Source:">
                             <InsertItemTemplate>
                                 <asp:DropDownList ID="ddlApptSource" runat="server" DataSourceID="ApptSourceDS" DataTextField="ApptSourceName" DataValueField="ApptSourceId" SelectedValue='<%# Bind("ApptSourceId") %>'>
                                 </asp:DropDownList>
                                    <label id="mandlbl46" style="color:Red" runat="server">*</label>
-                                <asp:RequiredFieldValidator ID="rfvApptSource" ControlToValidate="ddlApptSource" Display="Dynamic" InitialValue="0" runat="server" ErrorMessage="Please Select Appointment Source to proceed.">Required Field</asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="rfvApptSource" ControlToValidate="ddlApptSource" Display="Dynamic" InitialValue="0" runat="server" ErrorMessage="Please Select New Appointment Source to proceed.">Required Field</asp:RequiredFieldValidator>
                             </InsertItemTemplate>                                                    
                         </asp:TemplateField>
                          <asp:TemplateField HeaderText="Registered for Training?:">
@@ -188,13 +188,6 @@
                                 <label id="mandlbl51" style="color:Red" runat="server">*</label>
                                 <asp:RequiredFieldValidator ID="rFVHowManyAttended" ControlToValidate="txtHowManyAttended" Display="Static" InitialValue="" runat="server" ErrorMessage="Please Enter Class Head Count to proceed.">Required Field</asp:RequiredFieldValidator>
                              </InsertItemTemplate>
-                        </asp:TemplateField>
-                         <asp:TemplateField HeaderText="New Company?:">
-                            <InsertItemTemplate>
-                                <asp:DropDownList ID="ddlCompany" runat="server" DataSourceID="NewItemInfoDS" DataTextField="Description"
-                                    DataValueField="Value" SelectedValue='<%# Bind("IsNewCompany") %>'>
-                                </asp:DropDownList>
-                            </InsertItemTemplate>
                         </asp:TemplateField>
                           <asp:TemplateField HeaderText="Industry :">
                             <InsertItemTemplate>
@@ -288,7 +281,6 @@
                         <asp:ControlParameter ControlID="dvQuickStart" Name="CourseTrngDate" PropertyName="SelectedValue" />
                         <asp:ControlParameter ControlID="dvQuickStart" Name="TrainingCourseName" PropertyName="SelectedValue" />
                         <asp:ControlParameter ControlID="dvQuickStart" Name="HowManyAttended" PropertyName="SelectedValue" />
-                        <asp:ControlParameter ControlID="dvQuickStart" Name="IsNewCompany" PropertyName="SelectedValue" />
                         <asp:ControlParameter ControlID="dvQuickStart" Name="IndID" PropertyName="SelectedValue" />                        
                         <asp:ControlParameter ControlID="dvQuickStart" Name="NextContactDate" PropertyName="SelectedValue" />
                         <asp:ControlParameter ControlID="dvQuickStart" Name="OppCloseDate" PropertyName="SelectedValue" />

@@ -1,4 +1,4 @@
-﻿<%@ page title="GapAnalysis" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="GapAnalysisCreate, App_Web_n3nsndxm" %>
+﻿<%@ page title="GapAnalysis" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="GapAnalysisCreate, App_Web_5i5pk2ch" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
@@ -58,8 +58,7 @@
                                             </tr>
                                             <tr style="color: Black; background-color: #EEEEEE">
                                                 <td>
-                                                    <a href="#" title="Sales Cycle Time tool tip, this is the description of sales cycle time.">
-                                                        Sales Cycle Time</a>
+                                                    <a href=# title="Sales Cycle Time tool tip, this is the description of sales cycle time.">Sales Cycle Time</a>
                                                 </td>
                                                 <td>
                                                     <asp:DropDownList ID="drpListSCTAsIs" OnDataBound="ddlCreateDefaultSelection" runat="server">
@@ -68,8 +67,7 @@
                                             </tr>
                                             <tr style="color: Black; background-color: #DCDCDC">
                                                 <td>
-                                                    <a href="#" title="Sales Cycle Time tool tip, this is the description of sales cycle time.">
-                                                        Sales Efficiency</a>
+                                                    <a href=# title="Sales Cycle Time tool tip, this is the description of sales cycle time.">Sales Efficiency</a>
                                                 </td>
                                                 <td>
                                                     <asp:DropDownList ID="drpListSEAsIs" OnDataBound="ddlCreateDefaultSelection" runat="server">
@@ -78,8 +76,7 @@
                                             </tr>
                                             <tr style="color: Black; background-color: #EEEEEE">
                                                 <td>
-                                                    <a href="#" title="Sales Cycle Time tool tip, this is the description of sales cycle time.">
-                                                        Sales Qualification</a>
+                                                    <a href=# title="Sales Cycle Time tool tip, this is the description of sales cycle time.">Sales Qualification</a>
                                                 </td>
                                                 <td>
                                                     <asp:DropDownList ID="drpListSQAsIs" OnDataBound="ddlCreateDefaultSelection" runat="server">
@@ -88,8 +85,7 @@
                                             </tr>
                                             <tr style="color: Black; background-color: #DCDCDC">
                                                 <td>
-                                                    <a href="#" title="Sales Cycle Time tool tip, this is the description of sales cycle time.">
-                                                        Sales Rep Retention</a>
+                                                    <a href=# title="Sales Cycle Time tool tip, this is the description of sales cycle time.">Sales Rep Retention</a>
                                                 </td>
                                                 <td>
                                                     <asp:DropDownList ID="drpListTCSAsIs" OnDataBound="ddlCreateDefaultSelection" runat="server">
@@ -98,8 +94,7 @@
                                             </tr>
                                             <tr style="color: Black; background-color: #EEEEEE">
                                                 <td>
-                                                    <a href="#" title="Sandler Trng Benefits tool tip, this is the description of Sandler Trng Benefits.">
-                                                        Quota Achievement</a>
+                                                    <a href=# title="Sandler Trng Benefits tool tip, this is the description of Sandler Trng Benefits.">Quota Achievement</a>
                                                 </td>
                                                 <td>
                                                     <asp:DropDownList ID="drpListQAAsIs" OnDataBound="ddlCreateDefaultSelection" runat="server">
@@ -108,8 +103,7 @@
                                             </tr>
                                             <tr style="color: Black; background-color: #DCDCDC">
                                                 <td>
-                                                    <a href="#" title="Sandler Trng Benefits tool tip, this is the description of Sandler Trng Benefits.">
-                                                        Sandler Trng Benefits</a>
+                                                    <a href=# title="Sandler Trng Benefits tool tip, this is the description of Sandler Trng Benefits.">Sandler Trng Benefits</a>
                                                 </td>
                                                 <td>
                                                     <asp:DropDownList ID="drpListEBGAsIS" OnDataBound="ddlCreateDefaultSelection" runat="server">
