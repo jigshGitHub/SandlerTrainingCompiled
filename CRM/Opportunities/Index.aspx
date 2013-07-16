@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunityIndex, App_Web_ygfd23lp" %>
+﻿<%@ page title="CRM - View Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunityIndex, App_Web_ks2njsjc" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -69,9 +69,9 @@
                                 <a href="Detail.aspx?id=<%#Eval("Id")%>">View Detail...</a>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField ShowHeader="False">
+                        <asp:TemplateField ShowHeader="False" HeaderText="Archive">
                             <ItemTemplate>
-                                <a href="ProcessArchive.aspx?mode=false&id=<%#Eval("Id")%>">Archive...</a>
+                                <a href="ProcessArchive.aspx?mode=false&id=<%#Eval("Id")%>" onclick="return confirm ('Are you sure to archive this record?');">Archive...</a>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>

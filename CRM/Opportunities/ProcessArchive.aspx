@@ -1,4 +1,4 @@
-﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ProcessArchive, App_Web_ygfd23lp" %>
+﻿<%@ page title="CRM - View Archived Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ProcessArchive, App_Web_ks2njsjc" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -10,9 +10,8 @@
             <td>
                 <table style="width: 100%">
                     <tr>
-                        <td style="width: 100%" align="right">
-                            <uc1:EntityMenu ID="opportunityMenu" runat="server" EnableViewState="true" />
-                        </td>
+                        <th style="float: left">View Archived Pipeline Records:
+                        </th>
                     </tr>
                     <tr>
                         <td>
@@ -70,9 +69,9 @@
                             HeaderStyle-ForeColor="Blue" DataField="SalesRep" HeaderText="Sales Rep" SortExpression="SalesRep" />
                         <asp:BoundField ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left"
                             HeaderStyle-ForeColor="Blue" DataField="Status" HeaderText="Status" SortExpression="Status" />
-                        <asp:TemplateField ShowHeader="False">
+                        <asp:TemplateField ShowHeader="False" HeaderText="UnArchive">
                             <ItemTemplate>
-                                <a href="ProcessArchive.aspx?mode=true&id=<%#Eval("Id")%>">UnArchive...</a>
+                                <a href="ProcessArchive.aspx?mode=true&id=<%#Eval("Id")%>" onclick="return confirm ('Are you sure to unarchive this record?');">UnArchive...</a>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
