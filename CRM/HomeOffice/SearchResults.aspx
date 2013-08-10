@@ -1,4 +1,4 @@
-﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_SearchResults, App_Web_s3eog4ia" %>
+﻿<%@ page title="" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_SearchResults, App_Web_3otvqb4z" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 
@@ -45,6 +45,15 @@
                                     Text="View Detail.."></asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
+
+                        <asp:TemplateField  HeaderText="Archive" HeaderStyle-HorizontalAlign="Left">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="archiveButton" runat="server" CausesValidation="False" CommandName="Delete" 
+                                    Text="Archive"  OnClientClick="return confirm ('Are you sure to archive this Franchisee record?');" ></asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField> 
+
+
                     </Columns>
                     <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                     <AlternatingRowStyle BackColor="#DCDCDC" />
@@ -59,8 +68,17 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:ObjectDataSource ID="SearchFranchiseeDS" runat="server" TypeName="SandlerRepositories.FranchiseesRepository" SelectMethod="GetFranchiseesForSearch"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="SearchFranchiseeDS" runat="server" TypeName="SandlerRepositories.FranchiseesRepository" 
+                DeleteMethod="ArchiveFranchisee" SelectMethod="GetFranchiseesForSearch">
+                
+                <DeleteParameters>
+                      <asp:Parameter Name="ID" Type="Int32" />
+                      <asp:ControlParameter Name="CurrentUserId"  ControlID="hidCurrentUserId"/>
+                  </DeleteParameters>
+                
+                </asp:ObjectDataSource>
                 <asp:HiddenField ID="hidFranchiseeID" runat="server" />
+                <asp:HiddenField ID="hidCurrentUserId" runat="server" />
             </td>
         </tr>
 

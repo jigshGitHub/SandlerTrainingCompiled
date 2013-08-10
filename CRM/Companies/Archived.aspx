@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View Archived Company Records" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CompaniesArchived, App_Web_lamlrchw" %>
+﻿<%@ page title="CRM - View Archived Company Records" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CompaniesArchived, App_Web_s4uwmx3d" %>
 <%@ Import Namespace="SandlerRepositories" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">

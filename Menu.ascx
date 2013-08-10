@@ -1,5 +1,5 @@
 ﻿<%@ Import Namespace="Sandler.UI.ChartStructure" %>
-<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_bwnwhu1z" %>
+<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_uit2kwpa" %>
 <div class="clear hideSkiplink">
     <table style="width: 100%; border-color: White; border-style: none; border-width: thin">
         <tr>
@@ -62,7 +62,7 @@
                             <li><a href="#">Franchisee Report By...</a>
                                 <ul class="sub_menu">
                                 <li><a href="<%=  Page.ResolveClientUrl("~/CRM/HomeOffice/HomeOfficeReports.aspx?reportName=frbyawlevel")%>">Award Level</a></li>
-                                    <li><a href="<%=  Page.ResolveClientUrl("~/CRM/HomeOffice/HomeOfficeReports.aspx?reportName=frbybusarea")%>">Business Area</a></li>
+                                    <li><a href="<%=  Page.ResolveClientUrl("~/CRM/HomeOffice/HomeOfficeReports.aspx?reportName=frbybusarea")%>">Business Focus Area</a></li>
                                     <li><a href="<%=  Page.ResolveClientUrl("~/CRM/HomeOffice/HomeOfficeReports.aspx?reportName=frbycertlevel")%>">Certification Level</a></li>
                                     <li><a href="<%=  Page.ResolveClientUrl("~/CRM/HomeOffice/HomeOfficeReports.aspx?reportName=frbycoach")%>">Coach</a></li>
                                       <li><a href="<%=  Page.ResolveClientUrl("~/CRM/HomeOffice/HomeOfficeReports.aspx?reportName=frbycontdetails")%>">Contract Details</a></li>
@@ -79,6 +79,7 @@
                                </ul>
                             </li>
                             <li><a href="<%=  Page.ResolveClientUrl("~/CRM/HomeOffice/HomeOfficeReports.aspx?reportName=mfrd")%>">Master Franchisee Details</a></li>
+                            <li><a href="<%=  Page.ResolveClientUrl("~/CRM/HomeOffice/HomeOfficeReports.aspx?reportName=ardd")%>">Area Developer Details</a></li>
                             <li><a href="<%=  Page.ResolveClientUrl("~/CRM/HomeOffice/HomeOfficeReports.aspx?reportName=msfr")%>">Master/Sub Franchisees</a></li>
                             <li><a href="#">Membership Reports</a>
                                 <ul class="sub_menu">

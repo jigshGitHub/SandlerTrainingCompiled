@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Search Results - Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CRM_Companies_SearchResults, App_Web_lamlrchw" %>
+﻿<%@ page title="CRM - Search Results - Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CRM_Companies_SearchResults, App_Web_s4uwmx3d" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -27,7 +27,8 @@
             <td colspan="2">
                 <asp:GridView Width="100%" ID="gvCompanies" runat="server" DataSourceID="SearchCompanyDS"
                     AutoGenerateColumns="False" DataKeyNames="COMPANIESID" AllowSorting="true" AllowPaging="true"
-                    PageSize="20" OnSelectedIndexChanged="gvCompanies_SelectedIndexChanged" OnDataBound="gvCompanies_DataBound">
+                    PageSize="20" OnSelectedIndexChanged="gvCompanies_SelectedIndexChanged" OnRowDataBound="gvCompanies_RowDataBound" onrowdeleted="gvCompanies_RowDeleted"
+                    OnDataBound="gvCompanies_DataBound">
                     <PagerStyle BackColor="#999999" ForeColor="Blue" CssClass="gvPager" HorizontalAlign="Center" />
                     <Columns>
                         <asp:BoundField DataField="COMPANIESID" Visible="False" />
@@ -47,6 +48,12 @@
                                     Text="View Detail.."></asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
+                        <asp:TemplateField  HeaderText="Archive" HeaderStyle-HorizontalAlign="Left">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="archiveButton" runat="server" CausesValidation="False" CommandName="Delete" 
+                                    Text="Archive"  OnClientClick="return confirm ('Are you sure to archive this Company record? All Contacts and Pipeline records for this Company will be archived too.');" ></asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField> 
                     </Columns>
                     <RowStyle BackColor="#EEEEEE" ForeColor="Black" />
                     <AlternatingRowStyle BackColor="#DCDCDC" />
@@ -119,10 +126,18 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:ObjectDataSource ID="SearchCompanyDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository" SelectMethod="GetCompaniesForSearch" OnSelecting="SearchCompanyDS_Selecting">
+                <asp:ObjectDataSource ID="SearchCompanyDS" runat="server" TypeName="SandlerRepositories.CompaniesRepository" 
+                SelectMethod="GetCompaniesForSearch" 
+                DeleteMethod="ArchiveCompany"
+                OnSelecting="SearchCompanyDS_Selecting">
                     <SelectParameters><asp:Parameter Name="_user"  /></SelectParameters>
+                     <DeleteParameters>
+                        <asp:Parameter Name="COMPANIESID" Type="Int32" />
+                        <asp:ControlParameter Name="CurrentUserId"  ControlID="hidCurrentUserId"/>
+                    </DeleteParameters>
                     </asp:ObjectDataSource>
                 <asp:HiddenField ID="hidCompanyID" runat="server" />
+                <asp:HiddenField ID="hidCurrentUserId" runat="server" />
             </td>
         </tr>
     </table>
