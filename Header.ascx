@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="Header, App_Web_n0dd3ghu" %>
+﻿<%@ control language="C#" autoeventwireup="true" inherits="Header, App_Web_t0atp25t" %>
 <%@ Register Src="Menu.ascx" TagName="Menu" TagPrefix="uc1" %>
 <div class="loginDisplay" style="display: block">
     <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">

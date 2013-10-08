@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Search Contacts - Results" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_Contacts_SearchResults, App_Web_er1sobdd" %>
+﻿<%@ page title="CRM - Search Contacts - Results" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_Contacts_SearchResults, App_Web_rong0mzj" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -125,8 +125,13 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:ObjectDataSource ID="SearchContactDS" runat="server" TypeName="SandlerRepositories.ContactsRepository" SelectMethod="GetAllForSearch" OnSelecting="SearchContactDS_Selecting">
+                <asp:ObjectDataSource ID="SearchContactDS" runat="server" TypeName="SandlerRepositories.ContactsRepository" SelectMethod="GetAllForSearch" 
+                  DeleteMethod="ArchiveContact" OnSelecting="SearchContactDS_Selecting">
                     <SelectParameters><asp:Parameter Name="_user"  /></SelectParameters>
+                    <DeleteParameters>
+                        <asp:Parameter Name="contactsid" Type="Int32" />
+                        <asp:ControlParameter Name="CurrentUserId"  ControlID="hidCurrentUserId"/>
+                    </DeleteParameters>
                     </asp:ObjectDataSource>
                 <asp:HiddenField ID="hidContactID" runat="server" />
                 <asp:HiddenField ID="hidCurrentUserId" runat="server" />
