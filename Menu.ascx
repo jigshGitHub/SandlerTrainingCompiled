@@ -1,5 +1,5 @@
 ﻿<%@ Import Namespace="Sandler.UI.ChartStructure" %>
-<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_oyz2bdeg" %>
+<%@ control language="C#" autoeventwireup="true" inherits="Menu, App_Web_hp1kiznp" %>
 <div class="clear hideSkiplink">
     <table style="width: 100%; border-color: White; border-style: none; border-width: thin">
         <tr>
@@ -93,6 +93,7 @@
                             <li><a href="<%=  Page.ResolveClientUrl("~/CRM/HomeOffice/HomeOfficeReports.aspx?reportName=glaa")%>">Global Account Agreement</a></li>
                         </ul>
                         </li>
+                        <li><a href="<%=  Page.ResolveClientUrl("~/RDL/RDLReports.aspx")%>">RDL Reports</a></li>
                     </ul>
                     </li>
                     <li><a id="anchorBenchmarks" runat="server" href="#">BENCHMARKS</a><ul id="Ul1" runat="server"
@@ -114,7 +115,14 @@
 
                     <li><a id="a1" runat="server" href="#">CRM</a>
                       <ul class="sub_menu">
-                        <li><a id="quickstartAnchor" runat="server" visible="false">QuickStart</a></li>
+                        <li><a id="quickstartAnchor" runat="server" visible="false">QuickStart</a>
+                            <ul class="sub_menu">
+                                <li><a href="<%=  Page.ResolveClientUrl("~/CRM/Quickstart/Index.aspx")  %>">
+                                    Add</a></li>
+                                <li><a href="<%=  Page.ResolveClientUrl("~/CRM/Quickstart/Edit.aspx")  %>">
+                                    Edit</a></li>
+                            </ul>
+                        </li>
                         <li><a id="companyAnchor" runat="server">Companies</a></li>
                         <li><a id="contactAnchor" runat="server">Contacts</a></li>
                         <li><a id="oppsAnchor" runat="server">Pipeline</a></li>
