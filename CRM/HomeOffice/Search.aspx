@@ -1,4 +1,4 @@
-﻿<%@ page title="Search - Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Search, App_Web_3cxosrwo" %>
+﻿<%@ page title="Search - Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Search, App_Web_jcqvhh3b" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
 
@@ -216,7 +216,7 @@
                                                 </td>
                                              </tr>
                                              <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
-                                                <td>Advisory Borad:</td>
+                                                <td>Advisory Board:</td>
                                                 <td>
                                                     <asp:DropDownList  ID="ddlAdvBoard" runat="server"  DataSourceID="YesNoOptionsInfoDS" DataTextField="Description" DataValueField="Value"></asp:DropDownList>
                                                 </td>

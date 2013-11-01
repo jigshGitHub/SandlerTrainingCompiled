@@ -1,4 +1,4 @@
-﻿<%@ page title="View/Edit Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Detail, App_Web_3cxosrwo" %>
+﻿<%@ page title="View/Edit Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Detail, App_Web_jcqvhh3b" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
@@ -231,7 +231,7 @@
                                                 </td>
                                              </tr>
                                              <tr style="color: Black; background-color: #DCDCDC; white-space: nowrap;">
-                                                <td>Advisory Borad:</td>
+                                                <td>Advisory Board:</td>
                                                 <td>
                                                     <asp:DropDownList ID="ddlAdvBoard" runat="server" DataSourceID="YesNoOptionsInfoDS" DataTextField="Description" DataValueField="Value" SelectedValue='<%# Bind("IsAdvBoardValue") %>'></asp:DropDownList>
                                                 </td>
