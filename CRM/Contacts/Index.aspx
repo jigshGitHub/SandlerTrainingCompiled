@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View Contacts" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="ContactIndex, App_Web_rlctewcw" %>
+﻿<%@ page title="CRM - View Contacts" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="ContactIndex, App_Web_or5kmkao" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
 <%@ Register Src="../EntityMenu.ascx" TagName="EntityMenu" TagPrefix="uc1" %>
@@ -43,7 +43,7 @@
                             <ItemStyle HorizontalAlign="Center" />
                         </asp:TemplateField>
                         <asp:BoundField DataField="contactsid" Visible="False" />
-                        <asp:BoundField ItemStyle-HorizontalAlign="Left"  HeaderStyle-HorizontalAlign="Left" DataField="FullName" HeaderText="Name" HeaderStyle-ForeColor="Blue" SortExpression="FullName" />
+                        <asp:BoundField ItemStyle-HorizontalAlign="Left"  HeaderStyle-HorizontalAlign="Left" DataField="FullName" HeaderText="Name" HeaderStyle-ForeColor="Blue" SortExpression="LastName" />
                         <asp:BoundField ItemStyle-HorizontalAlign="Left"  HeaderStyle-HorizontalAlign="Left" DataField="Phone" HeaderText="Phone"   HeaderStyle-ForeColor="Blue" SortExpression="Phone" />
                         <asp:BoundField ItemStyle-HorizontalAlign="Left"  HeaderStyle-HorizontalAlign="Left" DataField="Email" HeaderText="E-mail"  HeaderStyle-ForeColor="Blue" SortExpression="Email" />
                         <asp:BoundField ItemStyle-HorizontalAlign="Left"  HeaderStyle-HorizontalAlign="Left" DataField="COMPANYNAME" HeaderText="Company" HeaderStyle-ForeColor="Blue" SortExpression="COMPANYNAME" />
@@ -69,7 +69,7 @@
         <tr id="trExport" runat="server" visible="false">
             <td>
                 <div id="Report" runat="server">
-                    <asp:GridView Width="100%" ID="gvContactsExport" runat="server" DataSourceID="ContactDS"
+                    <asp:GridView Width="100%" ID="gvContactsExport" runat="server" DataSourceID="ContactExportDS"
                         AutoGenerateColumns="False" DataKeyNames="contactsid">
                         <Columns>
                             <asp:BoundField DataField="contactsid"  HeaderText="ID" />
@@ -131,7 +131,8 @@
         </tr>
         <tr>
             <td>
-                <asp:ObjectDataSource ID="ContactDS" runat="server" 
+            <%--For Export Purpose Only--%>
+            <asp:ObjectDataSource ID="ContactExportDS" runat="server" 
                 TypeName="SandlerRepositories.ContactsRepository" SelectMethod="GetAll"
                 DeleteMethod="ArchiveContact" 
                 OnSelecting="ContactDS_Selecting">
@@ -139,22 +140,41 @@
                         <asp:ControlParameter ControlID="ddlCompanies" Name="COMPANIESID" PropertyName="SelectedValue" Type="Int32" />
                         <asp:Parameter Name="_user"  />
                     </SelectParameters>
-                    <DeleteParameters>
-                        <asp:Parameter Name="contactsid" Type="Int32" />
-                        <asp:ControlParameter Name="CurrentUserId"  ControlID="hidCurrentUserId"/>
-                    </DeleteParameters>
-                </asp:ObjectDataSource>
+             </asp:ObjectDataSource>
+             <%--For list and sorting/pagination--%>
+             <asp:ObjectDataSource ID="ContactDS" runat="server" TypeName="EffectiveDataSourceMgmt.EffectiveDataSource" 
+                EnablePaging="true" MaximumRowsParameterName="pageSize"
+                StartRowIndexParameterName="startRowIndex" OnSelecting="ContactDS_Selecting"
+                SelectCountMethod="TotalRowCountContact" SortParameterName="sortExpression" DeleteMethod="ArchiveContact"
+                SelectMethod="GetContactData"> 
+                  <SelectParameters>
+                    <asp:Parameter Name="startRowIndex" Type="Int32" />
+                    <asp:Parameter Name="pageSize" Type="Int32"/>
+                    <asp:Parameter Name="sortExpression" Type="String" />            
+                    <asp:ControlParameter ControlID="hidTableName" Name="TableName" PropertyName="Value" />
+                    <asp:ControlParameter ControlID="ddlCompanies" Name="COMPANIESID" PropertyName="SelectedValue" Type="Int32" />
+                    <asp:Parameter Name="_user"  />   
+                  </SelectParameters>
+                  <DeleteParameters>
+                      <asp:Parameter Name="contactsid" Type="Int32" />
+                      <asp:ControlParameter Name="CurrentUserId"  ControlID="hidCurrentUserId"/>
+                  </DeleteParameters>
+               </asp:ObjectDataSource>
+
             </td>
         </tr>
         <tr>
             <td>
+                <%--For company list--%>
                 <asp:ObjectDataSource ID="CompaniesDS" runat="server" 
                 TypeName="SandlerRepositories.CompaniesRepository" 
                 SelectMethod="GetCompaniesForDDL" OnSelecting="CompaniesDS_Selecting">
                     <SelectParameters><asp:Parameter Name="_user"  /></SelectParameters>
                 </asp:ObjectDataSource>
+                <%--Hidden field Bank--%>
                 <asp:HiddenField ID="hidContactID" runat="server" />
                 <asp:HiddenField ID="hidCurrentUserId" runat="server" />
+                <asp:HiddenField ID="hidTableName" runat="server" />
             </td>
         </tr>
     </table>

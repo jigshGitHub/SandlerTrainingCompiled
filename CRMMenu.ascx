@@ -1,4 +1,4 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="CRMMenu, App_Web_nxy02rl4" %>
+﻿<%@ control language="C#" autoeventwireup="true" inherits="CRMMenu, App_Web_kdmk3ts1" %>
 <asp:Panel ID="pnlCrmSubMenu" runat="server" Visible="false">
     <table class="CRMSubMenus" align="center">
         <tr>
