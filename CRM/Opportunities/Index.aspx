@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunityIndex, App_Web_wx1ms3vz" %>
+﻿<%@ page title="CRM - View Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="OpportunityIndex, App_Web_fnevdzav" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
@@ -70,7 +70,7 @@
                                     HeaderStyle-ForeColor="Blue" DataField="CompanyName" HeaderText="Company" SortExpression="CompanyName"
                                     ReadOnly="true" />
                                 <asp:TemplateField ItemStyle-HorizontalAlign="Left" HeaderStyle-HorizontalAlign="Left"
-                                    HeaderText="Value" HeaderStyle-ForeColor="Blue" SortExpression="Value">
+                                    HeaderText="Value" HeaderStyle-ForeColor="Blue" SortExpression="VALUE">
                                     <ItemTemplate>
                                         <asp:Label ID="lblValue" runat="server" Text='<%#Eval("Value","{0:c}") %>' /></ItemTemplate>
                                     <EditItemTemplate>
