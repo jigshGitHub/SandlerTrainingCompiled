@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View Archived Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ProcessArchive, App_Web_5yjdjcme" %>
+﻿<%@ page title="CRM - View Archived Opportunities" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ProcessArchive, App_Web_i5bumicu" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
