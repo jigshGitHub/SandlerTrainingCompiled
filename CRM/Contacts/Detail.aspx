@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View/Edit Contact" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ContactDETAIL, App_Web_xznrjjc0" %>
+﻿<%@ page title="CRM - View/Edit Contact" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="ContactDETAIL, App_Web_vewt0pzh" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>
