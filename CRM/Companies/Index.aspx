@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CompanyIndex, App_Web_li5qvboq" %>
+﻿<%@ page title="CRM - View Company" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CompanyIndex, App_Web_gqfujcn3" %>
 
 
 <%@ Import Namespace="SandlerRepositories" %>

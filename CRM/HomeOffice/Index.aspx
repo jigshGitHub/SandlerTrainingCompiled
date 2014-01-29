@@ -1,4 +1,4 @@
-﻿<%@ page title="HomeOffice - View Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Index, App_Web_4icw5mkk" %>
+﻿<%@ page title="HomeOffice - View Franchisee" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="CRM_HomeOffice_Index, App_Web_0owhap3g" %>
 
 
 <%--This is Original Code--%>
