@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="8" virtualPath="/SandlerTraining/global.asax" hash="1a73cdce" filehash="3dcea762cb68" flags="150000" assembly="App_global.asax" type="ASP.global_asax">
+<preserve resultType="8" virtualPath="/SandlerTraining/global.asax" hash="affc027" filehash="3f77797e2713" flags="150000" assembly="App_global.asax" type="ASP.global_asax">
     <filedeps>
         <filedep name="/SandlerTraining/global.asax" />
     </filedeps>
