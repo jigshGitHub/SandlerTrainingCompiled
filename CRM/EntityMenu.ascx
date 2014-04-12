@@ -1,2 +1,2 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="CRM_EntityMenu, App_Web_23ub20vy" %>
+﻿<%@ control language="C#" autoeventwireup="true" inherits="CRM_EntityMenu, App_Web_0iqouoei" %>
 <asp:Panel ID="pnlSubMenu" runat="server" EnableViewState="true" />

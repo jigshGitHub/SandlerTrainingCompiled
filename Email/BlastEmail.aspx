@@ -1,4 +1,4 @@
-﻿<%@ page title="Send Email" language="C#" masterpagefile="~/CRM.master" validaterequest="false" autoeventwireup="true" inherits="Email_BlastEmail, App_Web_q140jrmh" %>
+﻿<%@ page title="Send Email" language="C#" masterpagefile="~/CRM.master" validaterequest="false" autoeventwireup="true" inherits="Email_BlastEmail, App_Web_karfpcsj" %>
 <%@ Register TagPrefix="FTB" Namespace="FreeTextBoxControls" Assembly="FreeTextBox" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Import Namespace="SandlerRepositories" %>

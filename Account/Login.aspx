@@ -1,4 +1,4 @@
-﻿<%@ page language="C#" autoeventwireup="true" inherits="Login, App_Web_ndq2bo1y" %>
+﻿<%@ page language="C#" autoeventwireup="true" inherits="Login, App_Web_tixtsxbr" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,7 +10,8 @@
     <div>
         <img width="100%" src="<%= Page.ResolveClientUrl("~/images/Landing_Page.png") %>" alt="Sandler Logo" />
         <asp:Login runat="server" ID="sandlerLogin" DestinationPageUrl="~/Default.aspx" Style="position: absolute;
-            left: 500px; top: 60px;" onloggedin="sandlerLogin_LoggedIn">
+            left: 500px; top: 60px;" onloggedin="sandlerLogin_LoggedIn" 
+            onauthenticate="sandlerLogin_Authenticate">
             <LayoutTemplate>
                 <table>
                     <tr>
@@ -32,7 +33,7 @@
                             <span style="color: #FFFFFF">:</span>
                         </td>
                         <td>
-                            <asp:TextBox ID="Password" MaxLength="20" runat="server" TextMode="Password" Text="pa$$word" />
+                            <asp:TextBox ID="Password" MaxLength="20" runat="server" TextMode="Password"  />
                         </td>
                         <td>
                             <asp:Button runat="server" CommandName="Login" ID="btnLogin" Text="LOGIN" Style="background-color: #336699;

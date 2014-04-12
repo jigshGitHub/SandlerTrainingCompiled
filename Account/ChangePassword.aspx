@@ -1,10 +1,12 @@
-﻿<%@ page title="My Account - Change Password" language="C#" masterpagefile="~/Site.master" autoeventwireup="true" inherits="Account_ChangePassword, App_Web_ndq2bo1y" %>
+﻿<%@ page title="My Account - Change Password" language="C#" masterpagefile="~/Site.master" autoeventwireup="true" inherits="Account_ChangePassword, App_Web_tixtsxbr" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-    <table class="changePassword">
+    <asp:Label ID="lblPasswordCanBeChanged" runat="server"></asp:Label>
+    <asp:Panel ID="pnlChangePassword" runat="server">
+        <table class="changePassword">
         <tr>
             <td>
                 <h2>
@@ -73,4 +75,5 @@
             </td>
         </tr>
     </table>
+    </asp:Panel>
 </asp:Content>

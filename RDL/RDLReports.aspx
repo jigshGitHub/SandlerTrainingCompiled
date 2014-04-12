@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - Reports List" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CRM_RDL_RDLReports, App_Web_rhrb0rsx" %>
+﻿<%@ page title="CRM - Reports List" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="CRM_RDL_RDLReports, App_Web_uiocm3gu" %>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
