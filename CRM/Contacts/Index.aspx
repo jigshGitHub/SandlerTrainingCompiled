@@ -1,4 +1,4 @@
-﻿<%@ page title="CRM - View Contacts" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="ContactIndex, App_Web_x0abv3w1" %>
+﻿<%@ page title="CRM - View Contacts" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" enableeventvalidation="false" inherits="ContactIndex, App_Web_gfdxpyae" %>
 
 <%@ Import Namespace="SandlerRepositories" %>
 <%@ Register Src="../EntityMenu.ascx" TagName="EntityMenu" TagPrefix="uc1" %>

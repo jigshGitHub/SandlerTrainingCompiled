@@ -1,4 +1,4 @@
-﻿<%@ page title="Benchmarks-FranchiseeToRegion" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Reports_Benchmarks_FranchiseeToRegion, App_Web_i3yrx14o" %>
+﻿<%@ page title="Benchmarks-FranchiseeToRegion" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Reports_Benchmarks_FranchiseeToRegion, App_Web_lzzrjnvl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
