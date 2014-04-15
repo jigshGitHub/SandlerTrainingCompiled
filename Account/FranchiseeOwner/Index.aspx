@@ -1,4 +1,4 @@
-﻿<%@ page title="My Account - Franchisee Index" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_FranchiseeOwner_Index, App_Web_spn0juvc" %>
+﻿<%@ page title="My Account - Franchisee Index" language="C#" masterpagefile="~/CRM.master" autoeventwireup="true" inherits="Account_FranchiseeOwner_Index, App_Web_bcr2tpmj" %>
 
 <%@ Register Src="~/CRM/Pager.ascx" TagName="Pager" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
